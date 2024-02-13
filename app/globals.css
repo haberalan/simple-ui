@@ -2,32 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  body {
+    @apply flex flex-col justify-between;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  *:focus-visible {
+    @apply outline outline-offset-1 outline-gray-300 outline-2;
+  }
+
+  main {
+    @apply min-h-[calc(100vh-139px)];
+  }
+
+  .dark {
+    @apply bg-black text-gray-100;
+  }
+
+  .light {
+    @apply bg-gray-100 text-black;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .scrollbar::-webkit-scrollbar {
+    @apply bg-transparent w-2 h-2;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-900 rounded-full;
+  }
+
+  .scrollbar::-webkit-scrollbar-corner {
+    @apply bg-transparent;
+  }
+
+  .slider::-webkit-slider-thumb {
+    @apply appearance-none cursor-pointer h-5 w-5 bg-gray-100 border-2 border-solid border-black dark:border-gray-100 dark:bg-black rounded-full relative z-10;
+  }
+
+  .slider:disabled::-webkit-slider-thumb {
+    @apply cursor-default border-gray-500 dark:border-gray-500;
+  }
+
+  .code {
+    @apply text-sm text-gray-700 dark:text-gray-600;
   }
 }
