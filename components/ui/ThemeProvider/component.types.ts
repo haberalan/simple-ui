@@ -2,11 +2,11 @@ type ThemeContextProps = {
   /**
    * Theme
    */
-  theme: "light" | "dark";
+  theme: 'light' | 'dark';
   /**
    * Toggle theme
    */
-  changeTheme: (theme: "light" | "dark") => void;
+  changeTheme: (theme: 'light' | 'dark') => void;
 };
 
 type ThemeProviderProps = {

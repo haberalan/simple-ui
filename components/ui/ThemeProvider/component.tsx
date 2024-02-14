@@ -1,34 +1,32 @@
-"use client";
+'use client';
 
 // region Imports
-import React, { createContext, useEffect, useState } from "react";
-import { ThemeContextProps, ThemeProviderProps } from "./component.types";
+import React, { createContext, useEffect, useState } from 'react';
+import { ThemeContextProps, ThemeProviderProps } from './component.types';
 // endregion
 
 // region Context
 const ThemeContext = createContext<ThemeContextProps>({
-  theme: "dark",
+  theme: 'dark',
   changeTheme: () => {},
 });
 // endregion
 
 // region Helper
 const getTheme = () => {
-  if (typeof window !== "undefined") {
-    const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    );
+  if (typeof window !== 'undefined') {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-    const theme = window.localStorage.getItem("theme");
+    const theme = window.localStorage.getItem('theme');
 
     if (theme) {
-      return theme as "light" | "dark";
+      return theme as 'light' | 'dark';
     }
 
-    return darkModeMediaQuery.matches ? "dark" : "light";
+    return darkModeMediaQuery.matches ? 'dark' : 'light';
   }
 
-  return "dark";
+  return 'dark';
 };
 // endregion
 
@@ -39,11 +37,11 @@ const getTheme = () => {
  * @returns {React.ReactElement} The React element
  */
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
-  const [theme, setTheme] = useState<"light" | "dark">(getTheme());
+  const [theme, setTheme] = useState<'light' | 'dark'>(getTheme());
   const [mounted, setMounted] = useState(false);
 
-  const changeTheme = (theme: "light" | "dark") => {
-    window.localStorage.setItem("theme", theme);
+  const changeTheme = (theme: 'light' | 'dark') => {
+    window.localStorage.setItem('theme', theme);
 
     setTheme(theme);
   };
@@ -52,33 +50,33 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
     setMounted(true);
 
     const listener = (event: StorageEvent) => {
-      if (event.key === "theme") {
-        setTheme(event.newValue as "light" | "dark");
+      if (event.key === 'theme') {
+        setTheme(event.newValue as 'light' | 'dark');
       }
     };
 
-    window.addEventListener("storage", listener);
+    window.addEventListener('storage', listener);
 
     return () => {
-      window.removeEventListener("storage", listener);
+      window.removeEventListener('storage', listener);
     };
   }, []);
 
   useEffect(() => {
-    const body = document.querySelector("body");
+    const body = document.querySelector('body');
 
     if (body) {
-      body.classList.remove("light", "dark");
+      body.classList.remove('light', 'dark');
       body.classList.add(theme);
     }
   }, [theme]);
 
   useEffect(() => {
-    const body = document.querySelector("body");
+    const body = document.querySelector('body');
 
     const timer = setTimeout(() => {
       if (body) {
-        body.classList.add("loaded");
+        body.classList.add('loaded');
       }
     }, 300);
 
