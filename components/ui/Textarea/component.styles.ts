@@ -1,0 +1,42 @@
+import styles from '@/lib/styles';
+
+const TextareaStyles = styles(
+  'peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 px-3 py-2 text-sm placeholder:text-gray-500 placeholder:dark:text-gray-700 focus-visible:dark:outline-gray-800',
+  {
+    status: {
+      default: 'bg-white dark:bg-gray-1000 focus-visible:border-gray-500 focus-visible:dark:border-gray-600',
+      error: 'bg-white dark:bg-gray-1000 border-error-700 dark:border-error-900 text-error-600 dark:text-error-500',
+      disabled: 'bg-gray-200 text-gray-400 dark:bg-gray-900 dark:text-gray-700 resize-none',
+      valid: 'bg-white dark:bg-gray-1000 focus-visible:border-gray-500 focus-visible:dark:border-gray-600',
+    },
+    noResize: {
+      true: 'resize-none',
+      false: '',
+    },
+  }
+);
+
+const LabelStyles = styles('transition-colors ease-in-out duration-150 text-sm font-500', {
+  status: {
+    default: '',
+    error: 'text-error-600',
+    disabled: 'text-gray-500 dark:text-gray-700',
+    valid: '',
+  },
+});
+
+const HelperStyles = styles('transition-colors ease-in-out duration-150 text-xs', {
+  status: {
+    default: 'text-gray-600',
+    error: 'text-error-600',
+    disabled: 'text-gray-400 dark:text-gray-800',
+    valid: 'text-gray-600',
+  },
+  align: {
+    left: 'text-left',
+    right: 'text-right',
+    center: 'text-center',
+  },
+});
+
+export { TextareaStyles, LabelStyles, HelperStyles };
