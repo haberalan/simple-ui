@@ -1,0 +1,47 @@
+import React from "react";
+import { COMPONENTS } from "@/constants";
+import { ActiveLink } from "@/components/ui";
+
+const GROUPS = [
+  {
+    name: "Components",
+    path: "/components",
+    items: COMPONENTS,
+  },
+];
+
+const Navbar = () => {
+  return (
+    <nav className="scrollbar sticky top-[88px] flex max-h-[calc(100vh-122px)] w-[240px] flex-col gap-4 self-start overflow-auto text-sm">
+      {GROUPS.map((group) => (
+        <div key={group.name} className="flex flex-col gap-3">
+          <ActiveLink
+            noAbsolute
+            href={group.path}
+            className="font-500"
+            activeClassName="underline"
+          >
+            {group.name}
+          </ActiveLink>
+          <ul className="flex flex-col gap-1 text-gray-600 dark:text-gray-300">
+            {group.items.map((item) => (
+              <li key={item.name}>
+                <ActiveLink
+                  href={item.path}
+                  className="transition-spacing group duration-150"
+                  activeClassName="dark:text-white text-black ml-1 font-500"
+                >
+                  <span className="transition-spacing duration-150 group-hover:ml-1">
+                    {item.name}
+                  </span>
+                </ActiveLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  );
+};
+
+export default Navbar;
