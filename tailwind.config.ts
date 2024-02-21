@@ -133,7 +133,11 @@ export default {
     backgroundImage: {
       // place for gradients
     },
-    extend: {},
+    extend: {
+      transitionProperty: {
+        spacing: "margin, padding",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;
