@@ -23,12 +23,12 @@ const Navbar = () => {
           >
             {group.name}
           </ActiveLink>
-          <ul className="flex flex-col gap-1 text-gray-600 dark:text-gray-300">
+          <ul className="flex flex-col gap-1 text-gray-500 dark:text-gray-500">
             {group.items.map((item) => (
               <li key={item.name}>
                 <ActiveLink
                   href={item.path}
-                  className="transition-spacing group duration-150"
+                  className="group transition-spacing duration-150"
                   activeClassName="dark:text-white text-black ml-1 font-500"
                 >
                   <span className="transition-spacing duration-150 group-hover:ml-1">
