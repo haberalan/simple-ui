@@ -6,7 +6,9 @@ export default function Layout({
   return (
     <main className="container relative flex gap-4 py-8">
       <Navbar />
-      <div className="flex flex-col gap-4">{children}</div>
+      <div className="flex w-full max-w-[800px] flex-col gap-12">
+        {children}
+      </div>
     </main>
   );
 }
