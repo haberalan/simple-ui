@@ -134,6 +134,10 @@ export default {
       // place for gradients
     },
     extend: {
+      backgroundImage: {
+        "grid-light": `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="rgba(10, 9, 8, 0.2)"><path d="M0 .5H31.5V32"/></svg>')`,
+        "grid-dark": `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="rgba(250, 250, 250, 0.2)"><path d="M0 .5H31.5V32"/></svg>')`,
+      },
       transitionProperty: {
         spacing: "margin, padding",
       },
