@@ -1,14 +1,14 @@
-import { useState, useMemo, useLayoutEffect } from 'react';
+import { useState, useMemo, useLayoutEffect } from "react";
 
 type usePositionProps = {
   ref: React.RefObject<HTMLElement>;
-  direction?: 'top' | 'bottom';
+  direction?: "top" | "bottom";
 };
 
 const hasFixedParent = (element: HTMLElement | null) => {
   while (element) {
     const style = window.getComputedStyle(element);
-    if (style.position === 'fixed') {
+    if (style.position === "fixed") {
       return true;
     }
     element = element.parentElement;
@@ -18,14 +18,16 @@ const hasFixedParent = (element: HTMLElement | null) => {
 
 const usePosition = ({ ref, direction }: usePositionProps) => {
   const [active, setActive] = useState(false);
-  const [target, setTarget] = useState<(EventTarget & HTMLElement) | null>(null);
+  const [target, setTarget] = useState<(EventTarget & HTMLElement) | null>(
+    null,
+  );
   const baseStyles: React.CSSProperties = useMemo(
     () => ({
-      position: hasFixedParent(target!) ? 'fixed' : 'absolute',
-      width: 'max-content',
+      position: hasFixedParent(target!) ? "fixed" : "absolute",
+      width: "max-content",
       zIndex: 10,
     }),
-    [target]
+    [target],
   );
 
   const [styles, setStyles] = useState<React.CSSProperties>(baseStyles);
@@ -53,15 +55,22 @@ const usePosition = ({ ref, direction }: usePositionProps) => {
       let calculatedY: React.CSSProperties = {};
       let newStyles: React.CSSProperties = {};
 
-      if (direction === 'top') {
-        const top = targetRect.top - tooltipRect.height - 6 + (hasFixedParent(target) ? 0 : window.scrollY);
+      if (direction === "top") {
+        const top =
+          targetRect.top -
+          tooltipRect.height -
+          6 +
+          (hasFixedParent(target) ? 0 : window.scrollY);
         calculatedY = { top };
       } else {
-        const top = targetRect.bottom + 6 + (hasFixedParent(target) ? 0 : window.scrollY);
+        const top =
+          targetRect.bottom + 6 + (hasFixedParent(target) ? 0 : window.scrollY);
         calculatedY = { top };
       }
 
-      newStyles = { left: targetRect.left + targetRect.width / 2 - tooltipRect.width / 2 };
+      newStyles = {
+        left: targetRect.left + targetRect.width / 2 - tooltipRect.width / 2,
+      };
 
       if ((newStyles.left as number) < 0) {
         newStyles.left = 0;
@@ -74,6 +83,12 @@ const usePosition = ({ ref, direction }: usePositionProps) => {
     };
 
     updatePosition();
+
+    window.addEventListener("resize", updatePosition);
+
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+    };
   }, [active, target, ref, direction, baseStyles]);
 
   return {
