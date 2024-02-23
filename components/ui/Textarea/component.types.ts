@@ -6,7 +6,7 @@ type TextareaProps = {
   /**
    * Validation status of the text area
    */
-  status: 'valid' | 'error' | 'default';
+  status: "valid" | "error" | "default";
   /**
    * Textarea onChange event
    */
@@ -38,7 +38,7 @@ type TextareaProps = {
   /**
    * Textarea align helper text
    */
-  alignText?: 'left' | 'center' | 'right';
+  alignText?: "left" | "center" | "right";
   /**
    * Textarea auto focus
    */
