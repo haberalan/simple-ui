@@ -1,11 +1,16 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import React from "react";
-import { Inter } from "next/font/google";
+import { Inter, IBM_Plex_Mono as ibmPlexMono } from "next/font/google";
 import { Header, Footer } from "./_components";
 import { ThemeProvider } from "@/components/ui";
 
-const inter = Inter({ subsets: ["latin"] });
+const interFont = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const ibmFont = ibmPlexMono({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-ibm-plex-mono",
+});
 
 export const metadata: Metadata = {
   title: "simple-ui",
@@ -19,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${interFont.variable} ${ibmFont.variable}`}>
         <ThemeProvider>
           <Header />
           {children}

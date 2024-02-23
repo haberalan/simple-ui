@@ -47,9 +47,10 @@ export default {
         "2xl": "1420px",
       },
     },
-    // fontFamily: {
-    //   // place for fontFamilies
-    // },
+    fontFamily: {
+      sans: ["var(--font-inter)"],
+      mono: ["var(--font-ibm-plex-mono)"],
+    },
     fontSize: {
       "display-2xl": ["56px", "60px"],
       "display-xl": ["48px", "56px"],
