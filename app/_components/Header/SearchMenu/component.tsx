@@ -2,15 +2,8 @@
 
 import { Command, Icon } from "@/components/ui";
 import React, { useState } from "react";
-// import { LINKS } from "@/constants";
 import { ICONS } from "@/assets/assets";
-
-const LINKS = [
-  {
-    children: "Button",
-    href: "/docs/button",
-  },
-];
+import { COMPONENTS } from "@/constants";
 
 const labels = [
   {
@@ -26,9 +19,9 @@ const labels = [
   {
     label: "Components",
     items: [
-      ...LINKS.map((link) => ({
-        label: link.children,
-        href: link.href,
+      ...COMPONENTS.map((component) => ({
+        label: component.name,
+        href: component.path,
         icon: "Layout" as keyof typeof ICONS,
       })),
     ],
