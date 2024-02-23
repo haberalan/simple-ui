@@ -1,3 +1,3 @@
-import Radio from './component';
+import Radio from "./component";
 
 export default Radio;

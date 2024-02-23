@@ -1,6 +1,6 @@
 // region Imports
-import React from 'react';
-import { RadioProps } from './component.types';
+import React from "react";
+import { RadioProps } from "./component.types";
 // endregion
 
 // region Component
@@ -20,7 +20,7 @@ const Radio: React.FC<RadioProps> = (props) => {
         checked={props.checked === props.id}
         onChange={props.onChange}
         value={props.id}
-        className="peer relative h-4 w-4 cursor-pointer appearance-none rounded-full border border-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-[10px] after:w-[10px] after:rounded-full after:bg-black after:content-none checked:border-gray-500 checked:after:content-[''] disabled:cursor-default disabled:border-gray-300 disabled:after:bg-gray-400 dark:border-gray-100 after:dark:bg-gray-100 disabled:dark:border-gray-600 disabled:dark:after:bg-gray-600"
+        className="peer relative size-4 cursor-pointer appearance-none rounded-full border border-gray-300 after:absolute after:left-[2px] after:top-[2px] after:size-[10px] after:rounded-full after:bg-black after:content-none checked:border-gray-500 checked:after:content-[''] disabled:cursor-default disabled:border-gray-300 disabled:after:bg-gray-400 dark:border-gray-100 after:dark:bg-gray-100 disabled:dark:border-gray-600 disabled:dark:after:bg-gray-600"
       />
       <label
         htmlFor={props.id}
