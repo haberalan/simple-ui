@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 // region Imports
-import { createPortal } from 'react-dom';
-import React, { useRef } from 'react';
-import { DialogProps } from './component.types';
-import { AnimatePresence, motion } from 'framer-motion';
+import { createPortal } from "react-dom";
+import React, { useRef } from "react";
+import { DialogProps } from "./component.types";
+import { AnimatePresence, motion } from "framer-motion";
 // endregion
 
 // region Component
@@ -29,23 +29,23 @@ const Dialog: React.FC<DialogProps> = (props) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ ease: 'easeInOut', duration: 0.15 }}
+          transition={{ ease: "easeInOut", duration: 0.15 }}
           onClick={handleClick}
-          className="fixed left-0 top-0 z-20 flex h-full w-full items-center justify-center bg-white/5 backdrop-blur-sm dark:bg-gray-900/5"
+          className="fixed left-0 top-0 z-20 flex size-full items-center justify-center bg-white/5 backdrop-blur-sm dark:bg-gray-900/5"
           ref={refOverlay}
         >
           <motion.div
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.8 }}
-            transition={{ ease: 'easeInOut', duration: 0.15 }}
+            transition={{ ease: "easeInOut", duration: 0.15 }}
           >
             {props.children}
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 };
 // endregion
