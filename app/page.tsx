@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui";
+
 export default function Home() {
   return (
     <main className="container flex flex-1 flex-col items-center justify-center">
@@ -9,6 +11,9 @@ export default function Home() {
           Streamline development, enhance user experiences, and unleash
           creativity with our flexible and responsive toolkit.
         </p>
+        <Button href="/components" variant="primary" size="md" rounded>
+          Check the components
+        </Button>
       </section>
     </main>
   );
