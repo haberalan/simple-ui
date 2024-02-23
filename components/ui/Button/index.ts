@@ -1,3 +1,3 @@
-import Button from './component';
+import Button from "./component";
 
 export default Button;

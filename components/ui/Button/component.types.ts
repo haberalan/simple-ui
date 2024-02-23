@@ -1,14 +1,14 @@
-import { ICONS } from '@/assets/assets';
+import { ICONS } from "@/assets/assets";
 
 type ButtonProps = {
   /**
    * Button variants
    */
-  variant: 'primary' | 'secondary' | 'tertiary' | 'quaternary';
+  variant: "primary" | "secondary" | "tertiary" | "quaternary";
   /**
    * Button sizes
    */
-  size: 'sm' | 'md' | 'lg';
+  size: "sm" | "md" | "lg";
   /**
    * Button contents
    */
@@ -24,11 +24,11 @@ type ButtonProps = {
   /**
    * Sets icon position
    */
-  iconPosition?: 'left' | 'right';
+  iconPosition?: "left" | "right";
   /**
    * Sets button type
    */
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   /**
    * Is button disabled
    */
