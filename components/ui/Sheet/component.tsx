@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
 // region Imports
-import { AnimatePresence, motion } from 'framer-motion';
-import React, { useRef } from 'react';
-import { createPortal } from 'react-dom';
-import { SheetProps } from './component.types';
-import { SheetStyles } from './component.styles';
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useRef } from "react";
+import { createPortal } from "react-dom";
+import { SheetProps } from "./component.types";
+import { SheetStyles } from "./component.styles";
 // endregion
 
 // region Constants
 const ANIMATIONS = {
   right: {
-    initial: { x: '100%' },
+    initial: { x: "100%" },
     animate: { x: 0 },
-    exit: { x: '100%' },
+    exit: { x: "100%" },
   },
   left: {
-    initial: { x: '-100%' },
+    initial: { x: "-100%" },
     animate: { x: 0 },
-    exit: { x: '-100%' },
+    exit: { x: "-100%" },
   },
 };
 // endregion
@@ -47,24 +47,24 @@ const Sheet: React.FC<SheetProps> = (props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ ease: 'easeInOut', duration: 0.15 }}
+            transition={{ ease: "easeInOut", duration: 0.15 }}
             onClick={handleClick}
-            className="fixed left-0 top-0 z-20 h-full w-full bg-white/5 backdrop-blur-sm dark:bg-gray-900/5"
+            className="fixed left-0 top-0 z-20 size-full bg-white/5 backdrop-blur-sm dark:bg-gray-900/5"
           ></motion.div>
           <motion.div
             initial="initial"
             animate="animate"
             exit="exit"
-            variants={ANIMATIONS[props.direction ?? 'right']}
-            transition={{ ease: 'easeInOut', duration: 0.3 }}
-            className={SheetStyles({ direction: props.direction ?? 'right' })}
+            variants={ANIMATIONS[props.direction ?? "right"]}
+            transition={{ ease: "easeInOut", duration: 0.3 }}
+            className={SheetStyles({ direction: props.direction ?? "right" })}
           >
             {props.children}
           </motion.div>
         </>
       )}
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 };
 // endregion

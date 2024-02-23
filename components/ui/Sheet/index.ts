@@ -1,3 +1,3 @@
-import Sheet from './component';
+import Sheet from "./component";
 
 export default Sheet;

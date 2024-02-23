@@ -14,7 +14,7 @@ type SheetProps = {
   /**
    * Sheet direction from which it opens
    */
-  direction?: 'left' | 'right';
+  direction?: "left" | "right";
 };
 
 export { type SheetProps };
