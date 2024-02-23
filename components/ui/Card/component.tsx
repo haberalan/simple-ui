@@ -1,8 +1,8 @@
 // region Imports
-import React from 'react';
-import { CardProps } from './component.types';
-import { CardStyles } from './component.styles';
-import { Link } from '..';
+import React from "react";
+import { CardProps } from "./component.types";
+import { CardStyles } from "./component.styles";
+import { Link } from "..";
 // endregion
 
 // region Component
@@ -13,7 +13,11 @@ import { Link } from '..';
  */
 const Card: React.FC<CardProps> = (props) => {
   const content = (
-    <div onClick={props.onClick} onContextMenu={props.onContextMenu} className={CardStyles(props.className)}>
+    <div
+      onClick={props.onClick}
+      onContextMenu={props.onContextMenu}
+      className={CardStyles(props.className)}
+    >
       {props.children}
     </div>
   );
