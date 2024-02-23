@@ -27,7 +27,7 @@ const ComponentProps: React.FC<ComponentPropsProps> = (props) => {
               <tr>
                 <th className="w-[140px]">Prop</th>
                 <th className="w-[160px]">Default Value</th>
-                <th className="w-[140px]">Type</th>
+                <th className="w-[220px]">Type</th>
                 <th>Description</th>
               </tr>
             </thead>
@@ -38,17 +38,17 @@ const ComponentProps: React.FC<ComponentPropsProps> = (props) => {
                   className="group text-gray-700 odd:bg-gray-200 dark:text-gray-300 dark:odd:bg-gray-700/20"
                 >
                   <td>
-                    <div className="w-min rounded-1 bg-gray-300 px-2 py-1 group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
+                    <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
                       {prop.name}
                     </div>
                   </td>
                   <td>
-                    <div className="w-min rounded-1 bg-gray-300 px-2 py-1 group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
+                    <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
                       {prop.default}
                     </div>
                   </td>
                   <td>
-                    <div className="w-min rounded-1 bg-gray-300 px-2 py-1 group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
+                    <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
                       {prop.type}
                     </div>
                   </td>
