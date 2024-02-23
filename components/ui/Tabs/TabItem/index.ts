@@ -1,3 +1,3 @@
-import TabItem from './component';
+import TabItem from "./component";
 
 export default TabItem;

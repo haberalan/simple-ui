@@ -1,11 +1,15 @@
-'use client';
+"use client";
 
 // region Imports
-import React, { useContext, useId } from 'react';
-import { TabsNavProps } from './component.types';
-import { AnimatePresence, motion } from 'framer-motion';
-import { TabsContext } from '../component';
-import { TabsNavInnerWrapper, TabsNavStyles, TabsNavWrapper } from './component.styles';
+import React, { useContext, useId } from "react";
+import { TabsNavProps } from "./component.types";
+import { AnimatePresence, motion } from "framer-motion";
+import { TabsContext } from "../component";
+import {
+  TabsNavInnerWrapper,
+  TabsNavStyles,
+  TabsNavWrapper,
+} from "./component.styles";
 // endregion
 
 // region Component
@@ -34,7 +38,7 @@ const TabsNav: React.FC<TabsNavProps> = (props) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 layoutId={id}
-                transition={{ duration: 0.2, ease: 'easeInOut' }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
                 className={TabsNavStyles({ variant: props.variant })}
               />
             )}

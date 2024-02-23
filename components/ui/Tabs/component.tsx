@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React, { createContext, useState } from 'react';
-import { TabsContextProps, TabsProps } from './component.types';
-import TabsNav from './TabsNav';
+import React, { createContext, useState } from "react";
+import { TabsContextProps, TabsProps } from "./component.types";
+import TabsNav from "./TabsNav";
 
 const TabsContext = createContext<TabsContextProps>({
   labels: [],
-  active: '',
+  active: "",
   updateActive: () => {},
 });
 
 const Tabs: React.FC<TabsProps> = (props) => {
-  const [active, setActive] = useState<string>(props.labels[0] ?? '');
+  const [active, setActive] = useState<string>(props.labels[0] ?? "");
 
   const updateActive = (label: string) => {
     setActive(label);
@@ -26,7 +26,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
       }}
     >
       <TabsNav variant={props.variant} />
-      <div className={props.className ?? ''}>{props.children}</div>
+      <div className={props.className ?? ""}>{props.children}</div>
     </TabsContext.Provider>
   );
 };

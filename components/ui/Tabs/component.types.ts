@@ -1,4 +1,4 @@
-import { TabsNavProps } from './TabsNav/component.types';
+import { TabsNavProps } from "./TabsNav/component.types";
 
 type TabsContextProps = {
   /**
@@ -27,7 +27,7 @@ type TabsProps = {
   /**
    * Tabs Variant
    */
-  variant: TabsNavProps['variant'];
+  variant: TabsNavProps["variant"];
   /**
    * Additional class names
    */

@@ -1,3 +1,3 @@
-import TabsNav from './component';
+import TabsNav from "./component";
 
 export default TabsNav;

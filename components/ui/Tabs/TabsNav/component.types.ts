@@ -2,7 +2,7 @@ type TabsNavProps = {
   /**
    * Variant of the nav
    */
-  variant: 'primary' | 'secondary';
+  variant: "primary" | "secondary";
   /**
    * Additional class names
    */
