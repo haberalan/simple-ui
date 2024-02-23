@@ -1,7 +1,7 @@
 import styles from "@/lib/styles";
 
 const ButtonStyles = styles(
-  "relative h-8 font-500 rounded-1 transition-all duration-200 ease-in-out hover:shadow-sm flex items-center justify-center gap-2 disabled:pointer-events-none",
+  "relative h-8 font-500 transition-all duration-200 ease-in-out hover:shadow-sm flex items-center justify-center gap-2 disabled:pointer-events-none",
   {
     variant: {
       primary:
@@ -17,6 +17,10 @@ const ButtonStyles = styles(
       sm: "px-5 py-1 text-button-sm",
       md: "px-6 py-1 text-button-md",
       lg: "px-7 py-1 text-button-lg",
+    },
+    rounded: {
+      true: "rounded-full",
+      false: "rounded-1",
     },
   },
 );

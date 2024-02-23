@@ -21,7 +21,11 @@ const Button: React.FC<ButtonProps> = (props) => {
       disabled={props.disabled || props.loading}
       type={props.type ?? "button"}
       tabIndex={props.href ? -1 : 0}
-      className={ButtonStyles({ variant: props.variant, size: props.size })}
+      className={ButtonStyles({
+        variant: props.variant,
+        size: props.size,
+        rounded: !!props.rounded,
+      })}
     >
       <AnimatePresence initial={false}>
         {props.loading && (

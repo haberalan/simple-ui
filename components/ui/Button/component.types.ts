@@ -41,6 +41,10 @@ type ButtonProps = {
    * Adds link to the button
    */
   href?: string;
+  /**
+   * Sets button as rounded
+   */
+  rounded?: boolean;
 };
 
 export { type ButtonProps };
