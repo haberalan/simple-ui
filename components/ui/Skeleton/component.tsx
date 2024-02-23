@@ -1,7 +1,7 @@
 // region Imports
-import React from 'react';
-import { SkeletonProps } from './component.types';
-import { SkeletonStyles } from './component.styles';
+import React from "react";
+import { SkeletonProps } from "./component.types";
+import { SkeletonStyles } from "./component.styles";
 // endregion
 
 // region Component
