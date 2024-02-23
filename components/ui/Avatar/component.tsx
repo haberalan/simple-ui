@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 // region Imports
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { AvatarProps } from './component.types';
-import { AvatarImageStyles, AvatarWrapperStyles } from './component.styles';
+import Image from "next/image";
+import React, { useState } from "react";
+import { AvatarProps } from "./component.types";
+import { AvatarImageStyles, AvatarWrapperStyles } from "./component.styles";
 // endregion
 
 // region Component
