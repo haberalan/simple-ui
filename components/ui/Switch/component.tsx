@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 // region Imports
-import React from 'react';
-import { SwitchProps } from './component.types';
-import { AnimatePresence, motion } from 'framer-motion';
-import { LabelStyles, SwitchStyles } from './component.styles';
+import React from "react";
+import { SwitchProps } from "./component.types";
+import { AnimatePresence, motion } from "framer-motion";
+import { LabelStyles, SwitchStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -26,13 +26,23 @@ const Switch: React.FC<SwitchProps> = (props) => {
         />
         <AnimatePresence initial={false}>
           <motion.div
-            animate={{ left: props.checked ? 'auto' : 0, right: props.checked ? '0' : 'auto' }}
-            transition={{ duration: 0.1, ease: 'easeInOut' }}
-            className={SwitchStyles({ disabled: !!props.disabled, checked: !!props.checked })}
+            animate={{
+              left: props.checked ? "auto" : 0,
+              right: props.checked ? "0" : "auto",
+            }}
+            transition={{ duration: 0.1, ease: "easeInOut" }}
+            className={SwitchStyles({
+              disabled: !!props.disabled,
+              checked: !!props.checked,
+            })}
           ></motion.div>
         </AnimatePresence>
       </div>
-      {props.children && <p className={LabelStyles({ disabled: !!props.disabled })}>{props.children}</p>}
+      {props.children && (
+        <p className={LabelStyles({ disabled: !!props.disabled })}>
+          {props.children}
+        </p>
+      )}
     </label>
   );
 };
