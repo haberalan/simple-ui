@@ -1,7 +1,7 @@
 // region Imports
-import React, { createElement } from 'react';
-import { LinkProps } from './component.types';
-import NextLink from 'next/link';
+import React, { createElement } from "react";
+import { LinkProps } from "./component.types";
+import NextLink from "next/link";
 // endregion
 
 // region Component
@@ -11,17 +11,29 @@ import NextLink from 'next/link';
  * @returns {React.ReactElement} The React element
  */
 const Link: React.FC<LinkProps> = (props) => {
-  const isExternalLink = props.href.toLowerCase().startsWith('http');
+  const isExternalLink = props.href.toLowerCase().startsWith("http");
 
   const Element = (() => {
     if (isExternalLink) {
       return createElement(
-        'a',
-        { target: '_blank', rel: 'noopener noreferrer', href: props.href, className: props.className },
-        props.children
+        "a",
+        {
+          target: props.target ?? "_blank",
+          rel: props.rel ?? "noopener noreferrer",
+          href: props.href,
+          className: props.className,
+        },
+        props.children,
       );
     } else {
-      return createElement(NextLink, { href: props.href, className: props.className }, props.children);
+      return createElement(
+        NextLink,
+        {
+          href: props.href,
+          className: props.className,
+        },
+        props.children,
+      );
     }
   })();
 

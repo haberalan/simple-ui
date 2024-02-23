@@ -1,3 +1,3 @@
-import Link from './component';
+import Link from "./component";
 
 export default Link;
