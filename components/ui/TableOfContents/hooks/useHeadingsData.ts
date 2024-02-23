@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const useHeadingsData = (container: string) => {
   const pathname = usePathname();
@@ -7,7 +7,9 @@ const useHeadingsData = (container: string) => {
 
   useEffect(() => {
     const headingElements = Array.from(
-      document.querySelectorAll(`${container} h2, ${container} h3, ${container} h4, ${container} h5, ${container} h6`)
+      document.querySelectorAll(
+        `${container} h2, ${container} h3, ${container} h4, ${container} h5, ${container} h6`,
+      ),
     );
 
     setHeadings(headingElements as HTMLElement[]);
@@ -20,7 +22,7 @@ const useHeadingsData = (container: string) => {
 
     window.scrollTo({
       top: targetPosition,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 

@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const useIntersectionObserver = (headings: HTMLElement[]) => {
   const [active, setActive] = useState<HTMLElement | null>(null);
-  const headingElementsRef = useRef(new Map<HTMLElement, IntersectionObserverEntry>());
+  const headingElementsRef = useRef(
+    new Map<HTMLElement, IntersectionObserverEntry>(),
+  );
 
   const index = headings.indexOf(active as HTMLElement) ?? -1;
 
@@ -27,7 +29,7 @@ const useIntersectionObserver = (headings: HTMLElement[]) => {
     };
 
     const observer = new IntersectionObserver(callback, {
-      rootMargin: '0px 0px -40% 0px',
+      rootMargin: "0px 0px -40% 0px",
     });
     headings.forEach((element) => observer.observe(element));
 

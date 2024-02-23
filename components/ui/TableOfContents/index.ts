@@ -1,3 +1,3 @@
-import TableOfContents from './component';
+import TableOfContents from "./component";
 
 export default TableOfContents;
