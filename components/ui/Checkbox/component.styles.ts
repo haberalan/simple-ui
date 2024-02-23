@@ -1,20 +1,20 @@
-import styles from '@/lib/styles';
+import styles from "@/lib/styles";
 
-const IconStyles = styles('h-3 w-3', {
+const IconStyles = styles("h-3 w-3", {
   disabled: {
-    true: 'text-gray-500',
-    false: '',
+    true: "text-gray-500",
+    false: "",
   },
   checked: {
-    true: 'dark:text-black text-white',
-    false: 'text-transparent',
+    true: "dark:text-black text-white",
+    false: "text-transparent",
   },
 });
 
-const LabelStyles = styles('text-sm', {
+const LabelStyles = styles("text-sm", {
   disabled: {
-    true: 'text-gray-500 dark:text-gray-600',
-    false: '',
+    true: "text-gray-500 dark:text-gray-600",
+    false: "",
   },
 });
 
