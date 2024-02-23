@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 // region Imports
-import React, { createContext, useState } from 'react';
-import { AccordionContextProps, AccordionProps } from './component.types';
+import React, { createContext, useState } from "react";
+import { AccordionContextProps, AccordionProps } from "./component.types";
 // endregion
 
 // region Context

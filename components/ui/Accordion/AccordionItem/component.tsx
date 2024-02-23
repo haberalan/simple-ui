@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
 // region Imports
-import React, { useContext, useId } from 'react';
-import { AccordionItemProps } from './component.types';
-import { AnimatePresence, motion } from 'framer-motion';
-import { AccordionContext } from '../component';
-import { Icon } from '../..';
-import { IconStyles } from './component.styles';
+import React, { useContext, useId } from "react";
+import { AccordionItemProps } from "./component.types";
+import { AnimatePresence, motion } from "framer-motion";
+import { AccordionContext } from "../component";
+import { Icon } from "../..";
+import { IconStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -21,7 +21,7 @@ const AccordionItem: React.FC<AccordionItemProps> = (props) => {
   const ctxAccordion = useContext(AccordionContext);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       ctxAccordion.toggle(id);
     }
@@ -37,19 +37,25 @@ const AccordionItem: React.FC<AccordionItemProps> = (props) => {
         aria-controls={`controls-${id}`}
         aria-labelledby={`label-${id}`}
       >
-        <p className="text-lg font-400 group-hover:underline" id={`label-${id}`}>
+        <p
+          className="text-lg font-400 group-hover:underline"
+          id={`label-${id}`}
+        >
           {props.label}
         </p>
-        <Icon name="ChevronDown" className={IconStyles({ open: ctxAccordion.isOpen(id) })} />
+        <Icon
+          name="ChevronDown"
+          className={IconStyles({ open: ctxAccordion.isOpen(id) })}
+        />
       </button>
       <AnimatePresence initial={false}>
         {ctxAccordion.isOpen(id) && (
           <motion.div
             className="overflow-hidden text-sm text-gray-700 dark:text-gray-300"
             initial={{ height: 0 }}
-            animate={{ height: 'auto' }}
+            animate={{ height: "auto" }}
             exit={{ height: 0 }}
-            transition={{ ease: 'easeInOut', duration: 0.15 }}
+            transition={{ ease: "easeInOut", duration: 0.15 }}
             id={`controls-${id}`}
           >
             {props.children}
