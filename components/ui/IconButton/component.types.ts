@@ -1,4 +1,4 @@
-import { ICONS } from '@/assets/assets';
+import { ICONS } from "@/assets/assets";
 
 type IconButtonProps = {
   /**
@@ -8,11 +8,11 @@ type IconButtonProps = {
   /**
    * IconButton variant
    */
-  variant: 'primary' | 'secondary' | 'tertiary' | 'quaternary';
+  variant: "primary" | "secondary" | "tertiary" | "quaternary";
   /**
    * IconButton size
    */
-  size: 'sm' | 'md' | 'lg';
+  size: "sm" | "md" | "lg";
   /**
    * IconButton onClick event
    */
@@ -20,7 +20,7 @@ type IconButtonProps = {
   /**
    * IconButton type
    */
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   /**
    * IconButton disabled
    */

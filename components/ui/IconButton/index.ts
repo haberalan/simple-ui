@@ -1,3 +1,3 @@
-import IconButton from './component';
+import IconButton from "./component";
 
 export default IconButton;
