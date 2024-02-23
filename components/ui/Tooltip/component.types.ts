@@ -14,7 +14,7 @@ type TooltipProps = {
   /**
    * The direction of the tooltip.
    */
-  direction?: 'top' | 'bottom';
+  direction?: "top" | "bottom";
 };
 
 export { type TooltipProps };

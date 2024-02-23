@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
 // region Imports
-import React, { useRef } from 'react';
-import { TooltipProps } from './component.types';
-import { AnimatePresence, motion } from 'framer-motion';
-import { createPortal } from 'react-dom';
-import { usePosition } from '@/hooks';
+import React, { useRef } from "react";
+import { TooltipProps } from "./component.types";
+import { AnimatePresence, motion } from "framer-motion";
+import { createPortal } from "react-dom";
+import { usePosition } from "@/hooks";
 // endregion
 
 // region Component
@@ -18,11 +18,16 @@ const Tooltip: React.FC<TooltipProps> = (props) => {
   const refTooltip = useRef<HTMLDivElement>(null);
   const { active, handleOpen, handleLeave, styles } = usePosition({
     ref: refTooltip,
-    direction: props.direction ?? 'top',
+    direction: props.direction ?? "top",
   });
 
   return (
-    <div className="relative" onMouseEnter={handleOpen} onMouseLeave={handleLeave} onClick={handleOpen}>
+    <div
+      className="relative"
+      onMouseEnter={handleOpen}
+      onMouseLeave={handleLeave}
+      onClick={handleOpen}
+    >
       {createPortal(
         <AnimatePresence>
           {active && (
@@ -32,7 +37,11 @@ const Tooltip: React.FC<TooltipProps> = (props) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.15, ease: 'easeInOut', delay: props.delay ?? 0.3 }}
+              transition={{
+                duration: 0.15,
+                ease: "easeInOut",
+                delay: props.delay ?? 0.3,
+              }}
               style={{
                 ...styles,
               }}
@@ -41,14 +50,18 @@ const Tooltip: React.FC<TooltipProps> = (props) => {
                 initial={{ y: 4, scale: 0.8 }}
                 animate={{ y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.15, ease: 'easeInOut', delay: props.delay ?? 0.3 }}
+                transition={{
+                  duration: 0.15,
+                  ease: "easeInOut",
+                  delay: props.delay ?? 0.3,
+                }}
               >
                 {props.content}
               </motion.div>
             </motion.div>
           )}
         </AnimatePresence>,
-        document.body
+        document.body,
       )}
       {props.children}
     </div>
