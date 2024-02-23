@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 // region Imports
-import React from 'react';
-import { OptionType, SelectProps } from './component.types';
+import React from "react";
+import { OptionType, SelectProps } from "./component.types";
 import {
   BadgesWrapperStyles,
   HelperStyles,
@@ -10,10 +10,10 @@ import {
   ItemStyles,
   LabelStyles,
   SelectStyles,
-} from './component.styles';
-import { Badge, Icon, Input } from '..';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useSelect } from './hooks';
+} from "./component.styles";
+import { Badge, Icon, Input } from "..";
+import { AnimatePresence, motion } from "framer-motion";
+import { useSelect } from "./hooks";
 // endregion
 
 // region Component
@@ -42,13 +42,18 @@ const Select: React.FC<SelectProps> = (props) => {
     }
   };
 
-  const status = props.disabled ? 'disabled' : props.status ?? 'default';
-  const text = { error: props.errorText, default: props.helperText, disabled: '', valid: '' }[
-    props.status ?? 'default'
-  ];
+  const status = props.disabled ? "disabled" : props.status ?? "default";
+  const text = {
+    error: props.errorText,
+    default: props.helperText,
+    disabled: "",
+    valid: "",
+  }[props.status ?? "default"];
 
   const isSelected = (option: OptionType) =>
-    Array.isArray(props.value) ? props.value.includes(option.label) : props.value === option.label;
+    Array.isArray(props.value)
+      ? props.value.includes(option.label)
+      : props.value === option.label;
 
   const selected = props.multiple ? (
     <div className={BadgesWrapperStyles({ disabled: props.disabled })}>
@@ -80,7 +85,9 @@ const Select: React.FC<SelectProps> = (props) => {
           autoFocus={props.autoFocus}
         >
           {props.placeholder && (!props.value || props.value.length === 0) && (
-            <p className="pointer-events-none select-none text-gray-500 dark:text-gray-700">{props.placeholder}</p>
+            <p className="pointer-events-none select-none text-gray-500 dark:text-gray-700">
+              {props.placeholder}
+            </p>
           )}
           {props.value && selected}
           <Icon name="ChevronDown" className={IconStyles({ open })} />
@@ -92,7 +99,7 @@ const Select: React.FC<SelectProps> = (props) => {
               initial={{ opacity: 0, y: -4, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.15, ease: 'easeInOut' }}
+              transition={{ duration: 0.15, ease: "easeInOut" }}
             >
               {props.search && (
                 <div className="mb-2">
@@ -120,17 +127,26 @@ const Select: React.FC<SelectProps> = (props) => {
                     })}
                   >
                     {option.label}
-                    {isSelected(option) && <Icon name="Check" className="absolute right-2 top-2 h-4 w-4" />}
+                    {isSelected(option) && (
+                      <Icon
+                        name="Check"
+                        className="absolute right-2 top-2 size-4"
+                      />
+                    )}
                   </li>
                 ))}
                 {filteredOptions.length === 0 && (
-                  <li className="px-3 text-center dark:text-gray-600">No results found</li>
+                  <li className="px-3 text-center dark:text-gray-600">
+                    No results found
+                  </li>
                 )}
               </ul>
             </motion.div>
           )}
         </AnimatePresence>
-        {props.label && <div className={LabelStyles({ status })}>{props.label}</div>}
+        {props.label && (
+          <div className={LabelStyles({ status })}>{props.label}</div>
+        )}
       </div>
       <div className="h-4">
         <p className={HelperStyles({ status })}>{text}</p>
