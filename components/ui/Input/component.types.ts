@@ -1,4 +1,4 @@
-import { ICONS } from '@/assets/assets';
+import { ICONS } from "@/assets/assets";
 
 type InputProps = {
   /**
@@ -8,7 +8,7 @@ type InputProps = {
   /**
    * Input status
    */
-  status: 'valid' | 'error' | 'default';
+  status: "valid" | "error" | "default";
   /**
    * Input onChange event
    */
@@ -24,7 +24,7 @@ type InputProps = {
   /**
    * Icon position
    */
-  iconPositon?: 'left' | 'right';
+  iconPositon?: "left" | "right";
   /**
    * Icon onClick event
    */
@@ -32,7 +32,7 @@ type InputProps = {
   /**
    * Input type
    */
-  type?: 'text' | 'number' | 'password' | 'email';
+  type?: "text" | "number" | "password" | "email";
   /**
    * Input label
    */

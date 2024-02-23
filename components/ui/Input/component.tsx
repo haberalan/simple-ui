@@ -1,8 +1,13 @@
 // region Imports
-import React, { forwardRef, useId } from 'react';
-import { InputProps } from './component.types';
-import { InputStyles, IconStyles, LabelStyles, HelperStyles } from './component.styles';
-import { Icon } from '..';
+import React, { forwardRef, useId } from "react";
+import { InputProps } from "./component.types";
+import {
+  InputStyles,
+  IconStyles,
+  LabelStyles,
+  HelperStyles,
+} from "./component.styles";
+import { Icon } from "..";
 // endregion
 
 // region Component
@@ -14,12 +19,15 @@ import { Icon } from '..';
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const id = useId();
 
-  const status = props.disabled ? 'disabled' : props.status ?? 'default';
-  const text = { error: props.errorText, default: props.helperText, disabled: '', valid: '' }[
-    props.status ?? 'default'
-  ];
+  const status = props.disabled ? "disabled" : props.status ?? "default";
+  const text = {
+    error: props.errorText,
+    default: props.helperText,
+    disabled: "",
+    valid: "",
+  }[props.status ?? "default"];
 
-  const icon = props.icon ? props.iconPositon ?? 'right' : 'none';
+  const icon = props.icon ? props.iconPositon ?? "right" : "none";
 
   return (
     <div className="flex flex-col gap-1">
@@ -29,7 +37,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           value={props.value}
           onChange={props.onChange}
           onBlur={props.onBlur}
-          type={props.type ?? 'text'}
+          type={props.type ?? "text"}
           id={id}
           disabled={props.disabled}
           placeholder={props.placeholder}
@@ -40,7 +48,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           <Icon
             onClick={props.onIconClick}
             name={props.icon}
-            className={IconStyles({ status, icon, targetable: !!props.onIconClick })}
+            className={IconStyles({
+              status,
+              icon,
+              targetable: !!props.onIconClick,
+            })}
           />
         )}
         {props.label && (
@@ -59,6 +71,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 });
 // endregion
 
-Input.displayName = 'Input';
+Input.displayName = "Input";
 
 export default Input;
