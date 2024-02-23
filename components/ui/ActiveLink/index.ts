@@ -1,3 +1,3 @@
-import ActiveLink from './component';
+import ActiveLink from "./component";
 
 export default ActiveLink;

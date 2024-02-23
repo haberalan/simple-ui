@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
 // region Imports
-import React, { useCallback } from 'react';
-import { ActiveLinkProps } from './component.types';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import styles from '@/lib/styles';
+import React, { useCallback } from "react";
+import { ActiveLinkProps } from "./component.types";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "@/lib/styles";
 // endregion
 
 // region Component
@@ -17,16 +17,16 @@ import styles from '@/lib/styles';
 const ActiveLink: React.FC<ActiveLinkProps> = (props) => {
   const pathname = usePathname();
 
-  const LinkStyles = styles('', {
+  const LinkStyles = styles("", {
     active: {
-      true: `${props.activeClassName ?? ''} pointer-events-none`,
-      false: '',
+      true: `${props.activeClassName ?? ""} pointer-events-none`,
+      false: "",
     },
   });
 
   const isActive = useCallback(() => {
-    const path = pathname.split('/').filter((path) => path !== '');
-    const href = props.href.split('/').filter((path) => path !== '');
+    const path = pathname.split("/").filter((path) => path !== "");
+    const href = props.href.split("/").filter((path) => path !== "");
 
     if (props.noAbsolute) {
       return path.every((pathPath) => href.includes(pathPath));
@@ -36,7 +36,10 @@ const ActiveLink: React.FC<ActiveLinkProps> = (props) => {
   }, [pathname, props.href, props.noAbsolute]);
 
   return (
-    <Link href={props.href} className={LinkStyles({ active: isActive() }, props.className)}>
+    <Link
+      href={props.href}
+      className={LinkStyles({ active: isActive() }, props.className)}
+    >
       {props.children}
     </Link>
   );
