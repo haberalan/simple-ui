@@ -1,7 +1,7 @@
 // region Imports
-import React from 'react';
-import { LoaderProps } from './component.types';
-import { LoaderStyles } from './component.styles';
+import React from "react";
+import { LoaderProps } from "./component.types";
+import { LoaderStyles } from "./component.styles";
 // endregion
 
 // region Component

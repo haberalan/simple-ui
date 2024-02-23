@@ -1,3 +1,3 @@
-import Loader from './component';
+import Loader from "./component";
 
 export default Loader;

@@ -2,7 +2,7 @@ type LoaderProps = {
   /**
    * Loader size
    */
-  size: 'sm' | 'md' | 'lg';
+  size: "sm" | "md" | "lg";
 };
 
 export { type LoaderProps };
