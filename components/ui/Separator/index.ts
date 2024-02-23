@@ -1,3 +1,3 @@
-import Separator from './component';
+import Separator from "./component";
 
 export default Separator;

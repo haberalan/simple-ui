@@ -2,7 +2,7 @@ type SeparatorProps = {
   /**
    * Sets the variant of the separator
    */
-  variant: 'vertical' | 'horizontal';
+  variant: "vertical" | "horizontal";
   /**
    * Adds additional classes
    */

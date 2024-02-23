@@ -1,7 +1,7 @@
 // region Imports
-import React from 'react';
-import { SeparatorProps } from './component.types';
-import { SeparatorStyles } from './component.styles';
+import React from "react";
+import { SeparatorProps } from "./component.types";
+import { SeparatorStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -11,7 +11,12 @@ import { SeparatorStyles } from './component.styles';
  * @returns {React.ReactElement} The React element
  */
 const Separator: React.FC<SeparatorProps> = (props) => {
-  return <div role="none" className={SeparatorStyles({ variant: props.variant }, props.className)}></div>;
+  return (
+    <div
+      role="none"
+      className={SeparatorStyles({ variant: props.variant }, props.className)}
+    ></div>
+  );
 };
 // endregion
 
