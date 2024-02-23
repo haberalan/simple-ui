@@ -1,4 +1,4 @@
-import { ICONS } from '@/assets/assets';
+import { ICONS } from "@/assets/assets";
 
 type IconProps = {
   /**
