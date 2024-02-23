@@ -84,6 +84,12 @@ export default function Page() {
                 type: "string",
                 description: "Adds link to the button.",
               },
+              {
+                name: "rounded",
+                default: "false",
+                type: "boolean",
+                description: "Rounds the button.",
+              },
             ],
           },
         ]}
