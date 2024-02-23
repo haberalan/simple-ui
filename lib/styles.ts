@@ -1,4 +1,4 @@
-import { twMerge } from "tailwind-merge";
+import { twMerge } from "@/lib/twMerge";
 
 type ConditionsType<T> = {
   /**
@@ -13,13 +13,13 @@ function styles(base: string | string[]): (additional?: string) => string;
 
 function styles<T extends Record<string, Record<string, string>>>(
   base: string | string[],
-  styleObj: T
+  styleObj: T,
 ): (conditions?: ConditionsType<T>, additional?: string) => string;
 
 function styles<T extends Record<string, Record<string, string>>>(
   base: string | string[],
   styleObj: T,
-  combinations: Record<string, string>
+  combinations: Record<string, string>,
 ): (conditions?: ConditionsType<T>, additional?: string) => string;
 
 /**
@@ -44,16 +44,20 @@ function styles<T extends Record<string, Record<string, string>>>(
 function styles<T extends Record<string, Record<string, string>>>(
   base: string | string[],
   styleObj?: T,
-  combinations?: Record<string, string>
+  combinations?: Record<string, string>,
 ):
   | ((conditions?: ConditionsType<T>, additional?: string) => string)
   | ((additional?: string) => string) {
   if (styleObj === undefined) {
+    // return (additional?: string) =>
+    //   Array.isArray(base)
+    //     ? base.join(" ")
+    //     : base + (additional ? ` ${additional}` : "");
     return (additional?: string) =>
       twMerge(
         Array.isArray(base)
           ? base.join(" ")
-          : base + (additional ? ` ${additional}` : "")
+          : base + (additional ? ` ${additional}` : ""),
       );
   }
 
@@ -72,7 +76,7 @@ function styles<T extends Record<string, Record<string, string>>>(
 
     if (combinations && conditions) {
       for (const [combinationKey, combinationValue] of Object.entries(
-        combinations
+        combinations,
       )) {
         const conditionPairs = combinationKey.split("+").map((condition) => {
           const [conditionKey, conditionValue] = condition.split(".");
@@ -82,7 +86,7 @@ function styles<T extends Record<string, Record<string, string>>>(
         const isCombinationSatisfied = conditionPairs.every(
           ({ conditionKey, conditionValue }) =>
             conditions[conditionKey] &&
-            conditions[conditionKey]?.toString() === conditionValue
+            conditions[conditionKey]?.toString() === conditionValue,
         );
 
         if (isCombinationSatisfied) {
@@ -98,6 +102,7 @@ function styles<T extends Record<string, Record<string, string>>>(
     result = result.trim();
 
     return twMerge((result += additional ? ` ${additional}` : "").trim());
+    // return (result += additional ? ` ${additional}` : "").trim();
   };
 }
 
