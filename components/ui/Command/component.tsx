@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
 // region Imports
-import React, { useId, useState } from 'react';
-import { Card, Dialog, Icon, Link, Separator } from '..';
-import { CommandProps } from './component.types';
+import React, { useId, useState } from "react";
+import { Card, Dialog, Icon, Link, Separator } from "..";
+import { CommandProps } from "./component.types";
 // endregion
 
 // region Component
@@ -15,7 +15,7 @@ import { CommandProps } from './component.types';
 const Command: React.FC<CommandProps> = (props) => {
   const id = useId();
 
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -39,7 +39,7 @@ const Command: React.FC<CommandProps> = (props) => {
           <label htmlFor={id}>
             <Icon
               name="Search"
-              className="h-5 w-5 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 hover:dark:text-gray-500"
+              className="size-5 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 hover:dark:text-gray-500"
             />
           </label>
           <input
@@ -52,7 +52,7 @@ const Command: React.FC<CommandProps> = (props) => {
           />
           <Icon
             name="Close"
-            className="h-4 w-4 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 hover:dark:text-gray-500"
+            className="size-4 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 hover:dark:text-gray-500"
             onClick={props.handleClose}
           />
         </div>
@@ -63,25 +63,37 @@ const Command: React.FC<CommandProps> = (props) => {
               item.items.length > 0 && (
                 <React.Fragment key={item.label}>
                   <ul className="flex flex-col gap-2 p-2">
-                    <div className="text-xs font-500 text-gray-500 dark:text-gray-600">{item.label}</div>
+                    <div className="text-xs font-500 text-gray-500 dark:text-gray-600">
+                      {item.label}
+                    </div>
                     {item.items.map((item) => (
                       <li
                         onClick={props.handleClose}
                         className="rounded-1 p-1 text-sm transition-all duration-100 ease-in-out hover:bg-gray-200 hover:dark:bg-gray-900"
                         key={item.label}
                       >
-                        <Link href={item.href} className="flex items-center gap-2 rounded-1">
-                          <Icon name={item.icon} className="h-4 w-4" />
+                        <Link
+                          href={item.href}
+                          className="flex items-center gap-2 rounded-1"
+                        >
+                          <Icon name={item.icon} className="size-4" />
                           <span>{item.label}</span>
                         </Link>
                       </li>
                     ))}
                   </ul>
-                  <Separator variant="horizontal" className="last-of-type:hidden" />
+                  <Separator
+                    variant="horizontal"
+                    className="last-of-type:hidden"
+                  />
                 </React.Fragment>
-              )
+              ),
           )}
-          {isEmpty && <p className="py-4 text-center text-gray-400 dark:text-gray-700">No results found.</p>}
+          {isEmpty && (
+            <p className="py-4 text-center text-gray-400 dark:text-gray-700">
+              No results found.
+            </p>
+          )}
         </div>
       </Card>
     </Dialog>

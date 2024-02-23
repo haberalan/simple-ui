@@ -1,3 +1,3 @@
-import Command from './component';
+import Command from "./component";
 
 export default Command;
