@@ -1,5 +1,5 @@
-import { AlertProps } from './Alert/component.types';
-import React from 'react';
+import { AlertProps } from "./Alert/component.types";
+import React from "react";
 
 type AlertContextProps = {
   /**
@@ -9,7 +9,7 @@ type AlertContextProps = {
   /**
    * Function that adds an alert to the array
    */
-  push: (alert: Omit<AlertProps, 'key'>) => void;
+  push: (alert: Omit<AlertProps, "key">) => void;
 };
 
 type AlertProviderProps = {

@@ -1,6 +1,6 @@
-import React from 'react';
-import { ICONS } from '@/assets/assets';
-import { ButtonProps } from '../../Button/component.types';
+import React from "react";
+import { ICONS } from "@/assets/assets";
+import { ButtonProps } from "../../Button/component.types";
 
 type AlertProps = {
   /**
