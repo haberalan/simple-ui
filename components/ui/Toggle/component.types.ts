@@ -1,10 +1,10 @@
-import { ICONS } from '@/assets/assets';
+import { ICONS } from "@/assets/assets";
 
 type ToggleProps = {
   /**
    * The variant of the toggle.
    */
-  variant: 'primary' | 'secondary';
+  variant: "primary" | "secondary";
   /**
    * Icon of the toggle.
    */

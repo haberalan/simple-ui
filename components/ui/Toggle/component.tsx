@@ -1,8 +1,8 @@
 // region Imports
-import React from 'react';
-import { ToggleProps } from './component.types';
-import { Icon } from '..';
-import ToggleStyles from './component.styles';
+import React from "react";
+import { ToggleProps } from "./component.types";
+import { Icon } from "..";
+import ToggleStyles from "./component.styles";
 // endregion
 
 // region Component
@@ -13,7 +13,7 @@ import ToggleStyles from './component.styles';
  */
 const Toggle: React.FC<ToggleProps> = (props) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       props.onClick();
     }
@@ -30,7 +30,7 @@ const Toggle: React.FC<ToggleProps> = (props) => {
         disabled: !!props.disabled,
       })}
     >
-      <Icon name={props.icon} className="h-6 w-6" />
+      <Icon name={props.icon} className="size-6" />
       {props.label && <p className="text-sm">{props.label}</p>}
     </div>
   );
