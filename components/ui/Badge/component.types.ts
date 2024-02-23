@@ -1,4 +1,4 @@
-import { ICONS } from '@/assets/assets';
+import { ICONS } from "@/assets/assets";
 
 type BadgeProps = {
   /**
@@ -8,15 +8,15 @@ type BadgeProps = {
   /**
    * Badge variant
    */
-  variant: 'primary' | 'secondary' | 'tertiary';
+  variant: "primary" | "secondary" | "tertiary";
   /**
    * Badge size
    */
-  size: 'xs' | 'sm' | 'md' | 'lg';
+  size: "xs" | "sm" | "md" | "lg";
   /**
    * Badge shape
    */
-  shape: 'rounded' | 'pill';
+  shape: "rounded" | "pill";
   /**
    * Is badge disabled
    */
@@ -28,7 +28,7 @@ type BadgeProps = {
   /**
    * Sets icon position
    */
-  iconPosition?: 'left' | 'right';
+  iconPosition?: "left" | "right";
   /**
    * Adds link to the badge
    */

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 // region Imports
-import React from 'react';
-import { BadgeProps } from './component.types';
-import { BadgeStyles, IconStyles, LinkStyles } from './component.styles';
-import { Icon, Link } from '..';
+import React from "react";
+import { BadgeProps } from "./component.types";
+import { BadgeStyles, IconStyles, LinkStyles } from "./component.styles";
+import { Icon, Link } from "..";
 // endregion
 
 // region Component
@@ -15,7 +15,7 @@ import { Icon, Link } from '..';
  */
 const Badge: React.FC<BadgeProps> = (props) => {
   const handleKeyDOwn = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       props.onClick?.();
     }
@@ -35,7 +35,13 @@ const Badge: React.FC<BadgeProps> = (props) => {
       })}
     >
       {props.icon && (
-        <Icon name={props.icon} className={IconStyles({ size: props.size, position: props.iconPosition ?? 'left' })} />
+        <Icon
+          name={props.icon}
+          className={IconStyles({
+            size: props.size,
+            position: props.iconPosition ?? "left",
+          })}
+        />
       )}
       {props.children}
     </div>
@@ -45,7 +51,10 @@ const Badge: React.FC<BadgeProps> = (props) => {
     return (
       <Link
         data-badge
-        className={LinkStyles({ shape: props.shape, disabled: !!props.disabled })}
+        className={LinkStyles({
+          shape: props.shape,
+          disabled: !!props.disabled,
+        })}
         href={props.href}
         tabIndex={props.disabled ? -1 : 0}
       >
