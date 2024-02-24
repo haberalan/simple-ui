@@ -50,7 +50,7 @@ export const PREVIEWS = {
   skeleton: <SkeletonPreview />,
   slider: <SliderPreview />,
   switch: <SwitchPreview />,
-  tableOfContents: <TableOfContentsPreview />,
+  "table-of-contents": <TableOfContentsPreview />,
   tabs: <TabsPreview />,
   textarea: <TextareaPreview />,
   theme: <ThemePreview />,
