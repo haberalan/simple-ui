@@ -1,9 +1,13 @@
 import React from "react";
 import { PREVIEWS } from "@/components/preview";
+import { redirect } from "next/navigation";
 
 export default function Page({ params }: { params: { slug?: string[] } }) {
   if (params.slug) {
-    return PREVIEWS[params.slug[0] as keyof typeof PREVIEWS];
+    return (
+      PREVIEWS[params.slug[0] as keyof typeof PREVIEWS] ??
+      redirect("/components")
+    );
   }
 
   return (
