@@ -1,3 +1,5 @@
+"use client";
+
 import { TabItem, Tabs } from "@/components/ui";
 import React from "react";
 
