@@ -1,9 +1,14 @@
-import { Accordion, AccordionItem } from "@/components/ui";
 import {
   ComponentHeader,
   ComponentPreview,
   ComponentProps,
 } from "../_components";
+
+import dynamic from "next/dynamic";
+
+const Preview = dynamic(() => import("./preview"), {
+  loading: () => <p>Loading...</p>,
+});
 
 export default function Page() {
   return (
@@ -12,23 +17,7 @@ export default function Page() {
         name="Accordion"
         description="Accordions are a way to manage content in a collapsible manner. They are useful when you want to toggle between hiding and showing large amount of content."
       />
-      <ComponentPreview
-        preview={
-          <div className="w-1/2">
-            <Accordion>
-              <AccordionItem label="First Label">
-                <p>Content of the first label</p>
-              </AccordionItem>
-              <AccordionItem label="Second Label">
-                <p>Content of the second label</p>
-              </AccordionItem>
-              <AccordionItem label="Third Label">
-                <p>Content of the third label</p>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        }
-      />
+      <ComponentPreview preview={<Preview />} />
       <ComponentProps
         elements={[
           {
