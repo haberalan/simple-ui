@@ -19,6 +19,10 @@ type CalendarProps = {
    * Start of the week
    */
   startOfWeek?: "Sunday" | "Monday";
+  /**
+   * Disabled
+   */
+  disabled?: boolean;
 };
 
 export { type CalendarProps };

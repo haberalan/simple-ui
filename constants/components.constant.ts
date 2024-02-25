@@ -392,6 +392,12 @@ const COMPONENTS = [
             type: "'Sunday' | 'Monday'",
             description: "Start of the week.",
           },
+          {
+            name: "disabled",
+            default: "false",
+            type: "boolean",
+            description: "Is calendar disabled.",
+          },
         ],
       },
     ],

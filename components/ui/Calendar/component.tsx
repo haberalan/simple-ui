@@ -165,8 +165,9 @@ const Calendar: React.FC<CalendarProps> = (props) => {
             className={CalendarDayStyles({
               currentMonth: !!day.fromCurrentMonth,
               selected: props.value?.toDateString() === day.date.toDateString(),
+              disabled: !!props.disabled,
             })}
-            onClick={() => props.setValue(day.date)}
+            onClick={() => !props.disabled && props.setValue(day.date)}
           >
             {day.day}
           </button>

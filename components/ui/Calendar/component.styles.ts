@@ -11,6 +11,10 @@ const CalendarDayStyles = styles(
       true: "bg-black text-white hover:bg-black dark:bg-white dark:!text-black dark:hover:bg-white",
       false: "hover:bg-gray-300 dark:hover:bg-gray-700",
     },
+    disabled: {
+      true: "cursor-default pointer-events-none",
+      false: "cursor-pointer",
+    },
   },
 );
 
