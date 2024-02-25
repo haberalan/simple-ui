@@ -355,6 +355,48 @@ const COMPONENTS = [
     ],
   },
   {
+    name: "Calendar",
+    description: "Calendars are used to display dates and to select a date.",
+    path: "/components/calendar",
+    props: [
+      {
+        name: "Calendar",
+        props: [
+          {
+            name: "year",
+            default: "undefined",
+            type: "number",
+            description: "Year to display.",
+          },
+          {
+            name: "month",
+            default: "undefined",
+            type: "number",
+            description: "Month to display.",
+          },
+          {
+            name: "value",
+            default: "undefined",
+            type: "Date | null",
+            description: "Date value.",
+          },
+          {
+            name: "setValue",
+            default: "undefined",
+            type: "(date: Date) => void",
+            description: "Date change event.",
+          },
+          {
+            name: "startOfWeek",
+            default: "'Sunday'",
+            type: "'Sunday' | 'Monday'",
+            description: "Start of the week.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Card",
     description:
       "Cards are used to display content in a structured and visually appealing way. They can be used to display a variety of content types, such as images, text, links, and buttons.",

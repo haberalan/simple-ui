@@ -4,6 +4,7 @@ import AlertPreview from "./alert";
 import AvatarPreview from "./avatar";
 import BadgePreview from "./badge";
 import ButtonPreview from "./button";
+import CalendarPreview from "./calendar";
 import CardPreview from "./card";
 import CheckboxPreview from "./checkbox";
 import CommandPreview from "./command";
@@ -34,6 +35,7 @@ export const PREVIEWS = {
   avatar: <AvatarPreview />,
   badge: <BadgePreview />,
   button: <ButtonPreview />,
+  calendar: <CalendarPreview />,
   card: <CardPreview />,
   checkbox: <CheckboxPreview />,
   command: <CommandPreview />,
