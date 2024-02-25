@@ -11,7 +11,25 @@ export default function Home() {
           Crafted with TypeScript, Tailwind CSS, and Framer Motion, this library
           offers a comprehensive suite of reusable components and animations.
           Streamline development, enhance user experiences, and unleash
-          creativity with the flexible and responsive toolkit.
+          creativity with the flexible and responsive toolkit. Inspired by{" "}
+          <a
+            href="https://ui.shadcn.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-500 text-black hover:underline dark:text-gray-500"
+          >
+            shadcn/ui
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://ui.aceternity.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-500 text-black hover:underline dark:text-gray-500"
+          >
+            Aceternity UI
+          </a>
+          .
         </p>
         <div className="flex items-center gap-8">
           <Button href="/components" variant="primary" size="md">

@@ -1,6 +1,6 @@
 # simple-ui
 
-Crafted with TypeScript, Tailwind CSS, and Framer Motion, this library offers a comprehensive suite of reusable components and animations. Streamline development, enhance user experiences, and unleash creativity with the flexible and responsive toolkit.
+Crafted with TypeScript, Tailwind CSS, and Framer Motion, this library offers a comprehensive suite of reusable components and animations. Streamline development, enhance user experiences, and unleash creativity with the flexible and responsive toolkit. Inspired by [shadcn/ui](https://ui.shadcn.com/) and [Aceternity UI](https://ui.aceternity.com/).
 
 ![Next](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Framer-motion](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
@@ -11,6 +11,7 @@ Crafted with TypeScript, Tailwind CSS, and Framer Motion, this library offers a 
 ## Quick setup
 
 Clone the repository and run the following commands:
+
 ```
 npm install
 npm run dev
