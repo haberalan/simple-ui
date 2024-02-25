@@ -1,7 +1,7 @@
 import styles from "@/lib/styles";
 
 const CalendarDayStyles = styles(
-  "flex size-[28px] items-center justify-center rounded-1 p-1",
+  "flex size-[28px] items-center justify-center rounded-1 p-1 transition",
   {
     currentMonth: {
       true: "dark:text-gray-300",
