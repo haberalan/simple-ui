@@ -1330,6 +1330,36 @@ const COMPONENTS = [
     ],
   },
   {
+    name: "TimePicker",
+    description: "Time pickers are used to select a time.",
+    path: "/components/time-picker",
+    props: [
+      {
+        name: "TimePicker",
+        props: [
+          {
+            name: "value",
+            default: "undefined",
+            type: "{ hour: number; minute: number }",
+            description: "Time value.",
+          },
+          {
+            name: "setValue",
+            default: "undefined",
+            type: "Dispatch<SetStateAction<{ hour: number; minute: number }>>;",
+            description: "Time change event.",
+          },
+          {
+            name: "disabled",
+            default: "false",
+            type: "boolean",
+            description: "Toggle disabled state.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Toggle",
     description:
       "Toggle is used to change the state of a component. It can be used to change the state of a component, to change the state of a component, or to change the state of a component. It can also be used to change the state of a component, to change the state of a component, or to change the state of a component.",

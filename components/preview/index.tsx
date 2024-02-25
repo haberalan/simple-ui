@@ -27,6 +27,7 @@ import TextareaPreview from "./textarea";
 import ThemePreview from "./theme";
 import TogglePreview from "./toggle";
 import TooltipPreview from "./tooltip";
+import TimePickerPreview from "./timePicker";
 
 export const PREVIEWS = {
   accordion: <AccordionPreview />,
@@ -56,6 +57,7 @@ export const PREVIEWS = {
   tabs: <TabsPreview />,
   textarea: <TextareaPreview />,
   theme: <ThemePreview />,
+  "time-picker": <TimePickerPreview />,
   toggle: <TogglePreview />,
   tooltip: <TooltipPreview />,
 };
