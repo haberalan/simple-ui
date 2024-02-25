@@ -12,7 +12,7 @@ const GROUPS = [
 
 const Navbar = () => {
   return (
-    <nav className="scrollbar sticky top-[88px] flex max-h-[calc(100vh-122px)] w-[240px] flex-col gap-4 self-start overflow-auto text-sm">
+    <nav className="scrollbar sticky top-[88px] hidden max-h-[calc(100vh-122px)] w-[240px] flex-col gap-4 self-start overflow-auto text-sm lg:flex">
       {GROUPS.map((group) => (
         <div key={group.name} className="flex flex-col gap-3">
           <ActiveLink
