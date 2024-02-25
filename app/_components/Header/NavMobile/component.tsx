@@ -32,7 +32,7 @@ const NavMobile = () => {
 
   return (
     <>
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         <Icon name="Menu" onClick={handleOpen} className="size-8" />
       </div>
 
