@@ -46,7 +46,7 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
         <Card
           key={component.name}
           href={component.path}
-          className="flex min-h-[120px] items-center justify-center text-sm transition hover:shadow-lg"
+          className="flex min-h-[120px] items-center justify-center text-sm text-gray-600 shadow-sm transition hover:text-black hover:shadow-lg dark:hover:text-white"
         >
           {component.name}
         </Card>

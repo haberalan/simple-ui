@@ -31,7 +31,7 @@ export default function Home() {
           </a>
           .
         </p>
-        <div className="flex items-center gap-8">
+        <div className="flex flex-col items-center gap-2 md:flex-row md:gap-8">
           <Button href="/components" variant="primary" size="md">
             Components
           </Button>
