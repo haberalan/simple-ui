@@ -34,7 +34,7 @@ const Command: React.FC<CommandProps> = (props) => {
 
   return (
     <Dialog open={props.open} handleClose={props.handleClose}>
-      <Card className="w-[520px] !p-0 shadow-md">
+      <Card className="w-[520px] max-w-[80vw] !p-0 shadow-md">
         <div className="flex items-center gap-2 p-3">
           <label htmlFor={id}>
             <Icon
