@@ -22,43 +22,45 @@ const ComponentProps: React.FC<ComponentPropsProps> = (props) => {
             {element.name}
           </div>
 
-          <table className="w-full border border-gray-300 text-sm dark:border-gray-900">
-            <thead className="[&_th]:border [&_th]:border-gray-300 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-600 [&_th]:dark:border-gray-900">
-              <tr>
-                <th className="w-[140px]">Prop</th>
-                <th className="w-[160px]">Default Value</th>
-                <th className="w-[220px]">Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody className="text-xs [&_td]:border [&_td]:border-gray-300 [&_td]:p-2 [&_td]:dark:border-gray-900">
-              {element.props.map((prop) => (
-                <tr
-                  key={prop.name}
-                  className="group text-gray-700 odd:bg-gray-200 dark:text-gray-300 dark:odd:bg-gray-700/20"
-                >
-                  <td>
-                    <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 font-mono group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
-                      {prop.name}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 font-mono group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
-                      {prop.default}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 font-mono group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
-                      {prop.type}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="px-2 py-1">{prop.description}</div>
-                  </td>
+          <div className="scrollbar overflow-x-auto pb-2">
+            <table className="w-full min-w-[800px] border border-gray-300 text-sm dark:border-gray-900">
+              <thead className="[&_th]:border [&_th]:border-gray-300 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-600 [&_th]:dark:border-gray-900">
+                <tr>
+                  <th className="w-[140px]">Prop</th>
+                  <th className="w-[160px]">Default Value</th>
+                  <th className="w-[220px]">Type</th>
+                  <th>Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="text-xs [&_td]:border [&_td]:border-gray-300 [&_td]:p-2 [&_td]:dark:border-gray-900">
+                {element.props.map((prop) => (
+                  <tr
+                    key={prop.name}
+                    className="group text-gray-700 odd:bg-gray-200 dark:text-gray-300 dark:odd:bg-gray-700/20"
+                  >
+                    <td>
+                      <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 font-mono group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
+                        {prop.name}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 font-mono group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
+                        {prop.default}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="w-fit rounded-1 bg-gray-300 px-2 py-1 font-mono group-odd:bg-gray-200 dark:bg-gray-700/60 dark:group-odd:bg-gray-700/60">
+                        {prop.type}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="px-2 py-1">{prop.description}</div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ))}
     </div>
