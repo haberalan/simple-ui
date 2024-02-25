@@ -38,7 +38,6 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
       </AnimatePresence>
       <AnimatePresence initial={false}>
         <motion.div
-          className="size-full"
           initial={{ opacity: 0 }}
           animate={{
             opacity: props.loading ? 0 : 1,
