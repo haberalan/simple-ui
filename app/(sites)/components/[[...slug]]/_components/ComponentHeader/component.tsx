@@ -2,7 +2,7 @@ import React from "react";
 
 type ComponentHeaderProps = {
   name: string;
-  description: string;
+  description?: string;
 };
 
 const ComponentHeader: React.FC<ComponentHeaderProps> = (props) => {
@@ -11,9 +11,11 @@ const ComponentHeader: React.FC<ComponentHeaderProps> = (props) => {
       <h2 className="text-display-md font-500 dark:text-white md:text-display-lg">
         {props.name}
       </h2>
-      <p className="max-w-[800px] text-sm text-gray-600 dark:text-gray-500 md:text-md">
-        {props.description}
-      </p>
+      {props.description && (
+        <p className="max-w-[800px] text-sm text-gray-600 dark:text-gray-500 md:text-md">
+          {props.description}
+        </p>
+      )}
     </div>
   );
 };

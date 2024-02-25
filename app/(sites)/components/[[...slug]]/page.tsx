@@ -2,6 +2,7 @@ import React from "react";
 import { PREVIEWS } from "@/components/preview";
 import { redirect } from "next/navigation";
 import { COMPONENTS } from "@/constants";
+import { Card } from "@/components/ui";
 
 export async function generateMetadata({
   params,
@@ -40,9 +41,16 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
   }
 
   return (
-    <div>
-      <h2>Components</h2>
-      <p>It is a main components page.</p>
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      {COMPONENTS.map((component) => (
+        <Card
+          key={component.name}
+          href={component.path}
+          className="flex min-h-[120px] items-center justify-center text-sm transition hover:shadow-lg"
+        >
+          {component.name}
+        </Card>
+      ))}
     </div>
   );
 }

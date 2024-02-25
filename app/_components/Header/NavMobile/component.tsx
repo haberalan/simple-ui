@@ -33,7 +33,11 @@ const NavMobile = () => {
   return (
     <>
       <div className="xl:hidden">
-        <Icon name="Menu" onClick={handleOpen} className="size-8" />
+        <Icon
+          name="Menu"
+          onClick={handleOpen}
+          className="size-8 cursor-pointer"
+        />
       </div>
 
       <Sheet open={open} handleClose={handleClose} direction="left">
