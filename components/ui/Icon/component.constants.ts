@@ -13,6 +13,7 @@ import Copy from "@/assets/icons/copy.svg";
 import Moon from "@/assets/icons/moon.svg";
 import Sun from "@/assets/icons/sun.svg";
 import Clock from "@/assets/icons/clock.svg";
+import Menu from "@/assets/icons/menu.svg";
 
 const ICON_FILES = {
   ArrowRight,
@@ -30,6 +31,7 @@ const ICON_FILES = {
   Moon,
   Sun,
   Clock,
+  Menu,
 };
 
 export { ICON_FILES };

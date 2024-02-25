@@ -14,6 +14,7 @@ const ICONS = {
   Moon: "Moon",
   Sun: "Sun",
   Clock: "Clock",
+  Menu: "Menu",
 };
 
 export { ICONS };
