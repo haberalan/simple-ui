@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="border-t border-gray-300 text-sm dark:border-gray-900 dark:text-gray-400">
-      <div className="container flex items-center justify-between py-6">
+      <div className="container flex flex-col-reverse items-center justify-between gap-4 py-6 md:flex-row md:gap-0">
         <p>
           Created by <span className="font-500">Alan Haber</span> &copy;{" "}
           {new Date().getFullYear()}

@@ -3,9 +3,11 @@ import { Button } from "@/components/ui";
 export default function Home() {
   return (
     <main className="container flex flex-1 flex-col items-center justify-center">
-      <section className="flex flex-col items-center gap-4">
-        <h1 className="text-display-2xl font-600">Hello World!</h1>
-        <p className="max-w-[800px] text-center text-md text-gray-600">
+      <section className="flex flex-col items-center gap-4 text-center">
+        <h1 className="text-display-lg font-600 md:text-display-2xl">
+          Hello World!
+        </h1>
+        <p className="max-w-[800px] text-center text-sm text-gray-600 md:text-md">
           Crafted with TypeScript, Tailwind CSS, and Framer Motion, our library
           offers a comprehensive suite of reusable components and animations.
           Streamline development, enhance user experiences, and unleash

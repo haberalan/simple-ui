@@ -1,9 +1,10 @@
 "use client";
 
-import { Icon, Sheet, ActiveLink, IconButton } from "@/components/ui";
-import { useState } from "react";
+import { Icon, Sheet, ActiveLink } from "@/components/ui";
+import { useEffect, useState } from "react";
 import { COMPONENTS } from "@/constants";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const GROUPS = [
   {
@@ -14,6 +15,7 @@ const GROUPS = [
 ];
 
 const NavMobile = () => {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -24,15 +26,14 @@ const NavMobile = () => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    handleClose();
+  }, [pathname]);
+
   return (
     <>
       <div className="lg:hidden">
-        <IconButton
-          onClick={handleOpen}
-          icon="Menu"
-          variant="quaternary"
-          size="sm"
-        />
+        <Icon name="Menu" onClick={handleOpen} className="size-8" />
       </div>
 
       <Sheet open={open} handleClose={handleClose} direction="left">
