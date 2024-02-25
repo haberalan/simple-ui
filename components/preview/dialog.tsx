@@ -17,7 +17,7 @@ const DialogPreview = () => {
   return (
     <>
       <Dialog open={open} handleClose={handleClose}>
-        <Card className="flex max-w-[360px] flex-col gap-6 pt-4">
+        <Card className="flex w-[360px] max-w-[90vw] flex-col gap-6 pt-4">
           <div>
             <p className="mb-2 text-2xl font-500">This is a dialog</p>
             <p className="text-sm text-gray-500">

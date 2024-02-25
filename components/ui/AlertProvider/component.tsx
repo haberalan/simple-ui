@@ -49,9 +49,9 @@ const AlertProvider: React.FC<AlertProviderProps> = (props) => {
         push,
       }}
     >
-      <div className="fixed bottom-8 right-8 z-10 w-full max-w-[520px]">
+      <div className="fixed bottom-0 right-0 z-10 w-full max-w-[520px] md:bottom-8 md:right-8">
         <ul
-          className="flex h-full flex-col justify-end gap-4"
+          className="flex h-full max-w-[100vw] flex-col justify-end gap-4 px-2 py-4 md:p-0"
           aria-live="polite"
         >
           <AnimatePresence initial={false}>
