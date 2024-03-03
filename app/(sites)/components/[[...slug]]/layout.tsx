@@ -26,7 +26,7 @@ export default function Layout({
         name={component.name}
         description={component.description}
       />
-      <ComponentPreview preview={children} />
+      <ComponentPreview preview={children} code={component.code} />
       <ComponentProps elements={component.props} />
     </>
   ) : (
