@@ -4,6 +4,17 @@ const COMPONENTS = [
     description:
       "Accordions are a way to manage content in a collapsible manner. They are useful when you want to toggle between hiding and showing large amount of content.",
     path: "/components/accordion",
+    code: `<Accordion>
+  <AccordionItem label="First Label">
+    <p>Content of the first label</p>
+  </AccordionItem>
+  <AccordionItem label="Second Label">
+    <p>Content of the second label</p>
+  </AccordionItem>
+  <AccordionItem label="Third Label">
+    <p>Content of the third label</p>
+  </AccordionItem>
+</Accordion>`,
     props: [
       {
         name: "Accordion",
@@ -47,6 +58,7 @@ const COMPONENTS = [
     description:
       "ActiveLink is a special kind of Link that applies an active class when its href is equal to the current URL. You can use it to style the link differently when it is active.",
     path: "/components/active-link",
+    code: `<ActiveLink href="/components">Components</ActiveLink>`,
     props: [
       {
         name: "ActiveLink",
@@ -92,6 +104,9 @@ const COMPONENTS = [
     description:
       "Alerts are used to communicate a state that affects the entire system. They can be used to inform the user about a successful operation, an error, a warning, or a general information.",
     path: "/components/alert",
+    code: `<Alert label="Alert" icon="Sunset" timer>
+  "This is an alert
+</Alert>`,
     props: [
       {
         name: "AlertProvider",
@@ -152,6 +167,7 @@ const COMPONENTS = [
     description:
       "Avatars are used to represent people or entities. They can be used to represent a user, a bot, or a system entity. They can also be used to represent a contact in a messaging application.",
     path: "/components/avatar",
+    code: `<Avatar src={img} alt="AH" size={160} />`,
     props: [
       {
         name: "Avatar",
@@ -213,6 +229,9 @@ const COMPONENTS = [
     description:
       "Badges are used to inform the user about the status of an object or about a new or unread item. They can be used to represent a new message, a new notification, a new feature, a new product, or a new event.",
     path: "/components/badge",
+    code: `<Badge variant="primary" size="md" shape="rounded">
+  Badge
+</Badge>`,
     props: [
       {
         name: "Badge",
@@ -280,6 +299,9 @@ const COMPONENTS = [
     description:
       "Buttons are used to perform an action. They can be used to submit a form, to open a dialog, to navigate to a new page, to save a record, or to perform any other action.",
     path: "/components/button",
+    code: `<Button variant="primary" size="md">
+  Button
+</Button>`,
     props: [
       {
         name: "Button",
@@ -358,6 +380,11 @@ const COMPONENTS = [
     name: "Calendar",
     description: "Calendars are used to display dates and to select a date.",
     path: "/components/calendar",
+    code: `<Calendar
+  value={selectedDate}
+  setValue={setSelectedDate}
+  startOfWeek="Monday"
+/>`,
     props: [
       {
         name: "Calendar",
@@ -407,6 +434,7 @@ const COMPONENTS = [
     description:
       "Cards are used to display content in a structured and visually appealing way. They can be used to display a variety of content types, such as images, text, links, and buttons.",
     path: "/components/card",
+    code: `<Card>This is a card</Card>`,
     props: [
       {
         name: "Card",
@@ -450,6 +478,9 @@ const COMPONENTS = [
     description:
       "Checkboxes are used to select one or more options from a list of options. They can be used to select multiple options at the same time, or to select a single option from a list of options.",
     path: "/components/checkbox",
+    code: `<Checkbox checked={checked} onClick={handleClick}>
+  Label
+</Checkbox>`,
     props: [
       {
         name: "Checkbox",
@@ -487,6 +518,7 @@ const COMPONENTS = [
     description:
       "Commands are used to display a list of links in a dropdown menu. They can be used to navigate to different pages, to open different modals, or to perform different actions.",
     path: "/components/command",
+    code: `<Command open={open} handleClose={handleClose} labels={LABELS} />`,
     props: [
       {
         name: "Command",
@@ -518,6 +550,20 @@ const COMPONENTS = [
     description:
       "Dialogs are used to display a message or to get input from the user. They can be used to display a variety of content types, such as text, images, links, and buttons.",
     path: "/components/dialog",
+    code: `<Dialog open={open} handleClose={handleClose}>
+  <Card className="flex w-[360px] max-w-[90vw] flex-col gap-6 pt-4">
+    <div>
+      <p className="mb-2 text-2xl font-500">This is a dialog</p>
+      <p className="text-sm text-gray-500">
+        Dialog is a modal component that can be used to display a message
+        or to get input from the user.
+      </p>
+    </div>
+    <Button variant="secondary" size="md" onClick={handleClose}>
+      Close dialog
+    </Button>
+  </Card>
+</Dialog>`,
     props: [
       {
         name: "Dialog",
@@ -549,6 +595,7 @@ const COMPONENTS = [
     description:
       "Icons are used to represent different types of content, such as images, text, links, and buttons. They can be used to display a variety of content types, such as images, text, links, and buttons.",
     path: "/components/icon",
+    code: `<Icon name="Sunset" className="size-16" />`,
     props: [
       {
         name: "Icon",
@@ -580,6 +627,7 @@ const COMPONENTS = [
     description:
       "Icon buttons are used to perform an action. They can be used to submit a form, to open a dialog, to navigate to a new page, to save a record, or to perform any other action.",
     path: "/components/icon-button",
+    code: `<IconButton variant="primary" size="md" icon="Sunset" />`,
     props: [
       {
         name: "IconButton",
@@ -641,6 +689,18 @@ const COMPONENTS = [
     description:
       "Inputs are used to collect data from the user. They can be used to collect a variety of data types, such as text, numbers, dates, and files. They can also be used to collect data in a variety of formats, such as text, numbers, dates, and files.",
     path: "/components/input",
+    code: `<Input
+  status="default"
+  icon={type === "text" ? "EyeOff" : "Eye"}
+  iconPositon="right"
+  value={value}
+  onChange={handleChange}
+  onIconClick={handleTypeChange}
+  label="Password"
+  placeholder="###"
+  helperText="Enter your password."
+  type={type}
+/>`,
     props: [
       {
         name: "Input",
@@ -744,6 +804,7 @@ const COMPONENTS = [
     description:
       "Links are used to navigate between pages or to open a new page in the same window or a new tab. They can be used to navigate to a new page, to open a dialog, to save a record, or to perform any other action.",
     path: "/components/link",
+    code: `<Link href="/components">Components</Link>`,
     props: [
       {
         name: "Link",
@@ -794,6 +855,7 @@ const COMPONENTS = [
     description:
       "Loaders are used to indicate that a page or a component is loading. They can be used to indicate that a page or a component is loading, to indicate that a process is in progress, or to indicate that a process is complete.",
     path: "/components/loader",
+    code: `<Loader size="md" />`,
     props: [
       {
         name: "Loader",
@@ -813,6 +875,27 @@ const COMPONENTS = [
     description:
       "Radios are used to select one option from a list. They can be used to select one option from a list, to select one option from a group of options, or to select one option from a list of options.",
     path: "/components/radio",
+    code: `<Radio
+  checked={checked}
+  onChange={handleChange}
+  id="easy"
+  name="difficulty"
+  label="Easy mode"
+/>
+<Radio
+  checked={checked}
+  onChange={handleChange}
+  id="medium"
+  name="difficulty"
+  label="Medium mode"
+/>
+<Radio
+  checked={checked}
+  onChange={handleChange}
+  id="hard"
+  name="difficulty"
+  label="Hard mode"
+/>`,
     props: [
       {
         name: "Radio",
@@ -862,6 +945,14 @@ const COMPONENTS = [
     description:
       "Selects are used to select one option from a list. They can be used to select one option from a list, to select one option from a group of options, or to select one option from a list of options. They can also be used to select one option from a list of options, to select one option from a group of options, or to select one option from a list of options.",
     path: "/components/select",
+    code: `<Select
+  status="default"
+  value={value}
+  onChange={handleChange}
+  options={OPTIONS}
+  helperText="Select your favorite icon."
+  search
+/>`,
     props: [
       {
         name: "Select",
@@ -954,6 +1045,7 @@ const COMPONENTS = [
     description:
       "Separators are used to separate content. They can be used to separate content, to separate content, or to separate content. They can also be used to separate content, to separate content, or to separate content.",
     path: "/components/separator",
+    code: `<Separator variant="horizontal" className="my-auto" />`,
     props: [
       {
         name: "Separator",
@@ -979,6 +1071,40 @@ const COMPONENTS = [
     description:
       "Sheets are used to display additional information. They can be used to display additional information, to display additional information, or to display additional information. They can also be used to display additional information, to display additional information, or to display additional information.",
     path: "/components/sheet",
+    code: `<Sheet open={open} handleClose={handleClose}>
+  <div className="flex flex-col px-4 py-3">
+    <Icon
+      name="Close"
+      className="size-5 cursor-pointer self-end"
+      onClick={handleClose}
+    />
+    <div className="mt-16 flex w-full flex-col">
+      <p className="mb-4 text-2xl font-600">Login</p>
+      <Input
+        value=""
+        placeholder="test"
+        label="Username"
+        onChange={(_) => _}
+        status="valid"
+      />
+      <Input
+        value=""
+        placeholder="###"
+        label="Password"
+        onChange={(_) => _}
+        status="valid"
+        icon="Eye"
+      />
+      <Button variant="secondary" size="md">
+        Submit
+      </Button>
+    </div>
+    <p className="mx-auto mt-2 text-sm text-gray-700">
+      Don&apos;t have account?{" "}
+      <span className="font-500 underline">Signup</span>
+    </p>
+  </div>
+</Sheet>`,
     props: [
       {
         name: "Sheet",
@@ -1016,6 +1142,11 @@ const COMPONENTS = [
     description:
       "Skeletons are used to indicate that a page or a component is loading. They can be used to indicate that a page or a component is loading, to indicate that a process is in progress, or to indicate that a process is complete.",
     path: "/components/skeleton",
+    code: `<div className="flex w-3/4 flex-wrap gap-1">
+  <Skeleton className="h-8 w-full rounded-1" />
+  <Skeleton className="h-8 w-full flex-1 rounded-1" />
+  <Skeleton className="h-8 w-full flex-[2] rounded-1" />
+</div>`,
     props: [
       {
         name: "Skeleton",
@@ -1035,6 +1166,7 @@ const COMPONENTS = [
     description:
       "Sliders are used to select a value from a range. They can be used to select a value from a range, to select a value from a group of values, or to select a value from a list of values. They can also be used to select a value from a range, to select a value from a group of values, or to select a value from a list of values.",
     path: "/components/slider",
+    code: `<Slider value={value} onChange={handleChange} />`,
     props: [
       {
         name: "Slider",
@@ -1084,6 +1216,9 @@ const COMPONENTS = [
     description:
       "Switches are used to toggle between two states. They can be used to toggle between two states, to toggle between two options, or to toggle between two values. They can also be used to toggle between two states, to toggle between two options, or to toggle between two values.",
     path: "/components/switch",
+    code: `<Switch checked={checked} onClick={handleClick}>
+  Toggle me!
+</Switch>`,
     props: [
       {
         name: "Switch",
@@ -1121,6 +1256,7 @@ const COMPONENTS = [
     description:
       "Table of contents are used to navigate a page. They can be used to navigate a page, to navigate a page, or to navigate a page. They can also be used to navigate a page, to navigate a page, or to navigate a page.",
     path: "/components/table-of-contents",
+    code: `<TableOfContents heading="This Page" />`,
     props: [
       {
         name: "TableOfContents",
@@ -1140,6 +1276,17 @@ const COMPONENTS = [
     description:
       "Tabs are used to navigate between different sections. They can be used to navigate between different sections, to navigate between different sections, or to navigate between different sections. They can also be used to navigate between different sections, to navigate between different sections, or to navigate between different sections.",
     path: "/components/tabs",
+    code: `<Tabs labels={["First", "Second", "Third"]} variant="primary">
+  <TabItem label="First">
+    <></>
+  </TabItem>
+  <TabItem label="Second">
+    <></>
+  </TabItem>
+  <TabItem label="Third">
+    <></>
+  </TabItem>
+</Tabs>`,
     props: [
       {
         name: "Tabs",
@@ -1194,6 +1341,15 @@ const COMPONENTS = [
     description:
       "Textareas are used to input large amounts of text. They can be used to input large amounts of text, to input large amounts of text, or to input large amounts of text. They can also be used to input large amounts of text, to input large amounts of text, or to input large amounts of text.",
     path: "/components/textarea",
+    code: `<Textarea
+  label="Description"
+  placeholder="Type something here..."
+  helperText="This is a helper text."
+  value={value}
+  onChange={handleChange}
+  status="default"
+  rows={7}
+/>`,
     props: [
       {
         name: "Textarea",
@@ -1315,6 +1471,9 @@ const COMPONENTS = [
     description:
       "Theme is used to change the application theme. It can be used to change the application theme, to change the application theme, or to change the application theme. It can also be used to change the application theme, to change the application theme, or to change the application theme.",
     path: "/components/theme",
+    code: `<Button variant="secondary" size="md" onClick={handleClick}>
+  Toggle Theme
+</Button>`,
     props: [
       {
         name: "ThemeProvider",
@@ -1333,6 +1492,7 @@ const COMPONENTS = [
     name: "TimePicker",
     description: "Time pickers are used to select a time.",
     path: "/components/time-picker",
+    code: `<TimePicker value={value} setValue={setValue} />`,
     props: [
       {
         name: "TimePicker",
@@ -1364,6 +1524,13 @@ const COMPONENTS = [
     description:
       "Toggle is used to change the state of a component. It can be used to change the state of a component, to change the state of a component, or to change the state of a component. It can also be used to change the state of a component, to change the state of a component, or to change the state of a component.",
     path: "/components/toggle",
+    code: `<Toggle
+  toggled={toggled}
+  onClick={handleClick}
+  variant="primary"
+  icon="Sunset"
+  label="Toggle me!"
+/>`,
     props: [
       {
         name: "Toggle",
@@ -1413,6 +1580,11 @@ const COMPONENTS = [
     description:
       "Tooltips are used to display additional information when hovering over an element. They can be used to display additional information when hovering over an element, to display additional information when hovering over an element, or to display additional information when hovering over an element. They can also be used to display additional information when hovering over an element, to display additional information when hovering over an element, or to display additional information when hovering over an element.",
     path: "/components/tooltip",
+    code: `<Tooltip content={<Card>Hovered text.</Card>} direction="top">
+  <Button variant="secondary" size="md">
+    Hover
+  </Button>
+</Tooltip>`,
     props: [
       {
         name: "Tooltip",
