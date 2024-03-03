@@ -64,7 +64,7 @@ const AlertProvider: React.FC<AlertProviderProps> = (props) => {
                 exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
                 role="alert"
               >
-                <Alert {...alert} />
+                <Alert {...alert} key={alert.key} />
               </motion.li>
             ))}
           </AnimatePresence>
