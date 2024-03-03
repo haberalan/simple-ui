@@ -15,6 +15,10 @@
     @apply outline outline-2 outline-offset-1 outline-gray-300;
   }
 
+  *::selection {
+    @apply bg-error-200 dark:bg-error-500/50;
+  }
+
   .dark {
     @apply bg-black text-gray-100;
   }
