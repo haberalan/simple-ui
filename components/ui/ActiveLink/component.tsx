@@ -39,6 +39,9 @@ const ActiveLink: React.FC<ActiveLinkProps> = (props) => {
     <Link
       href={props.href}
       className={LinkStyles({ active: isActive() }, props.className)}
+      replace={props.replace}
+      scroll={props.scroll}
+      prefetch={props.prefetch}
     >
       {props.children}
     </Link>

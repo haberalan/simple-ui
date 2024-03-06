@@ -21,6 +21,18 @@ type ActiveLinkProps = {
    * Class name of the link when active
    */
   activeClassName?: string;
+  /**
+   * Replace the current entry in the history stack
+   */
+  replace?: boolean;
+  /**
+   * Scroll to the top of the page after a navigation
+   */
+  scroll?: boolean;
+  /**
+   * Prefetch the linked page in the background
+   */
+  prefetch?: boolean;
 };
 
 export { type ActiveLinkProps };

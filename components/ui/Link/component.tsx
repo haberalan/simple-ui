@@ -31,6 +31,9 @@ const Link: React.FC<LinkProps> = (props) => {
         {
           href: props.href,
           className: props.className,
+          replace: props.replace,
+          scroll: props.scroll,
+          prefetch: props.prefetch,
         },
         props.children,
       );
