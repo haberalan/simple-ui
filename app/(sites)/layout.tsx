@@ -1,4 +1,4 @@
-import { Navbar } from "./_components";
+import { Navbar, ScrollToTop } from "./_components";
 
 export default function Layout({
   children,
@@ -7,6 +7,7 @@ export default function Layout({
 }>) {
   return (
     <main className="container relative flex gap-4 py-8">
+      <ScrollToTop />
       <Navbar />
       <div className="flex w-full max-w-[880px] flex-col gap-12">
         {children}
