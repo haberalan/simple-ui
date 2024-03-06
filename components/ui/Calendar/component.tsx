@@ -159,9 +159,9 @@ const Calendar: React.FC<CalendarProps> = (props) => {
         ))}
       </div>
       <div className="grid w-full grid-cols-7 gap-1 text-sm">
-        {daysToShow.map((day, index) => (
+        {daysToShow.map((day) => (
           <button
-            key={index}
+            key={day.date.toString() + day.fromCurrentMonth}
             className={CalendarDayStyles({
               currentMonth: !!day.fromCurrentMonth,
               selected: props.value?.toDateString() === day.date.toDateString(),
