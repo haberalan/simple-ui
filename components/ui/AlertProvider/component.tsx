@@ -1,7 +1,7 @@
 "use client";
 
 // region Imports
-import React, { createContext } from "react";
+import React, { createContext, useRef, useState } from "react";
 import { AlertContextProps, AlertProviderProps } from "./component.types";
 import { AlertProps } from "./Alert/component.types";
 import { AnimatePresence, motion } from "framer-motion";
@@ -28,18 +28,43 @@ const AlertContext = createContext<AlertContextProps>({
  * @returns {React.ReactElement} The React element
  */
 const AlertProvider: React.FC<AlertProviderProps> = (props) => {
-  const [alerts, setAlerts] = React.useState<AlertProps[]>([]);
+  const [alerts, setAlerts] = useState<Omit<AlertProps, "onClose">[]>([]);
+  const timeouts = useRef<
+    { id: string; timeout: ReturnType<typeof setTimeout> }[]
+  >([]);
 
-  const push = (alert: Omit<AlertProps, "key">) => {
+  const push = (alert: Omit<AlertProps, "id" | "onClose">) => {
+    const id = uuidv4();
+
     setAlerts([
       ...alerts,
       {
         ...alert,
-        key: uuidv4(),
+        id,
       },
     ]);
 
-    setTimeout(() => setAlerts((prev) => prev.slice(1)), 8000);
+    timeouts.current.push({
+      id,
+      timeout: setTimeout(() => {
+        setAlerts((prev) => prev.filter((a) => a.id !== id));
+      }, 8000),
+    });
+  };
+
+  const handleClose = (id: string) => {
+    setAlerts((prev) =>
+      prev.filter((alert) => {
+        if (alert.id === id) {
+          const timeout = timeouts.current.find((t) => t.id === id);
+          if (timeout) {
+            clearTimeout(timeout.timeout);
+          }
+          return false;
+        }
+        return true;
+      }),
+    );
   };
 
   return (
@@ -57,14 +82,14 @@ const AlertProvider: React.FC<AlertProviderProps> = (props) => {
           <AnimatePresence initial={false}>
             {alerts.map((alert) => (
               <motion.li
-                key={alert.key}
+                key={alert.id}
                 layout
                 initial={{ opacity: 0, y: 50, scale: 0.5 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
                 role="alert"
               >
-                <Alert {...alert} key={alert.key} />
+                <Alert {...alert} onClose={handleClose} key={alert.id} />
               </motion.li>
             ))}
           </AnimatePresence>

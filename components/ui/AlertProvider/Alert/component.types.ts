@@ -6,7 +6,7 @@ type AlertProps = {
   /**
    * Unique key for the alert
    */
-  key: string;
+  id: string;
   /**
    * Alert label
    */
@@ -27,6 +27,14 @@ type AlertProps = {
    * Shows timer of the alert
    */
   timer?: boolean;
+  /**
+   * Shows close button
+   */
+  showClose?: boolean;
+  /**
+   * Function to close the alert
+   */
+  onClose: (key: string) => void;
 };
 
 export { type AlertProps };

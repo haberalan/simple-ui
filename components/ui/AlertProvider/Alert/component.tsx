@@ -3,7 +3,7 @@
 // region Imports
 import React, { useEffect } from "react";
 import { AlertProps } from "./component.types";
-import { Button, Card, Icon } from "../..";
+import { Button, Card, Icon, IconButton } from "../..";
 import { animate, motion, useMotionValue } from "framer-motion";
 // endregion
 
@@ -35,11 +35,21 @@ const Alert: React.FC<AlertProps> = (props) => {
         </div>
       </div>
       <div>{props.action && <Button {...props.action} />}</div>
+      {props.showClose && (
+        <div className="absolute right-3 top-2">
+          <IconButton
+            icon="Close"
+            variant="quaternary"
+            size="sm"
+            onClick={props.onClose.bind(this, props.id)}
+          />
+        </div>
+      )}
       {props.timer && (
         <motion.div
           className="absolute bottom-0 left-0 h-[2px] bg-black dark:bg-gray-100"
           style={{ width }}
-        ></motion.div>
+        />
       )}
     </Card>
   );

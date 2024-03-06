@@ -12,6 +12,7 @@ const AlertPreview = () => {
       children: "This is an alert",
       icon: "Sunset",
       timer: true,
+      showClose: true,
     });
   };
 

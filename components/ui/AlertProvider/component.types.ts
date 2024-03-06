@@ -5,11 +5,11 @@ type AlertContextProps = {
   /**
    * Array of alerts
    */
-  alerts: AlertProps[];
+  alerts: Omit<AlertProps, "onClose">[];
   /**
    * Function that adds an alert to the array
    */
-  push: (alert: Omit<AlertProps, "key">) => void;
+  push: (alert: Omit<AlertProps, "id" | "onClose">) => void;
 };
 
 type AlertProviderProps = {
