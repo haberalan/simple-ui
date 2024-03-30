@@ -15,12 +15,14 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     const id = useId();
 
     const status = props.disabled ? "disabled" : props.status ?? "default";
+
     const text = {
       error: props.errorText,
       default: props.helperText,
       disabled: "",
       valid: "",
     }[props.status ?? "default"];
+
     return (
       <div className="flex flex-col gap-1">
         <div className="flex flex-col-reverse gap-1">
