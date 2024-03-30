@@ -2,10 +2,11 @@
 
 // region Imports
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { SheetProps } from "./component.types";
 import { SheetStyles } from "./component.styles";
+import { ScaleContext } from "../ScaleProvider/component";
 // endregion
 
 // region Constants
@@ -32,11 +33,21 @@ const ANIMATIONS = {
 const Sheet: React.FC<SheetProps> = (props) => {
   const refOverlay = useRef<HTMLDivElement>(null);
 
+  const { setScale } = useContext(ScaleContext);
+
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (e.target === refOverlay.current) {
       props.handleClose();
     }
   };
+
+  useEffect(() => {
+    if (props.open) {
+      setScale(0.95);
+    } else {
+      setScale(1);
+    }
+  }, [setScale, props.open]);
 
   return createPortal(
     <AnimatePresence>
@@ -59,6 +70,7 @@ const Sheet: React.FC<SheetProps> = (props) => {
             transition={{ ease: "easeInOut", duration: 0.3 }}
             className={SheetStyles({ direction: props.direction ?? "right" })}
           >
+            <p>Open: {props.open.toString()} -hehe</p>
             {props.children}
           </motion.div>
         </>
