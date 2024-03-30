@@ -70,7 +70,6 @@ const Sheet: React.FC<SheetProps> = (props) => {
             transition={{ ease: "easeInOut", duration: 0.3 }}
             className={SheetStyles({ direction: props.direction ?? "right" })}
           >
-            <p>Open: {props.open.toString()} -hehe</p>
             {props.children}
           </motion.div>
         </>
