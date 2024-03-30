@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply flex min-h-screen flex-col font-sans;
+    @apply font-sans;
   }
 
   footer {
