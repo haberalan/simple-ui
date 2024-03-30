@@ -27,6 +27,7 @@ import Avatar from "./Avatar";
 import Select from "./Select";
 import Command from "./Command";
 import IconButton from "./IconButton";
+import ScaleProvider, { ScaleContext } from "./ScaleProvider";
 
 export {
   ThemeProvider,
@@ -62,4 +63,6 @@ export {
   Select,
   Command,
   IconButton,
+  ScaleProvider,
+  ScaleContext,
 };

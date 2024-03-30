@@ -28,6 +28,7 @@ import ThemePreview from "./theme";
 import TogglePreview from "./toggle";
 import TooltipPreview from "./tooltip";
 import TimePickerPreview from "./timePicker";
+import ScalePreview from "./scale";
 
 export const PREVIEWS = {
   accordion: <AccordionPreview />,
@@ -47,6 +48,7 @@ export const PREVIEWS = {
   link: <LinkPreview />,
   loader: <LoaderPreview />,
   radio: <RadioPreview />,
+  scale: <ScalePreview />,
   select: <SelectPreview />,
   separator: <SeparatorPreview />,
   sheet: <SheetPreview />,

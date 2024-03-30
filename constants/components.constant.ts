@@ -977,6 +977,30 @@ const COMPONENTS = [
     ],
   },
   {
+    name: "Scale",
+    description: "ScaleProvider is used to set the scale of the background.",
+    path: "/components/scale",
+    code: `<ScaleProvider>
+  <Button variant="secondary" size="md" onClick={handleClick}>
+    Toggle sheet
+  </Button>
+</ScaleProvider>
+    `,
+    props: [
+      {
+        name: "ScaleProvider",
+        props: [
+          {
+            name: "children",
+            default: "undefined",
+            type: "React.ReactNode",
+            description: "Content of the provider.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Select",
     description:
       "Selects are used to select one option from a list. They can be used to select one option from a list, to select one option from a group of options, or to select one option from a list of options. They can also be used to select one option from a list of options, to select one option from a group of options, or to select one option from a list of options.",
