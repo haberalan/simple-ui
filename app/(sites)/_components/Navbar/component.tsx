@@ -31,7 +31,7 @@ const Navbar = () => {
                   className="group transition-spacing duration-150"
                   activeClassName="dark:text-white text-black ml-1 font-500"
                 >
-                  <span className="transition-spacing duration-150 group-hover:ml-1">
+                  <span className="transition-spacing duration-150 group-hover:pl-1">
                     {item.name}
                   </span>
                 </ActiveLink>
