@@ -47,7 +47,6 @@ const ScaleProvider: React.FC<ScaleProviderProps> = (props) => {
       >
         {props.children}
       </motion.div>
-      ;
     </ScaleContext.Provider>
   );
 };
