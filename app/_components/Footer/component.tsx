@@ -12,7 +12,7 @@ const Footer = () => {
         </p>
         <div className="flex items-center justify-center gap-2">
           <a
-            href="https://github.com/"
+            href="https://github.com/haberalan/simple-ui"
             target="_blank"
             aria-label="Will open in new tab."
             className="hover:underline"
