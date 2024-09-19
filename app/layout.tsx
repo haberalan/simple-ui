@@ -3,7 +3,12 @@ import type { Metadata } from "next";
 import React from "react";
 import { Inter, IBM_Plex_Mono as ibmPlexMono } from "next/font/google";
 import { Header, Footer } from "./_components";
-import { AlertProvider, ThemeProvider, ScaleProvider } from "@/components/ui";
+import {
+  AlertProvider,
+  ThemeProvider,
+  ScaleProvider,
+  ToastProvider,
+} from "@/components/ui";
 
 const interFont = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmFont = ibmPlexMono({
@@ -27,11 +32,13 @@ export default function RootLayout({
       <body className={`${interFont.variable} ${ibmFont.variable}`}>
         <ThemeProvider>
           <AlertProvider>
-            <ScaleProvider>
-              <Header />
-              {children}
-              <Footer />
-            </ScaleProvider>
+            <ToastProvider>
+              <ScaleProvider>
+                <Header />
+                {children}
+                <Footer />
+              </ScaleProvider>
+            </ToastProvider>
           </AlertProvider>
         </ThemeProvider>
       </body>

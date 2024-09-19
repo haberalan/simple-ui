@@ -1580,6 +1580,44 @@ const COMPONENTS = [
     ],
   },
   {
+    name: "Toast",
+    description: "Toasts are used to display small alerts to the user.",
+    path: "/components/toast",
+    code: `<Toast>
+  This is an toast
+</Toast>`,
+    props: [
+      {
+        name: "ToastProvider",
+        props: [
+          {
+            name: "children",
+            default: "undefined",
+            type: "React.ReactNode",
+            description: "Content of the provider.",
+          },
+        ],
+      },
+      {
+        name: "Toast",
+        props: [
+          {
+            name: "key",
+            default: "undefined",
+            type: "string",
+            description: "Unique key for the toast.",
+          },
+          {
+            name: "children",
+            default: "undefined",
+            type: "React.ReactNode",
+            description: "Toast description.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Toggle",
     description:
       "Toggle is used to change the state of a component. It can be used to change the state of a component, to change the state of a component, or to change the state of a component. It can also be used to change the state of a component, to change the state of a component, or to change the state of a component.",

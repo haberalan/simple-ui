@@ -7,6 +7,7 @@ import Link from "./Link";
 import ActiveLink from "./ActiveLink";
 import Loader from "./Loader";
 import AlertProvider, { AlertContext } from "./AlertProvider";
+import ToastProvider, { ToastContext } from "./ToastProvider";
 import Card from "./Card";
 import Separator from "./Separator";
 import { Tabs, TabItem } from "./Tabs";
@@ -42,6 +43,8 @@ export {
   Loader,
   AlertProvider,
   AlertContext,
+  ToastContext,
+  ToastProvider,
   Card,
   Separator,
   Tabs,

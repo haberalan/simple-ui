@@ -28,6 +28,7 @@ import ThemePreview from "./theme";
 import TogglePreview from "./toggle";
 import TooltipPreview from "./tooltip";
 import TimePickerPreview from "./timePicker";
+import ToastPreview from "./toast";
 import ScalePreview from "./scale";
 
 export const PREVIEWS = {
@@ -60,6 +61,7 @@ export const PREVIEWS = {
   textarea: <TextareaPreview />,
   theme: <ThemePreview />,
   "time-picker": <TimePickerPreview />,
+  toast: <ToastPreview />,
   toggle: <TogglePreview />,
   tooltip: <TooltipPreview />,
 };
