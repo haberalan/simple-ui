@@ -79,7 +79,7 @@ const AlertProvider: React.FC<AlertProviderProps> = (props) => {
           className="flex h-full max-w-[100vw] flex-col justify-end gap-4 px-2 py-4 md:p-0"
           aria-live="polite"
         >
-          <AnimatePresence initial={false}>
+          <AnimatePresence initial={false} mode="popLayout">
             {alerts.map((alert) => (
               <motion.li
                 key={alert.id}
