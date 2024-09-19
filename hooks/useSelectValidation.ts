@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
 type useSelectValidationProps = {
   validation: (value: string | string[]) => boolean;
@@ -7,17 +7,28 @@ type useSelectValidationProps = {
   base?: string | string[];
 };
 
-const useSelectValidation = ({ validation, multiple, max, base }: useSelectValidationProps) => {
-  const [value, setValue] = useState<string | string[]>(base ?? multiple ? [] : '');
+const useSelectValidation = ({
+  validation,
+  multiple,
+  max,
+  base,
+}: useSelectValidationProps) => {
+  const [value, setValue] = useState<string | string[]>(
+    (base ?? multiple) ? [] : "",
+  );
   const [touched, setTouched] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
   const valid = validation(value);
 
-  const status: 'valid' | 'error' | 'default' = touched ? (valid ? 'valid' : 'error') : 'default';
+  const status: "valid" | "error" | "default" = touched
+    ? valid
+      ? "valid"
+      : "error"
+    : "default";
 
   const reset = (hard = false) => {
-    hard ? setTouched(false) : setTouched(true);
+    setTouched(hard);
     setValue([]);
   };
 

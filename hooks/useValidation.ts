@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
 type useValidationProps<T> = {
   validation: (value: string) => boolean;
@@ -10,17 +10,21 @@ const useValidation = <T extends HTMLInputElement | HTMLTextAreaElement>({
   validation,
   base,
 }: useValidationProps<T>) => {
-  const [value, setValue] = useState(base ?? '');
+  const [value, setValue] = useState(base ?? "");
   const [touched, setTouched] = useState(false);
   const ref = useRef<T | null>(null);
 
   const valid = validation(value);
 
-  const status: 'valid' | 'error' | 'default' = touched ? (valid ? 'valid' : 'error') : 'default';
+  const status: "valid" | "error" | "default" = touched
+    ? valid
+      ? "valid"
+      : "error"
+    : "default";
 
   const reset = (hard = false) => {
-    hard ? setTouched(false) : setTouched(true);
-    setValue('');
+    setTouched(hard);
+    setValue("");
   };
 
   const handleChange = (e: React.ChangeEvent<T>) => {
