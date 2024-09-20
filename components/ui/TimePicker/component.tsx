@@ -52,7 +52,7 @@ const TimePicker: React.FC<TimePickerProps> = (props) => {
           value={validateAndFormatTime(props.value.hour.toString(), "hour")}
           onChange={handleHourChange}
           disabled={props.disabled}
-          className="w-[36px] rounded-1 border border-gray-300 bg-white p-1 text-center text-sm font-500 disabled:text-gray-400 dark:border-gray-900 dark:bg-gray-1000 disabled:dark:text-gray-700"
+          className="w-9 rounded-1 border border-gray-300 bg-white p-1 text-center text-sm font-500 disabled:text-gray-400 dark:border-gray-900 dark:bg-gray-1000 disabled:dark:text-gray-700"
         />
         <div className="pointer-events-none text-lg font-800">:</div>
         <input
@@ -60,7 +60,7 @@ const TimePicker: React.FC<TimePickerProps> = (props) => {
           value={validateAndFormatTime(props.value.minute.toString(), "minute")}
           onChange={handleMinuteChange}
           disabled={props.disabled}
-          className="w-[36px] rounded-1 border border-gray-300 bg-white p-1 text-center text-sm font-500 disabled:text-gray-400 dark:border-gray-900 dark:bg-gray-1000 disabled:dark:text-gray-700"
+          className="w-9 rounded-1 border border-gray-300 bg-white p-1 text-center text-sm font-500 disabled:text-gray-400 dark:border-gray-900 dark:bg-gray-1000 disabled:dark:text-gray-700"
         />
       </div>
     </div>
