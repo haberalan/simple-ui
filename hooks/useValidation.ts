@@ -16,11 +16,11 @@ const useValidation = <T extends HTMLInputElement | HTMLTextAreaElement>({
   const ref = useRef<T | null>(null);
 
   const onChange = (e: React.ChangeEvent<T>) => {
+    if (error) setError(undefined);
     setValue(e.target.value);
   };
 
   const onBlur = () => {
-    if (error) setError(undefined);
     setTouched(true);
   };
 
@@ -43,13 +43,16 @@ const useValidation = <T extends HTMLInputElement | HTMLTextAreaElement>({
       : undefined);
 
   const reset = (hard = false) => {
-    setTouched(hard);
+    setTouched(!hard);
     setValue("");
   };
 
   const handleError = (message: string) => {
     setError(message);
     setTouched(true);
+    setTimeout(() => {
+      ref.current?.focus();
+    }, 10);
   };
 
   return {

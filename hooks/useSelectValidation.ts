@@ -22,6 +22,8 @@ function useSelectValidation<M extends boolean>({
   const [error, setError] = useState<string | undefined>(undefined);
 
   const onChange = (e: string) => {
+    if (error) setError(undefined);
+
     if (multiple) {
       setValue((prevValue) => {
         const prevArray = prevValue as unknown as string[];
@@ -40,7 +42,6 @@ function useSelectValidation<M extends boolean>({
   };
 
   const onBlur = () => {
-    if (error) setError(undefined);
     setTouched(true);
   };
 
@@ -61,7 +62,7 @@ function useSelectValidation<M extends boolean>({
       : undefined);
 
   const reset = (hard = false) => {
-    setTouched(hard);
+    setTouched(!hard);
     setValue((multiple ? [] : "") as ValueType<M>);
     setError(undefined);
   };
