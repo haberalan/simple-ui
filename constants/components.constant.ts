@@ -878,6 +878,31 @@ const COMPONENTS = [
     ],
   },
   {
+    name: "InputOTP",
+    description: "It can be used to collect OTP code from the user.",
+    path: "/components/input-otp",
+    code: `<InputOTP disabled={disabled} handleFilled={handleChange} />`,
+    props: [
+      {
+        name: "InputOTP",
+        props: [
+          {
+            name: "handleFilled",
+            default: "undefined",
+            type: "(code: string) => Promise<boolean>",
+            description: "Handle filled event.",
+          },
+          {
+            name: "disabled",
+            default: "undefined",
+            type: "boolean",
+            description: "Input disabled.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Link",
     description:
       "Links are used to navigate between pages or to open a new page in the same window or a new tab. They can be used to navigate to a new page, to open a dialog, to save a record, or to perform any other action.",

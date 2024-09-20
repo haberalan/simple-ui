@@ -29,6 +29,7 @@ import Select from "./Select";
 import Command from "./Command";
 import IconButton from "./IconButton";
 import ScaleProvider, { useScaleContext } from "./ScaleProvider";
+import InputOTP from "./InputOTP";
 
 export {
   ThemeProvider,
@@ -68,4 +69,5 @@ export {
   IconButton,
   ScaleProvider,
   useScaleContext,
+  InputOTP,
 };

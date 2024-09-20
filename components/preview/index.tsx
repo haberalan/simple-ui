@@ -30,6 +30,7 @@ import TooltipPreview from "./tooltip";
 import TimePickerPreview from "./timePicker";
 import ToastPreview from "./toast";
 import ScalePreview from "./scale";
+import InputOTPPreview from "./inputOtp";
 
 export const PREVIEWS = {
   accordion: <AccordionPreview />,
@@ -46,6 +47,7 @@ export const PREVIEWS = {
   icon: <IconPreview />,
   "icon-button": <IconButtonPreview />,
   input: <InputPreview />,
+  "input-otp": <InputOTPPreview />,
   link: <LinkPreview />,
   loader: <LoaderPreview />,
   radio: <RadioPreview />,
