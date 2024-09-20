@@ -52,25 +52,26 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           )}
         </div>
         {!props.hideHelper && (
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              initial={{ opacity: 0, y: "-4px" }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: "-4px" }}
-              transition={{ duration: 0.125 }}
-              key={status}
-              className="h-4"
-            >
-              <p
-                className={HelperStyles({
-                  status,
-                  align: props.alignText ?? "left",
-                })}
+          <div className="h-4">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                initial={{ opacity: 0, y: "-4px" }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: "-4px" }}
+                transition={{ duration: 0.125 }}
+                key={status}
               >
-                {text}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+                <p
+                  className={HelperStyles({
+                    status,
+                    align: props.alignText ?? "left",
+                  })}
+                >
+                  {text}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         )}
       </div>
     );
