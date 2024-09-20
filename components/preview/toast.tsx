@@ -1,10 +1,9 @@
 "use client";
 
-import { useContext } from "react";
-import { ToastContext, Button } from "../ui";
+import { useToastContext, Button } from "../ui";
 
 const ToastPreview = () => {
-  const ctxToast = useContext(ToastContext);
+  const ctxToast = useToastContext();
 
   const handleClick = () => {
     ctxToast.push({
