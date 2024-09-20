@@ -59,6 +59,10 @@ type TextareaProps = {
    * Additional classNames
    */
   className?: string;
+  /**
+   * Hides the helper text wrapper
+   */
+  hideHelper?: boolean;
 };
 
 export { type TextareaProps };

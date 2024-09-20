@@ -1,3 +1,5 @@
+"use client";
+
 // region Imports
 import React, { forwardRef, useId } from "react";
 import { InputProps } from "./component.types";
@@ -8,6 +10,7 @@ import {
   HelperStyles,
 } from "./component.styles";
 import { Icon } from "..";
+import { AnimatePresence, motion } from "framer-motion";
 // endregion
 
 // region Component
@@ -62,9 +65,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         )}
       </div>
       {!props.hideHelper && (
-        <div className="h-4">
-          <p className={HelperStyles({ status })}>{text}</p>
-        </div>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            initial={{ opacity: 0, y: "-4px" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-4px" }}
+            transition={{ duration: 0.125 }}
+            key={status}
+            className="h-4"
+          >
+            <p className={HelperStyles({ status })}>{text}</p>
+          </motion.div>
+        </AnimatePresence>
       )}
     </div>
   );

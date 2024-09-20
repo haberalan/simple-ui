@@ -148,9 +148,20 @@ const Select: React.FC<SelectProps> = (props) => {
           <div className={LabelStyles({ status })}>{props.label}</div>
         )}
       </div>
-      <div className="h-4">
-        <p className={HelperStyles({ status })}>{text}</p>
-      </div>
+      {!props.hideHelper && (
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            initial={{ opacity: 0, y: "-4px" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-4px" }}
+            transition={{ duration: 0.125 }}
+            key={status}
+            className="h-4"
+          >
+            <p className={HelperStyles({ status })}>{text}</p>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </div>
   );
 };

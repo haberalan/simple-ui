@@ -84,6 +84,10 @@ type SelectProps = {
    * Additional classNames
    */
   className?: string;
+  /**
+   * Hides the helper text wrapper
+   */
+  hideHelper?: boolean;
 } & (MultipleSelectProps | SingleSelectProps);
 
 export { type SelectProps, type OptionType };
