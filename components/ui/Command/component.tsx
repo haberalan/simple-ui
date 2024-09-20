@@ -70,12 +70,12 @@ const Command: React.FC<CommandProps> = (props) => {
                     {item.items.map((item) => (
                       <li
                         onClick={props.handleClose}
-                        className="rounded-1 p-1 text-sm transition-all duration-100 ease-in-out hover:bg-gray-200 hover:dark:bg-gray-900"
+                        className="rounded-1 text-sm transition-all duration-100 ease-in-out hover:bg-gray-200 hover:dark:bg-gray-900"
                         key={item.label}
                       >
                         <Link
                           href={item.href}
-                          className="flex items-center gap-2 rounded-1"
+                          className="flex items-center gap-2 rounded-1 p-1"
                         >
                           <Icon name={item.icon} className="size-4" />
                           <span>{item.label}</span>
