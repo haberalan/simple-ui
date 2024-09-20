@@ -1,7 +1,7 @@
 "use client";
 
 // region Imports
-import React, { createContext, useCallback, useState } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { ScaleContextProps, ScaleProviderProps } from "./component.types";
 // endregion
@@ -16,6 +16,21 @@ const ScaleContext = createContext<ScaleContextProps>({
   setScale: () => {},
   setDuration: () => {},
 });
+
+/**
+ * @name useScaleContext
+ * @description A hook to use the Scale context
+ * @returns {React.Context<ScaleContextProps>} The context of the Scale
+ */
+const useScaleContext = () => {
+  const context = useContext(ScaleContext);
+
+  if (context === undefined) {
+    throw new Error("useScaleContext must be used within a ScaleProvider");
+  }
+
+  return context;
+};
 // endregion
 
 // region Component
@@ -52,5 +67,5 @@ const ScaleProvider: React.FC<ScaleProviderProps> = (props) => {
 };
 // endregion
 
-export { ScaleContext };
+export { useScaleContext };
 export default ScaleProvider;

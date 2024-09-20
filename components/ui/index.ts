@@ -1,4 +1,4 @@
-import ThemeProvider, { ThemeContext } from "./ThemeProvider";
+import ThemeProvider, { useThemeContext } from "./ThemeProvider";
 import Button from "./Button";
 import Calendar from "./Calendar";
 import Icon from "./Icon";
@@ -6,8 +6,8 @@ import { Accordion, AccordionItem } from "./Accordion";
 import Link from "./Link";
 import ActiveLink from "./ActiveLink";
 import Loader from "./Loader";
-import AlertProvider, { AlertContext } from "./AlertProvider";
-import ToastProvider, { ToastContext } from "./ToastProvider";
+import AlertProvider, { useAlertContext } from "./AlertProvider";
+import ToastProvider, { useToastContext } from "./ToastProvider";
 import Card from "./Card";
 import Separator from "./Separator";
 import { Tabs, TabItem } from "./Tabs";
@@ -28,11 +28,11 @@ import Avatar from "./Avatar";
 import Select from "./Select";
 import Command from "./Command";
 import IconButton from "./IconButton";
-import ScaleProvider, { ScaleContext } from "./ScaleProvider";
+import ScaleProvider, { useScaleContext } from "./ScaleProvider";
 
 export {
   ThemeProvider,
-  ThemeContext,
+  useThemeContext,
   Button,
   Calendar,
   Icon,
@@ -42,8 +42,8 @@ export {
   ActiveLink,
   Loader,
   AlertProvider,
-  AlertContext,
-  ToastContext,
+  useAlertContext,
+  useToastContext,
   ToastProvider,
   Card,
   Separator,
@@ -67,5 +67,5 @@ export {
   Command,
   IconButton,
   ScaleProvider,
-  ScaleContext,
+  useScaleContext,
 };

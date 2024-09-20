@@ -1,4 +1,4 @@
-import ScaleProvider, { ScaleContext } from "./component";
+import ScaleProvider, { useScaleContext } from "./component";
 
 export default ScaleProvider;
-export { ScaleContext };
+export { useScaleContext };
