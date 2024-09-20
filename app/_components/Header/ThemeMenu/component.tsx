@@ -1,9 +1,9 @@
 "use client";
 
-import { Card, Icon, ThemeContext } from "@/components/ui";
+import { Card, Icon, useThemeContext } from "@/components/ui";
 import { usePosition } from "@/hooks";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { ThemeStyles } from "./component.styles";
 
@@ -15,7 +15,7 @@ const ThemeMenu = () => {
     direction: "bottom",
   });
 
-  const ctxTheme = useContext(ThemeContext);
+  const ctxTheme = useThemeContext();
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {

@@ -1,7 +1,7 @@
 "use client";
 
 // region Imports
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { ThemeContextProps, ThemeProviderProps } from "./component.types";
 // endregion
 
@@ -10,6 +10,21 @@ const ThemeContext = createContext<ThemeContextProps>({
   theme: "dark",
   changeTheme: () => {},
 });
+
+/**
+ * @name useThemeContext
+ * @description A hook to use the Theme context
+ * @returns {React.Context<ThemeContextProps>} The context of the Theme
+ */
+const useThemeContext = () => {
+  const context = useContext(ThemeContext);
+
+  if (context === undefined) {
+    throw new Error("useThemeContext must be used within a ThemeProvider");
+  }
+
+  return context;
+};
 // endregion
 
 // region Helper
@@ -102,5 +117,5 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
 };
 // endregion
 
-export { ThemeContext };
+export { useThemeContext };
 export default ThemeProvider;
