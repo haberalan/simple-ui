@@ -74,7 +74,7 @@ const AlertProvider: React.FC<AlertProviderProps> = (props) => {
         push,
       }}
     >
-      <div className="fixed bottom-0 right-0 z-10 w-full max-w-[520px] md:bottom-8 md:right-8">
+      <div className="pointer-events-none fixed bottom-0 right-0 z-10 w-full max-w-[520px] md:bottom-8 md:right-8">
         <ul
           className="flex h-full max-w-[100vw] flex-col justify-end gap-4 px-2 py-4 md:p-0"
           aria-live="polite"
@@ -84,6 +84,7 @@ const AlertProvider: React.FC<AlertProviderProps> = (props) => {
               <motion.li
                 key={alert.id}
                 layout
+                className="pointer-events-auto"
                 initial={{ opacity: 0, y: 50, scale: 0.5 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
