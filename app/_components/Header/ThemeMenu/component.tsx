@@ -93,7 +93,6 @@ const ThemeMenu = () => {
         document.body,
       )}
     </>
-    // <Toggle variant="secondary" icon="Sunset" toggled={ctxTheme.theme === 'dark'} onClick={ctxTheme.toggleTheme} />
   );
 };
 
