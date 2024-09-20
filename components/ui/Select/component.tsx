@@ -42,7 +42,7 @@ const Select: React.FC<SelectProps> = (props) => {
     }
   };
 
-  const status = props.disabled ? "disabled" : props.status ?? "default";
+  const status = props.disabled ? "disabled" : (props.status ?? "default");
   const text = {
     error: props.errorText,
     default: props.helperText,
@@ -77,7 +77,7 @@ const Select: React.FC<SelectProps> = (props) => {
     <div className="flex flex-col gap-1">
       <div className="relative flex flex-col-reverse gap-1" ref={refOptions}>
         <div
-          className={SelectStyles({ status })}
+          className={SelectStyles({ status }, props.className)}
           tabIndex={props.disabled ? -1 : 0}
           onClick={handleOpen}
           onKeyDown={handleKeyDownSelect}

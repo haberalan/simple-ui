@@ -1,6 +1,7 @@
 // region Imports
 import React from "react";
 import { RadioProps } from "./component.types";
+import { RadioStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -11,7 +12,7 @@ import { RadioProps } from "./component.types";
  */
 const Radio: React.FC<RadioProps> = (props) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className={RadioStyles(props.className)}>
       <input
         type="radio"
         id={props.id}

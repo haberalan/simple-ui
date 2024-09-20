@@ -13,6 +13,10 @@ type TimePickerProps = {
    * Whether the time picker is disabled
    */
   disabled?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type TimePickerProps };

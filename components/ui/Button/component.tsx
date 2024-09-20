@@ -21,11 +21,14 @@ const Button: React.FC<ButtonProps> = (props) => {
       disabled={props.disabled || props.loading}
       type={props.type ?? "button"}
       tabIndex={props.href ? -1 : 0}
-      className={ButtonStyles({
-        variant: props.variant,
-        size: props.size,
-        rounded: !!props.rounded,
-      })}
+      className={ButtonStyles(
+        {
+          variant: props.variant,
+          size: props.size,
+          rounded: !!props.rounded,
+        },
+        props.className,
+      )}
     >
       <AnimatePresence initial={false}>
         {props.loading && (
@@ -64,7 +67,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   if (props.href)
     return (
       <Link
-        className={LinkStyles({ disabled: !!props.disabled })}
+        className={LinkStyles({ disabled: !!props.disabled }, props.className)}
         href={props.href}
         tabIndex={props.disabled ? -1 : 0}
       >

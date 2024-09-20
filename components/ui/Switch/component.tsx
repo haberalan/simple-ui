@@ -31,10 +31,13 @@ const Switch: React.FC<SwitchProps> = (props) => {
               right: props.checked ? "0" : "auto",
             }}
             transition={{ duration: 0.1, ease: "easeInOut" }}
-            className={SwitchStyles({
-              disabled: !!props.disabled,
-              checked: !!props.checked,
-            })}
+            className={SwitchStyles(
+              {
+                disabled: !!props.disabled,
+                checked: !!props.checked,
+              },
+              props.className,
+            )}
           ></motion.div>
         </AnimatePresence>
       </div>

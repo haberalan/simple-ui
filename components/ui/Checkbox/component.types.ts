@@ -15,6 +15,10 @@ type CheckboxProps = {
    * Checkbox disabled state
    */
   disabled?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type CheckboxProps };

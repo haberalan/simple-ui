@@ -20,6 +20,10 @@ type AccordionProps = {
    * Sets possibility to open multiple accordions
    */
   multiple?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type AccordionProps, type AccordionContextProps };

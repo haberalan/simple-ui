@@ -23,6 +23,10 @@ type SliderProps = {
    * Sets slider as disabled.
    */
   disabled?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type SliderProps };

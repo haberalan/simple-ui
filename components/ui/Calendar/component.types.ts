@@ -23,6 +23,10 @@ type CalendarProps = {
    * Disabled
    */
   disabled?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type CalendarProps };

@@ -27,12 +27,15 @@ const Badge: React.FC<BadgeProps> = (props) => {
       onClick={props.onClick}
       tabIndex={props.onClick ? 0 : -1}
       onKeyDown={handleKeyDOwn}
-      className={BadgeStyles({
-        variant: props.variant,
-        size: props.size,
-        shape: props.shape,
-        clickable: !!(props.onClick || props.href),
-      })}
+      className={BadgeStyles(
+        {
+          variant: props.variant,
+          size: props.size,
+          shape: props.shape,
+          clickable: !!(props.onClick || props.href),
+        },
+        props.className,
+      )}
     >
       {props.icon && (
         <Icon

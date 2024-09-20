@@ -11,6 +11,10 @@ type DialogProps = {
    * Dialog contents
    */
   children: React.ReactElement;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type DialogProps };

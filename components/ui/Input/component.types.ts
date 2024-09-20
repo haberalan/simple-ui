@@ -61,6 +61,10 @@ type InputProps = {
    * Hides the helper text wrapper
    */
   hideHelper?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type InputProps };

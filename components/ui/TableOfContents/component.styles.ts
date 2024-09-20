@@ -1,5 +1,7 @@
 import styles from "@/lib/styles";
 
+const TableOfConentsStyles = styles("flex w-full max-w-[200px] flex-col gap-8");
+
 const ItemStyles = styles(
   "text-sm line-clamp-1 transition-all duration-150 ease-in-out cursor-pointer",
   {
@@ -18,4 +20,4 @@ const ItemStyles = styles(
   },
 );
 
-export { ItemStyles };
+export { TableOfConentsStyles, ItemStyles };

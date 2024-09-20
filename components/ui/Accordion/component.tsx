@@ -3,6 +3,7 @@
 // region Imports
 import React, { createContext, useState } from "react";
 import { AccordionContextProps, AccordionProps } from "./component.types";
+import { AccordionStyles } from "./component.styles";
 // endregion
 
 // region Context
@@ -43,7 +44,7 @@ const Accordion: React.FC<AccordionProps> = (props) => {
         toggle,
       }}
     >
-      <div className="flex w-full flex-col">{props.children}</div>
+      <div className={AccordionStyles(props.className)}>{props.children}</div>
     </AccordionContext.Provider>
   );
 };

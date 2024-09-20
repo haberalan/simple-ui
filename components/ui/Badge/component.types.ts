@@ -37,6 +37,10 @@ type BadgeProps = {
    * Ads onClick event to the badge
    */
   onClick?: (event?: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type BadgeProps };

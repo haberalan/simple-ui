@@ -23,6 +23,10 @@ type RadioProps = {
    * Radio disabled
    */
   disabled?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type RadioProps };

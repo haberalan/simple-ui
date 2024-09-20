@@ -33,6 +33,10 @@ type IconButtonProps = {
    * IconButton href
    */
   href?: string;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type IconButtonProps };

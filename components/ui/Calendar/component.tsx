@@ -4,7 +4,7 @@
 import { useState } from "react";
 import IconButton from "../IconButton";
 import { CalendarProps } from "./component.types";
-import { CalendarDayStyles } from "./component.styles";
+import { CalendarDayStyles, CalendarStyles } from "./component.styles";
 // endregion
 
 // region Constants
@@ -133,7 +133,7 @@ const Calendar: React.FC<CalendarProps> = (props) => {
   };
 
   return (
-    <div className="flex w-fit flex-col items-center rounded-2 border border-gray-300 bg-gray-100 p-3 shadow-sm dark:border-gray-900 dark:bg-black">
+    <div className={CalendarStyles(props.className)}>
       <div className="flex w-full items-center justify-between">
         <IconButton
           onClick={decrementMonth}

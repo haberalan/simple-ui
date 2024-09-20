@@ -11,7 +11,9 @@ import { LoaderStyles } from "./component.styles";
  * @returns {React.ReactElement} The React element
  */
 const Loader: React.FC<LoaderProps> = (props) => {
-  return <div className={LoaderStyles({ size: props.size })}></div>;
+  return (
+    <div className={LoaderStyles({ size: props.size }, props.className)}></div>
+  );
 };
 // endregion
 

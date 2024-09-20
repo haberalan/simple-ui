@@ -4,6 +4,7 @@
 import React from "react";
 import Icon from "../Icon";
 import { TimePickerProps } from "./component.types";
+import { TimePickerStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -44,7 +45,7 @@ const TimePicker: React.FC<TimePickerProps> = (props) => {
   };
 
   return (
-    <div className="flex items-center justify-between gap-3 rounded-2 border border-gray-300 bg-gray-100 p-2 shadow-sm dark:border-gray-900 dark:bg-black">
+    <div className={TimePickerStyles(props.className)}>
       <Icon name="Clock" className="size-6 text-gray-400 dark:text-gray-700" />
       <div className="flex items-center gap-1">
         <input

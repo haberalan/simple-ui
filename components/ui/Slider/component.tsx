@@ -1,7 +1,7 @@
 // region Imports
-import React from 'react';
-import { SliderProps } from './component.types';
-import { SliderStyles } from './component.styles';
+import React from "react";
+import { SliderProps } from "./component.types";
+import { SliderStyles, SliderWrapperStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -15,21 +15,21 @@ const Slider: React.FC<SliderProps> = (props) => {
     if (props.value > (props.max ?? 100) / 2) {
       return `calc(${((props.value - (props.min ?? 0)) / ((props.max ?? 100) - (props.min ?? 0))) * 100}%)`;
     } else {
-      if (props.value === 0) return '0%';
+      if (props.value === 0) return "0%";
       return `calc(${((props.value - (props.min ?? 0)) / ((props.max ?? 100) - (props.min ?? 0))) * 100}% + 3px)`;
     }
   };
 
   const calcRounded = () => {
     if (props.value > (props.max ?? 100) / 1.4) {
-      return 'rounded-full';
+      return "rounded-full";
     } else {
-      return 'rounded-l-full';
+      return "rounded-l-full";
     }
   };
 
   return (
-    <div className="relative flex w-full">
+    <div className={SliderWrapperStyles(props.className)}>
       <input
         type="range"
         value={props.value}
@@ -40,7 +40,10 @@ const Slider: React.FC<SliderProps> = (props) => {
         step={props.step}
         className="slider group h-2 w-full appearance-none rounded-full bg-gray-300 dark:bg-gray-800"
       />
-      <div className={SliderStyles({ disabled: !!props.disabled }, calcRounded())} style={{ width: calcWidth() }}></div>
+      <div
+        className={SliderStyles({ disabled: !!props.disabled }, calcRounded())}
+        style={{ width: calcWidth() }}
+      ></div>
     </div>
   );
 };

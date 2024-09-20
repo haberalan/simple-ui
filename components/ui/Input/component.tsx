@@ -19,7 +19,7 @@ import { Icon } from "..";
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const id = useId();
 
-  const status = props.disabled ? "disabled" : props.status ?? "default";
+  const status = props.disabled ? "disabled" : (props.status ?? "default");
   const text = {
     error: props.errorText,
     default: props.helperText,
@@ -27,7 +27,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     valid: "",
   }[props.status ?? "default"];
 
-  const icon = props.icon ? props.iconPositon ?? "right" : "none";
+  const icon = props.icon ? (props.iconPositon ?? "right") : "none";
 
   return (
     <div className="flex flex-col gap-1">
@@ -42,7 +42,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           disabled={props.disabled}
           placeholder={props.placeholder}
           autoFocus={props.autoFocus}
-          className={InputStyles({ status, icon })}
+          className={InputStyles({ status, icon }, props.className)}
         />
         {props.icon && (
           <Icon

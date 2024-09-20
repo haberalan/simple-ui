@@ -14,7 +14,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (props, ref) => {
     const id = useId();
 
-    const status = props.disabled ? "disabled" : props.status ?? "default";
+    const status = props.disabled ? "disabled" : (props.status ?? "default");
 
     const text = {
       error: props.errorText,
@@ -37,7 +37,10 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             autoFocus={props.autoFocus}
             rows={props.rows ?? 3}
             maxLength={props.maxLength}
-            className={TextareaStyles({ status, noResize: !!props.noResize })}
+            className={TextareaStyles(
+              { status, noResize: !!props.noResize },
+              props.className,
+            )}
           />
           {props.label && (
             <label htmlFor={id} className={LabelStyles({ status })}>

@@ -45,6 +45,10 @@ type ButtonProps = {
    * Sets button as rounded
    */
   rounded?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type ButtonProps };

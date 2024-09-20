@@ -4,7 +4,7 @@
 import React from "react";
 import { TableOfContentsProps } from "./component.types";
 import { useHeadingsData, useIntersectionObserver } from "./hooks";
-import { ItemStyles } from "./component.styles";
+import { ItemStyles, TableOfConentsStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -25,7 +25,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = (props) => {
   };
 
   return (
-    <nav className="flex w-full max-w-[200px] flex-col gap-8">
+    <nav className={TableOfConentsStyles(props.className)}>
       <p className="text-md font-500">{props.heading ?? "On This Page"}</p>
       <ul className="flex list-none flex-col gap-2">
         {headings.map((heading, index) => (

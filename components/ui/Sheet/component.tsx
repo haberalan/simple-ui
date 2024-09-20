@@ -68,7 +68,10 @@ const Sheet: React.FC<SheetProps> = (props) => {
             exit="exit"
             variants={ANIMATIONS[props.direction ?? "right"]}
             transition={{ ease: "easeInOut", duration: 0.3 }}
-            className={SheetStyles({ direction: props.direction ?? "right" })}
+            className={SheetStyles(
+              { direction: props.direction ?? "right" },
+              props.className,
+            )}
           >
             {props.children}
           </motion.div>

@@ -25,6 +25,10 @@ type ToggleProps = {
    * Disabled state.
    */
   disabled?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type ToggleProps };

@@ -15,6 +15,10 @@ type SwitchProps = {
    * Switch disabled
    */
   disabled?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type SwitchProps };

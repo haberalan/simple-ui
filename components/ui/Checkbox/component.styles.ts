@@ -1,5 +1,7 @@
 import styles from "@/lib/styles";
 
+const CheckboxStyles = styles("flex items-center gap-2");
+
 const IconStyles = styles("h-3 w-3", {
   disabled: {
     true: "text-gray-500",
@@ -18,4 +20,4 @@ const LabelStyles = styles("text-sm", {
   },
 });
 
-export { IconStyles, LabelStyles };
+export { CheckboxStyles, IconStyles, LabelStyles };

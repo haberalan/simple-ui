@@ -17,7 +17,10 @@ import { Icon, Link, Loader } from "..";
 const IconButton: React.FC<IconButtonProps> = (props) => {
   const content = (
     <button
-      className={IconButtonStyles({ variant: props.variant, size: props.size })}
+      className={IconButtonStyles(
+        { variant: props.variant, size: props.size },
+        props.className,
+      )}
       onClick={props.onClick}
       disabled={props.disabled || props.loading}
       type={props.type ?? "button"}
@@ -53,7 +56,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
   if (props.href)
     return (
       <Link
-        className={LinkStyles({ disabled: !!props.disabled })}
+        className={LinkStyles({ disabled: !!props.disabled }, props.className)}
         href={props.href}
         tabIndex={props.disabled ? -1 : 0}
       >

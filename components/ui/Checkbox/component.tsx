@@ -5,7 +5,7 @@ import React from "react";
 import { CheckboxProps } from "./component.types";
 import { Icon } from "..";
 import { AnimatePresence, motion } from "framer-motion";
-import { IconStyles, LabelStyles } from "./component.styles";
+import { CheckboxStyles, IconStyles, LabelStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -16,7 +16,7 @@ import { IconStyles, LabelStyles } from "./component.styles";
  */
 const Checkbox: React.FC<CheckboxProps> = (props) => {
   return (
-    <label className="flex items-center gap-2">
+    <label className={CheckboxStyles(props.className)}>
       <div className="relative flex items-center justify-center">
         <input
           type="checkbox"

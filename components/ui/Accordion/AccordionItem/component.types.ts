@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type AccordionItemProps = {
   /**
@@ -9,6 +9,10 @@ type AccordionItemProps = {
    * Content of the accordion item
    */
   children: React.ReactElement | React.ReactNode;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type AccordionItemProps };

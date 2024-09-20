@@ -55,6 +55,10 @@ type TextareaProps = {
    * Textarea max characters
    */
   maxLength?: number;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type TextareaProps };

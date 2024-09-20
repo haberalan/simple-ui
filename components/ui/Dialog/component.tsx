@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import React, { useRef } from "react";
 import { DialogProps } from "./component.types";
 import { AnimatePresence, motion } from "framer-motion";
+import { DialogStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -31,7 +32,7 @@ const Dialog: React.FC<DialogProps> = (props) => {
           exit={{ opacity: 0 }}
           transition={{ ease: "easeInOut", duration: 0.15 }}
           onClick={handleClick}
-          className="fixed left-0 top-0 z-20 flex size-full items-center justify-center bg-white/5 backdrop-blur-sm dark:bg-gray-900/5"
+          className={DialogStyles(props.className)}
           ref={refOverlay}
         >
           <motion.div

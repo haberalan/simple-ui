@@ -6,7 +6,7 @@ import { AccordionItemProps } from "./component.types";
 import { AnimatePresence, motion } from "framer-motion";
 import { AccordionContext } from "../component";
 import { Icon } from "../..";
-import { IconStyles } from "./component.styles";
+import { AccordionItemStyles, IconStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -28,7 +28,7 @@ const AccordionItem: React.FC<AccordionItemProps> = (props) => {
   };
 
   return (
-    <div className="border-b border-solid border-gray-500 py-2">
+    <div className={AccordionItemStyles(props.className)}>
       <button
         className="group flex w-full cursor-pointer select-none items-center justify-between gap-4 rounded-1 py-1"
         onKeyDown={handleKeyDown}

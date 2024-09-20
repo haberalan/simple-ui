@@ -1,5 +1,9 @@
 import styles from "@/lib/styles";
 
+const CalendarStyles = styles(
+  "flex w-fit flex-col items-center rounded-2 border border-gray-300 bg-gray-100 p-3 shadow-sm dark:border-gray-900 dark:bg-black",
+);
+
 const CalendarDayStyles = styles(
   "flex size-[28px] items-center justify-center rounded-1 p-1 transition",
   {
@@ -18,4 +22,4 @@ const CalendarDayStyles = styles(
   },
 );
 
-export { CalendarDayStyles };
+export { CalendarStyles, CalendarDayStyles };

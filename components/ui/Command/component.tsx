@@ -4,6 +4,7 @@
 import React, { useId, useState } from "react";
 import { Card, Dialog, Icon, Link, Separator } from "..";
 import { CommandProps } from "./component.types";
+import { CommandStyles } from "./component.styles";
 // endregion
 
 // region Component
@@ -34,7 +35,7 @@ const Command: React.FC<CommandProps> = (props) => {
 
   return (
     <Dialog open={props.open} handleClose={props.handleClose}>
-      <Card className="w-[520px] max-w-[90vw] !p-0 shadow-md">
+      <Card className={CommandStyles(props.className)}>
         <div className="flex items-center gap-2 p-3">
           <label htmlFor={id}>
             <Icon

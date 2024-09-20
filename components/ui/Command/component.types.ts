@@ -39,6 +39,10 @@ type CommandProps = {
    * Command items
    */
   labels: ItemsProps[];
+  /**
+   * Additional classNames
+   */
+  className?: string;
 };
 
 export { type CommandProps };

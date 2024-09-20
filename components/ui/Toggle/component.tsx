@@ -24,11 +24,14 @@ const Toggle: React.FC<ToggleProps> = (props) => {
       tabIndex={props.disabled ? -1 : 0}
       onClick={props.onClick}
       onKeyDown={handleKeyDown}
-      className={ToggleStyles({
-        variant: props.variant,
-        toggled: !!props.toggled,
-        disabled: !!props.disabled,
-      })}
+      className={ToggleStyles(
+        {
+          variant: props.variant,
+          toggled: !!props.toggled,
+          disabled: !!props.disabled,
+        },
+        props.className,
+      )}
     >
       <Icon name={props.icon} className="size-6" />
       {props.label && <p className="text-sm">{props.label}</p>}

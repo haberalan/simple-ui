@@ -39,7 +39,7 @@ type SelectProps = {
   /**
    * Status of the select
    */
-  status: 'valid' | 'error' | 'default';
+  status: "valid" | "error" | "default";
   /**
    * Select onChange event
    */
@@ -80,6 +80,10 @@ type SelectProps = {
    * Sets auto focus to the select
    */
   autoFocus?: boolean;
+  /**
+   * Additional classNames
+   */
+  className?: string;
 } & (MultipleSelectProps | SingleSelectProps);
 
 export { type SelectProps, type OptionType };
