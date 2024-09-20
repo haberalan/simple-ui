@@ -1,10 +1,9 @@
 "use client";
 
-import { Button, ThemeContext } from "@/components/ui";
-import { useContext } from "react";
+import { Button, useThemeContext } from "@/components/ui";
 
 const ThemePreview = () => {
-  const ctxTheme = useContext(ThemeContext);
+  const ctxTheme = useThemeContext();
 
   const handleClick = () => {
     ctxTheme.changeTheme(ctxTheme.theme === "light" ? "dark" : "light");
