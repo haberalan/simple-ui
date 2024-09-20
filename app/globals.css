@@ -51,6 +51,10 @@
     @apply cursor-default border-gray-500 dark:border-gray-500;
   }
 
+  .disable-transitions * {
+    transition: none !important;
+  }
+
   /* .code {
     @apply text-sm text-gray-700 dark:text-gray-600;
   } */

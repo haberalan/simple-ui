@@ -83,8 +83,16 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
     const body = document.querySelector("body");
 
     if (body) {
+      const root = document.documentElement;
+
+      root.classList.add("disable-transitions");
+
       body.classList.remove("light", "dark");
       body.classList.add(theme);
+
+      requestAnimationFrame(() => {
+        root.classList.remove("disable-transitions");
+      });
     }
   }, [theme]);
 
