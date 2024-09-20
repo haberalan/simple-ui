@@ -1,4 +1,4 @@
-import ToastProvider, { ToastContext } from "./component";
+import ToastProvider, { useToastContext } from "./component";
 
 export default ToastProvider;
-export { ToastContext };
+export { useToastContext };

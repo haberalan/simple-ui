@@ -1,7 +1,7 @@
 "use client";
 
 // region Imports
-import React, { createContext, useRef, useState } from "react";
+import React, { createContext, useContext, useRef, useState } from "react";
 import { ToastContextProps, ToastProviderProps } from "./component.types";
 import { ToastProps } from "./Toast/component.types";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,6 +19,21 @@ const ToastContext = createContext<ToastContextProps>({
   Toasts: [],
   push: () => {},
 });
+
+/**
+ * @name useToastContext
+ * @description A hook to use the Toast context
+ * @returns {React.Context<ToastContextProps>} The context of the Toast
+ */
+const useToastContext = () => {
+  const context = useContext(ToastContext);
+
+  if (context === undefined) {
+    throw new Error("useToastContext must be used within a ToastProvider");
+  }
+
+  return context;
+};
 // endregion
 
 // region Component
@@ -87,5 +102,5 @@ const ToastProvider: React.FC<ToastProviderProps> = (props) => {
 };
 // endregion
 
-export { ToastContext };
+export { useToastContext };
 export default ToastProvider;
