@@ -1,7 +1,7 @@
 "use client";
 
 // region Imports
-import React, { createContext, useRef, useState } from "react";
+import React, { createContext, useContext, useRef, useState } from "react";
 import { AlertContextProps, AlertProviderProps } from "./component.types";
 import { AlertProps } from "./Alert/component.types";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,6 +19,21 @@ const AlertContext = createContext<AlertContextProps>({
   alerts: [],
   push: () => {},
 });
+
+/**
+ * @name useAlertContext
+ * @description A hook to use the Alert context
+ * @returns {React.Context<AlertContextProps>} The context of the Alert
+ */
+const useAlertContext = () => {
+  const context = useContext(AlertContext);
+
+  if (context === undefined) {
+    throw new Error("useAlertContext must be used within a AlertProvider");
+  }
+
+  return context;
+};
 // endregion
 
 // region Component
@@ -102,5 +117,5 @@ const AlertProvider: React.FC<AlertProviderProps> = (props) => {
 };
 // endregion
 
-export { AlertContext };
+export { useAlertContext };
 export default AlertProvider;

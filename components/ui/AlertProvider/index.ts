@@ -1,4 +1,4 @@
-import AlertProvider, { AlertContext } from "./component";
+import AlertProvider, { useAlertContext } from "./component";
 
 export default AlertProvider;
-export { AlertContext };
+export { useAlertContext };

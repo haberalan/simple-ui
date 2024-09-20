@@ -1,10 +1,9 @@
 "use client";
 
-import { useContext } from "react";
-import { AlertContext, Button } from "../ui";
+import { Button, useAlertContext } from "../ui";
 
 const AlertPreview = () => {
-  const ctxAlert = useContext(AlertContext);
+  const ctxAlert = useAlertContext();
 
   const handleClick = () => {
     ctxAlert.push({
