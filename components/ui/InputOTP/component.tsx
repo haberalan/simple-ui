@@ -111,6 +111,10 @@ const InputOTP: React.FC<InputOTPProps> = (props) => {
     }
   }, [shouldFocusFirstInput]);
 
+  useEffect(() => {
+    refs.current[0]?.focus();
+  }, []);
+
   return (
     <div className="flex items-center gap-1">
       <div className="flex">
