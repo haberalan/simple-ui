@@ -8,6 +8,10 @@ type PopoverProps = {
    * Children of the popover.
    */
   children: React.ReactNode;
+  /**
+   * The direction of the popover.
+   */
+  direction?: "top" | "bottom";
 };
 
 export { type PopoverProps };

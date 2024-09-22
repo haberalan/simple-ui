@@ -18,7 +18,7 @@ const Popover: React.FC<PopoverProps> = (props) => {
   const refMenu = useRef<HTMLDivElement>(null);
   const { active, handleOpen, handleLeave, styles } = usePosition({
     ref: refMenu,
-    direction: "bottom",
+    direction: props.direction ?? "bottom",
   });
 
   useEffect(() => {

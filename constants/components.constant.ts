@@ -1032,6 +1032,12 @@ const COMPONENTS = [
             type: "React.ReactNode",
             description: "Children of the component.",
           },
+          {
+            name: "direction",
+            default: "bottom",
+            type: "'top' | 'bottom'",
+            description: "Direction of the popover.",
+          },
         ],
       },
     ],
