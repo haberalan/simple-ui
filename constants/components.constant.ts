@@ -67,6 +67,7 @@ const COMPONENTS = [
   },
   {
     name: "ActiveLink",
+    formattedName: "Active Link",
     description:
       "ActiveLink is a special kind of Link that applies an active class when its href is equal to the current URL. You can use it to style the link differently when it is active.",
     path: "/components/active-link",
@@ -690,6 +691,7 @@ const COMPONENTS = [
   },
   {
     name: "IconButton",
+    formattedName: "Icon Button",
     description:
       "Icon buttons are used to perform an action. They can be used to submit a form, to open a dialog, to navigate to a new page, to save a record, or to perform any other action.",
     path: "/components/icon-button",
@@ -879,6 +881,7 @@ const COMPONENTS = [
   },
   {
     name: "InputOTP",
+    formattedName: "Input OTP",
     description: "It can be used to collect OTP code from the user.",
     path: "/components/input-otp",
     code: `<InputOTP disabled={disabled} handleFilled={handleChange} />`,
@@ -992,6 +995,42 @@ const COMPONENTS = [
             default: "undefined",
             type: "string",
             description: "Additional class names.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Popover",
+    description:
+      "Popovers are used to display additional information or actions related to a specific element. They can be used to display additional information or actions related to a specific element, to display a list of options, or to display a list of actions.",
+    path: "/components/popover",
+    code: `<Popover triggerComponent={<Button variant="secondary" size="md">Trigger</Button>}>
+  <Card>
+    <div className="flex w-full items-center gap-2">
+      <Avatar src={img} alt="AH" size={48} />
+      <div>
+        <p className="text-sm">Username</p>
+        <p className="text-xs text-gray-600">username@email.com</p>
+      </div>
+    </div>
+  </Card>
+</Popover>`,
+    props: [
+      {
+        name: "Popover",
+        props: [
+          {
+            name: "triggerComponent",
+            default: "undefined",
+            type: "React.ReactElement",
+            description: "Element that triggers the popover.",
+          },
+          {
+            name: "children",
+            default: "undefined",
+            type: "React.ReactNode",
+            description: "Children of the component.",
           },
         ],
       },
@@ -1440,6 +1479,7 @@ const COMPONENTS = [
   },
   {
     name: "TableOfContents",
+    formattedName: "Table Of Contents",
     description:
       "Table of contents are used to navigate a page. They can be used to navigate a page, to navigate a page, or to navigate a page. They can also be used to navigate a page, to navigate a page, or to navigate a page.",
     path: "/components/table-of-contents",
@@ -1695,6 +1735,7 @@ const COMPONENTS = [
   },
   {
     name: "TimePicker",
+    formattedName: "Time Picker",
     description: "Time pickers are used to select a time.",
     path: "/components/time-picker",
     code: `<TimePicker value={value} setValue={setValue} />`,

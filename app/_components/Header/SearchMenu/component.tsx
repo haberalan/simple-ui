@@ -20,7 +20,7 @@ const labels = [
     label: "Components",
     items: [
       ...COMPONENTS.map((component) => ({
-        label: component.name,
+        label: component.formattedName || component.name,
         href: component.path,
         icon: "Layout" as keyof typeof ICONS,
       })),

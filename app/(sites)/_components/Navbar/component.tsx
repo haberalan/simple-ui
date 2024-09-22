@@ -32,7 +32,7 @@ const Navbar = () => {
                   activeClassName="dark:text-white text-black ml-1 font-500"
                 >
                   <span className="transition-spacing duration-150 group-hover:pl-1">
-                    {item.name}
+                    {item.formattedName || item.name}
                   </span>
                 </ActiveLink>
               </li>
