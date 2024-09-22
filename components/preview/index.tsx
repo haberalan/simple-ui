@@ -31,6 +31,7 @@ import TimePickerPreview from "./timePicker";
 import ToastPreview from "./toast";
 import ScalePreview from "./scale";
 import InputOTPPreview from "./inputOtp";
+import PopoverPreview from "./popover";
 
 export const PREVIEWS = {
   accordion: <AccordionPreview />,
@@ -66,4 +67,5 @@ export const PREVIEWS = {
   toast: <ToastPreview />,
   toggle: <TogglePreview />,
   tooltip: <TooltipPreview />,
+  popover: <PopoverPreview />,
 };

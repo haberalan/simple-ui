@@ -30,6 +30,7 @@ import Command from "./Command";
 import IconButton from "./IconButton";
 import ScaleProvider, { useScaleContext } from "./ScaleProvider";
 import InputOTP from "./InputOTP";
+import Popover from "./Popover";
 
 export {
   ThemeProvider,
@@ -70,4 +71,5 @@ export {
   ScaleProvider,
   useScaleContext,
   InputOTP,
+  Popover,
 };
