@@ -2,15 +2,15 @@ type TextareaProps = {
   /**
    * Value of the textarea
    */
-  value: string;
+  value?: string;
   /**
    * Validation status of the text area
    */
-  status: "valid" | "error" | "default";
+  status?: "valid" | "error" | "default";
   /**
    * Textarea onChange event
    */
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /**
    * Textarea onBlur event
    */

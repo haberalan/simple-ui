@@ -4,15 +4,15 @@ type InputProps = {
   /**
    * Input value
    */
-  value: string;
+  value?: string;
   /**
    * Input status
    */
-  status: "valid" | "error" | "default";
+  status?: "valid" | "error" | "default";
   /**
    * Input onChange event
    */
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   /**
    * Input onBlur event
    */

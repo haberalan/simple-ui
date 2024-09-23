@@ -4,11 +4,11 @@ type ButtonProps = {
   /**
    * Button variants
    */
-  variant: "primary" | "secondary" | "tertiary" | "quaternary";
+  variant?: "primary" | "secondary" | "tertiary" | "quaternary";
   /**
    * Button sizes
    */
-  size: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg";
   /**
    * Button contents
    */

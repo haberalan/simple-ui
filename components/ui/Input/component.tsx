@@ -23,6 +23,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const id = useId();
 
   const status = props.disabled ? "disabled" : (props.status ?? "default");
+
   const text = {
     error: props.errorText,
     default: props.helperText,

@@ -15,6 +15,8 @@ import { AnimatePresence, motion } from "framer-motion";
  * @returns {React.ReactElement} The React element
  */
 const Button: React.FC<ButtonProps> = (props) => {
+  const { variant = "primary", size = "md" } = props;
+
   const content = (
     <button
       onClick={props.onClick}
@@ -23,8 +25,8 @@ const Button: React.FC<ButtonProps> = (props) => {
       tabIndex={props.href ? -1 : 0}
       className={ButtonStyles(
         {
-          variant: props.variant,
-          size: props.size,
+          variant,
+          size,
           rounded: !!props.rounded,
         },
         props.className,
