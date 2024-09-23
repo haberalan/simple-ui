@@ -14,7 +14,9 @@ import { AvatarImageStyles, AvatarWrapperStyles } from "./component.styles";
  * @returns {React.ReactElement} The React element
  */
 const Avatar: React.FC<AvatarProps> = (props) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(!!props.src);
+
+  const { variant = "default" } = props;
 
   return (
     <div className={AvatarWrapperStyles(props.className)}>
@@ -33,7 +35,7 @@ const Avatar: React.FC<AvatarProps> = (props) => {
         onMouseLeave={props.onMouseLeave}
         onContextMenu={props.onContextMenu}
         onError={() => setShow(false)}
-        className={AvatarImageStyles({ show })}
+        className={AvatarImageStyles({ show, variant })}
       />
     </div>
   );

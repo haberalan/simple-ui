@@ -14,6 +14,10 @@ type AvatarProps = {
    */
   size: number;
   /**
+   * Avatar size in px
+   */
+  variant?: "rounded" | "squared" | "default";
+  /**
    * Avatar onClick event
    */
   onClick?: () => void;
@@ -25,6 +29,9 @@ type AvatarProps = {
    * Avatar onMouseEnter event
    */
   onMouseEnter?: () => void;
+  /**
+   * Avatar onMouseLeave event
+   */
   onMouseLeave?: () => void;
   /**
    * Avatar additional classNames

@@ -222,6 +222,12 @@ const COMPONENTS = [
             description: "Avatar size in px.",
           },
           {
+            name: "variant",
+            default: "'default'",
+            type: "'rounded' | 'squared' | 'default'",
+            description: "Avatar variant.",
+          },
+          {
             name: "onClick",
             default: "undefined",
             type: "() => void",
