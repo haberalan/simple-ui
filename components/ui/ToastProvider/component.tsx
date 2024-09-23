@@ -74,7 +74,7 @@ const ToastProvider: React.FC<ToastProviderProps> = (props) => {
         push,
       }}
     >
-      <div className="pointer-events-none fixed bottom-0 right-0 z-10 flex w-full items-center justify-center md:bottom-2">
+      <div className="pointer-events-none fixed bottom-0 right-0 z-50 flex w-full items-center justify-center md:bottom-2">
         <ul
           className="flex flex-col items-center justify-center gap-2 px-2 py-4 md:p-0"
           aria-live="polite"
