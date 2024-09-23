@@ -29,6 +29,10 @@ type TabsProps = {
    */
   variant: TabsNavProps["variant"];
   /**
+   * Nav class name
+   */
+  navClassName?: string;
+  /**
    * Additional class names
    */
   className?: string;

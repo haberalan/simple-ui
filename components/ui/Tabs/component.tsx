@@ -25,7 +25,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
         updateActive,
       }}
     >
-      <TabsNav variant={props.variant} />
+      <TabsNav variant={props.variant} className={props.navClassName} />
       <div className={props.className ?? ""}>{props.children}</div>
     </TabsContext.Provider>
   );
