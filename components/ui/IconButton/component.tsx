@@ -15,12 +15,11 @@ import { Icon, Link, Loader } from "..";
  * @returns {React.ReactElement} The React element
  */
 const IconButton: React.FC<IconButtonProps> = (props) => {
+  const { variant = "primary", size = "md" } = props;
+
   const content = (
     <button
-      className={IconButtonStyles(
-        { variant: props.variant, size: props.size },
-        props.className,
-      )}
+      className={IconButtonStyles({ variant, size }, props.className)}
       onClick={props.onClick}
       disabled={props.disabled || props.loading}
       type={props.type ?? "button"}

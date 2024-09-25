@@ -8,11 +8,11 @@ type IconButtonProps = {
   /**
    * IconButton variant
    */
-  variant: "primary" | "secondary" | "tertiary" | "quaternary";
+  variant?: "primary" | "secondary" | "tertiary" | "quaternary";
   /**
    * IconButton size
    */
-  size: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg";
   /**
    * IconButton onClick event
    */

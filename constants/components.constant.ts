@@ -708,13 +708,13 @@ const COMPONENTS = [
         props: [
           {
             name: "variant",
-            default: "undefined",
+            default: "'primary'",
             type: "'primary' | 'secondary' | 'tertiary' | 'quaternary'",
             description: "Button variants.",
           },
           {
             name: "size",
-            default: "undefined",
+            default: "'md'",
             type: "'sm' | 'md' | 'lg'",
             description: "Button sizes.",
           },
