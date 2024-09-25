@@ -15,7 +15,7 @@ const PopoverPreview = () => {
       >
         <Card>
           <div className="flex w-full items-center gap-2">
-            <Avatar src={img} alt="AH" size={48} />
+            <Avatar src={img} alt="AH" size={48} variant="rounded" />
             <div>
               <p className="text-sm">Username</p>
               <p className="text-xs text-gray-600">username@email.com</p>

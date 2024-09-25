@@ -19,7 +19,7 @@ const Avatar: React.FC<AvatarProps> = (props) => {
   const { variant = "default" } = props;
 
   return (
-    <div className={AvatarWrapperStyles(props.className)}>
+    <div className={AvatarWrapperStyles({ variant }, props.className)}>
       {!show && (
         <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-xs font-700">
           {props.alt}
