@@ -18,20 +18,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   const { variant = "primary", size = "md" } = props;
 
   const content = (
-    <button
-      onClick={props.onClick}
-      disabled={props.disabled || props.loading}
-      type={props.type ?? "button"}
-      tabIndex={props.href ? -1 : 0}
-      className={ButtonStyles(
-        {
-          variant,
-          size,
-          rounded: !!props.rounded,
-        },
-        props.className,
-      )}
-    >
+    <>
       <AnimatePresence initial={false}>
         {props.loading && (
           <motion.div
@@ -63,7 +50,7 @@ const Button: React.FC<ButtonProps> = (props) => {
           {props.children}
         </motion.div>
       </AnimatePresence>
-    </button>
+    </>
   );
 
   if (props.href)
@@ -73,11 +60,39 @@ const Button: React.FC<ButtonProps> = (props) => {
         href={props.href}
         tabIndex={props.disabled ? -1 : 0}
       >
-        {content}
+        <div
+          className={ButtonStyles(
+            {
+              variant,
+              size,
+              rounded: !!props.rounded,
+            },
+            props.className,
+          )}
+        >
+          {content}
+        </div>
       </Link>
     );
 
-  return content;
+  return (
+    <button
+      onClick={props.onClick}
+      disabled={props.disabled || props.loading}
+      type={props.type ?? "button"}
+      tabIndex={props.href ? -1 : 0}
+      className={ButtonStyles(
+        {
+          variant,
+          size,
+          rounded: !!props.rounded,
+        },
+        props.className,
+      )}
+    >
+      {content}
+    </button>
+  );
 };
 // endregion
 
