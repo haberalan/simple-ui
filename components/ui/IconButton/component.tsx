@@ -18,13 +18,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
   const { variant = "primary", size = "md" } = props;
 
   const content = (
-    <button
-      className={IconButtonStyles({ variant, size }, props.className)}
-      onClick={props.onClick}
-      disabled={props.disabled || props.loading}
-      type={props.type ?? "button"}
-      tabIndex={props.href ? -1 : 0}
-    >
+    <>
       <AnimatePresence initial={false}>
         {props.loading && (
           <motion.div
@@ -49,7 +43,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
           <Icon name={props.icon} className="size-5 shrink-0" />
         </motion.div>
       </AnimatePresence>
-    </button>
+    </>
   );
 
   if (props.href)
@@ -59,11 +53,23 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
         href={props.href}
         tabIndex={props.disabled ? -1 : 0}
       >
-        {content}
+        <div className={IconButtonStyles({ variant, size }, props.className)}>
+          {content}
+        </div>
       </Link>
     );
 
-  return content;
+  return (
+    <button
+      className={IconButtonStyles({ variant, size }, props.className)}
+      onClick={props.onClick}
+      disabled={props.disabled || props.loading}
+      type={props.type ?? "button"}
+      tabIndex={props.href ? -1 : 0}
+    >
+      {content}
+    </button>
+  );
 };
 // endregion
 
