@@ -1,7 +1,7 @@
 import { useState, useMemo, useLayoutEffect } from "react";
 
 type usePositionProps = {
-  ref: React.RefObject<HTMLElement>;
+  ref: React.RefObject<HTMLElement | null>;
   direction?: "top" | "bottom";
 };
 

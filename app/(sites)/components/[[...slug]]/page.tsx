@@ -7,15 +7,17 @@ import { Card } from "@/components/ui";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug?: string[] };
+  params: Promise<{ slug?: string[] }>;
 }) {
-  if (params.slug) {
+  const { slug } = await params;
+
+  if (slug) {
     const component = COMPONENTS.find(
       (component) =>
         component.name
           .replace(/([a-z])([A-Z])/g, "$1-$2")
           .replace(/^-/, "")
-          .toLocaleLowerCase() === params.slug?.[0].toLocaleLowerCase(),
+          .toLocaleLowerCase() === slug?.[0].toLocaleLowerCase(),
     );
 
     if (component) {
@@ -32,11 +34,16 @@ export async function generateMetadata({
   };
 }
 
-export default function Page({ params }: { params: { slug?: string[] } }) {
-  if (params.slug) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug?: string[] }>;
+}) {
+  const { slug } = await params;
+
+  if (slug) {
     return (
-      PREVIEWS[params.slug[0] as keyof typeof PREVIEWS] ??
-      redirect("/components")
+      PREVIEWS[slug[0] as keyof typeof PREVIEWS] ?? redirect("/components")
     );
   }
 

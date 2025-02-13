@@ -5,19 +5,21 @@ import {
   ComponentProps,
 } from "./_components";
 
-export default function Layout({
+export default async function Layout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { slug?: string[] };
+  params: Promise<{ slug?: string[] }>;
 }>) {
+  const { slug } = await params;
+
   const component = COMPONENTS.find(
     (component) =>
       component.name
         .replace(/([a-z])([A-Z])/g, "$1-$2")
         .replace(/^-/, "")
-        .toLocaleLowerCase() === params.slug?.[0].toLocaleLowerCase(),
+        .toLocaleLowerCase() === slug?.[0].toLocaleLowerCase(),
   );
 
   return component ? (
