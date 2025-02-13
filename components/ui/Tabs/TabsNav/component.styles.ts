@@ -11,8 +11,7 @@ const TabsNavStyles = styles(
   {
     variant: {
       primary: "h-[1px] bg-black dark:bg-gray-100",
-      secondary:
-        "h-full bg-black dark:bg-gray-100 bg-opacity-5 dark:bg-opacity-5",
+      secondary: "h-full bg-black/10 dark:bg-gray-100/10",
     },
   },
 );
