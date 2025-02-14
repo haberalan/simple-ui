@@ -19,7 +19,7 @@ const InputPreview = () => {
     <div className="w-[280px]">
       <Input
         status="default"
-        icon={type === "text" ? "EyeOff" : "Eye"}
+        icon={type === "text" ? "eye-closed" : "eye"}
         iconPositon="right"
         value={value}
         onChange={handleChange}

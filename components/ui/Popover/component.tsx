@@ -44,9 +44,14 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
   return (
     <>
-      {cloneElement(props.triggerComponent, {
-        onClick,
-      })}
+      {cloneElement(
+        props.triggerComponent as React.ReactElement<{
+          onClick: (e: React.MouseEvent) => void;
+        }>,
+        {
+          onClick,
+        },
+      )}
       {createPortal(
         <AnimatePresence>
           {active && (
