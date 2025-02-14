@@ -64,7 +64,7 @@ const Command: React.FC<CommandProps> = (props) => {
               item.items.length > 0 && (
                 <React.Fragment key={item.label}>
                   <ul className="flex flex-col gap-2 p-2">
-                    <div className="text-xs font-500 text-gray-500 dark:text-gray-600">
+                    <div className="font-500 text-xs text-gray-500 dark:text-gray-600">
                       {item.label}
                     </div>
                     {item.items.map((item) => (
@@ -75,7 +75,7 @@ const Command: React.FC<CommandProps> = (props) => {
                       >
                         <Link
                           href={item.href}
-                          className="flex items-center gap-2 rounded-1 p-1"
+                          className="rounded-1 flex items-center gap-2 p-1"
                         >
                           <Icon name={item.icon} className="size-4" />
                           <span>{item.label}</span>

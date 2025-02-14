@@ -1,7 +1,7 @@
 import styles from "@/lib/styles";
 
 const InputOTPStyles = styles(
-  "peer w-10 relative shadow-sm focus-visible:z-10 text-center h-12 transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 p-0 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:focus-visible:outline-gray-800 font-500 text-lg",
+  "peer w-10 relative shadow-sm focus-visible:z-10 text-center h-12 transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 p-0 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:outline-gray-800 font-500 text-lg outline-offset-1 outline-gray-300",
   {
     status: {
       default:

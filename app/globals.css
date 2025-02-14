@@ -209,14 +209,14 @@
     @apply mt-auto;
   }
 
-  button {
+  button,
+  [role="button"] {
     @apply cursor-pointer;
   }
 
   *:focus-visible {
     @apply outline outline-offset-1 outline-gray-300;
   }
-
   *::selection {
     @apply bg-error-200 dark:bg-error-500/50;
   }

@@ -1,7 +1,7 @@
 import styles from "@/lib/styles";
 
 const TextareaStyles = styles(
-  "peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:focus-visible:outline-gray-800",
+  "peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:outline-gray-800 outline-offset-1 outline-gray-300",
   {
     status: {
       default:

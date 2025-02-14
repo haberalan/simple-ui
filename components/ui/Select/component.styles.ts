@@ -1,7 +1,7 @@
 import styles from "@/lib/styles";
 
 const SelectStyles = styles(
-  "relative select-none peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 pl-3 pr-6 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:focus-visible:outline-gray-800 min-h-[36px]",
+  "relative select-none peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 pl-3 pr-6 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:outline-gray-800 min-h-[36px] outline-offset-1 outline-gray-300",
   {
     status: {
       default:
