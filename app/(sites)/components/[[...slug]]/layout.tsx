@@ -1,9 +1,6 @@
 import { COMPONENTS } from "@/constants";
-import {
-  ComponentHeader,
-  ComponentPreview,
-  ComponentProps,
-} from "./_components";
+import { ComponentPreview, ComponentProps } from "./_components";
+import { PageHeader } from "../../_components";
 
 export default async function Layout({
   children,
@@ -24,10 +21,7 @@ export default async function Layout({
 
   return component ? (
     <>
-      <ComponentHeader
-        name={component.name}
-        description={component.description}
-      />
+      <PageHeader name={component.name} description={component.description} />
       <ComponentPreview preview={children} code={component.code} />
       <ComponentProps elements={component.props} />
     </>

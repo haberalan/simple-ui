@@ -41,11 +41,11 @@ const ThemeMenu = () => {
   return (
     <>
       <button
-        className="flex items-center justify-between gap-2 rounded-1 border border-gray-300 p-[6px] text-left text-sm text-gray-600 transition-all hover:bg-gray-200 hover:text-black dark:border-gray-900 hover:dark:bg-gray-900 hover:dark:text-gray-100"
+        className="rounded-1 flex items-center justify-between gap-2 border border-gray-300 p-[6px] text-left text-sm text-gray-600 transition-all hover:bg-gray-200 hover:text-black dark:border-gray-900 dark:text-gray-100 dark:hover:bg-gray-900"
         onClick={handleOpen}
         ref={refButton}
       >
-        <Icon name="Sunset" className="size-5" />
+        <Icon name="sun" className="size-5" />
       </button>
       {createPortal(
         <AnimatePresence>
@@ -66,7 +66,7 @@ const ThemeMenu = () => {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.15, ease: "easeInOut" }}
               >
-                <Card className="flex flex-col gap-1 !p-1 shadow">
+                <Card className="flex flex-col gap-1 p-1! shadow-sm">
                   <button
                     onClick={ctxTheme.changeTheme.bind(this, "light")}
                     className={ThemeStyles({
@@ -74,7 +74,7 @@ const ThemeMenu = () => {
                     })}
                   >
                     <span>Light</span>
-                    <Icon name="Sun" className="size-4" />
+                    <Icon name="sun" className="size-4" />
                   </button>
                   <button
                     onClick={ctxTheme.changeTheme.bind(this, "dark")}
@@ -83,7 +83,7 @@ const ThemeMenu = () => {
                     })}
                   >
                     <span>Dark</span>
-                    <Icon name="Moon" className="size-4" />
+                    <Icon name="moon-star" className="size-4" />
                   </button>
                 </Card>
               </motion.div>

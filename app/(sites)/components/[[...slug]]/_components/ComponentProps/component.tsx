@@ -24,7 +24,7 @@ const ComponentProps: React.FC<ComponentPropsProps> = (props) => {
 
           <div className="scrollbar overflow-x-auto pb-2">
             <table className="w-full min-w-[800px] border border-gray-300 text-sm dark:border-gray-900">
-              <thead className="[&_th]:border [&_th]:border-gray-300 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-600 [&_th]:dark:border-gray-900">
+              <thead className="[&_th]:border [&_th]:border-gray-300 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-600 dark:[&_th]:border-gray-900">
                 <tr>
                   <th className="w-[140px]">Prop</th>
                   <th className="w-[160px]">Default Value</th>
@@ -32,7 +32,7 @@ const ComponentProps: React.FC<ComponentPropsProps> = (props) => {
                   <th>Description</th>
                 </tr>
               </thead>
-              <tbody className="text-xs [&_td]:border [&_td]:border-gray-300 [&_td]:p-2 [&_td]:dark:border-gray-900">
+              <tbody className="text-xs [&_td]:border [&_td]:border-gray-300 [&_td]:p-2 dark:[&_td]:border-gray-900">
                 {element.props.map((prop) => (
                   <tr
                     key={prop.name}

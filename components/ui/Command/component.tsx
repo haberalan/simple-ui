@@ -39,21 +39,21 @@ const Command: React.FC<CommandProps> = (props) => {
         <div className="flex items-center gap-2 p-3">
           <label htmlFor={id}>
             <Icon
-              name="Search"
-              className="size-5 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 hover:dark:text-gray-500"
+              name="search"
+              className="size-5 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 dark:hover:text-gray-500"
             />
           </label>
           <input
             id={id}
             placeholder="Search or type a command..."
-            className="w-full bg-transparent text-sm placeholder:text-gray-400 focus-visible:outline-none placeholder:dark:text-gray-700"
+            className="w-full bg-transparent text-sm placeholder:text-gray-400 focus-visible:outline-hidden dark:placeholder:text-gray-700"
             type="text"
             value={input}
             onChange={handleChange}
           />
           <Icon
-            name="Close"
-            className="size-4 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 hover:dark:text-gray-500"
+            name="close"
+            className="size-4 cursor-pointer text-gray-400 transition-all duration-150 ease-in-out hover:text-black dark:text-gray-700 dark:hover:text-gray-500"
             onClick={props.handleClose}
           />
         </div>
@@ -70,7 +70,7 @@ const Command: React.FC<CommandProps> = (props) => {
                     {item.items.map((item) => (
                       <li
                         onClick={props.handleClose}
-                        className="rounded-1 text-sm transition-all duration-100 ease-in-out hover:bg-gray-200 hover:dark:bg-gray-900"
+                        className="rounded-1 text-sm transition-all duration-100 ease-in-out hover:bg-gray-200 dark:hover:bg-gray-900"
                         key={item.label}
                       >
                         <Link

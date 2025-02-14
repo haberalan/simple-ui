@@ -1,7 +1,7 @@
 "use client";
 
 import { COMPONENTS } from "@/constants";
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 import { useState } from "react";
 import { Button, Command } from "../ui";
 
@@ -12,7 +12,7 @@ const LABELS = [
       ...COMPONENTS.map((link) => ({
         label: link.name,
         href: link.path,
-        icon: "Layout" as keyof typeof ICONS,
+        icon: "layout" as IconName
       })),
     ],
   },

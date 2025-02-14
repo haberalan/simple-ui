@@ -44,7 +44,7 @@ const AccordionItem: React.FC<AccordionItemProps> = (props) => {
           {props.label}
         </p>
         <Icon
-          name="ChevronDown"
+          name="chevron-down"
           className={IconStyles({ open: ctxAccordion.isOpen(id) })}
         />
       </button>

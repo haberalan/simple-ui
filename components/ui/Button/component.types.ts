@@ -1,4 +1,4 @@
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 
 type ButtonProps = {
   /**
@@ -20,7 +20,7 @@ type ButtonProps = {
   /**
    * Adds icon to the button
    */
-  icon?: keyof typeof ICONS;
+  icon?: IconName;
   /**
    * Sets icon position
    */

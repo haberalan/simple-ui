@@ -49,7 +49,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
   if (props.href)
     return (
       <Link
-        className={LinkStyles({ disabled: !!props.disabled }, props.className)}
+        className={LinkStyles({ disabled: !!props.disabled })}
         href={props.href}
         tabIndex={props.disabled ? -1 : 0}
       >

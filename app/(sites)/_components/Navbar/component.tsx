@@ -4,6 +4,27 @@ import { ActiveLink } from "@/components/ui";
 
 const GROUPS = [
   {
+    name: "Getting started",
+    path: "/general",
+    items: [
+      {
+        name: "Installation",
+        formattedName: undefined,
+        path: "/general/installation",
+      },
+      {
+        name: "Documentation",
+        formattedName: undefined,
+        path: "/general/documentation",
+      },
+      {
+        name: "Icons",
+        formattedName: undefined,
+        path: "/general/icons",
+      },
+    ],
+  },
+  {
     name: "Components",
     path: "/components",
     items: COMPONENTS,
@@ -27,6 +48,7 @@ const Navbar = () => {
             {group.items.map((item) => (
               <li key={item.name}>
                 <ActiveLink
+                  exact
                   href={item.path}
                   className="group transition-spacing duration-150"
                   activeClassName="dark:text-white text-black ml-1 font-500"

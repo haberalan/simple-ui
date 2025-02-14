@@ -126,6 +126,13 @@ const COMPONENTS = [
             type: "boolean",
             description: "Prefetch the linked page in the background.",
           },
+          {
+            name: "exact",
+            default: "false",
+            type: "boolean",
+            description:
+              "If true, the link will be active only on exact match.",
+          },
         ],
       },
     ],
@@ -135,7 +142,7 @@ const COMPONENTS = [
     description:
       "Alerts are used to communicate a state that affects the entire system. They can be used to inform the user about a successful operation, an error, a warning, or a general information.",
     path: "/components/alert",
-    code: `<Alert label="Alert" icon="Sunset" timer>
+    code: `<Alert label="Alert" icon="sun" timer>
   "This is an alert
 </Alert>`,
     props: [
@@ -174,7 +181,7 @@ const COMPONENTS = [
           {
             name: "icon",
             default: "undefined",
-            type: "keyof typeof ICONS",
+            type: "IconName",
             description: "Icon of the alert.",
           },
           {
@@ -306,7 +313,7 @@ const COMPONENTS = [
           {
             name: "icon",
             default: "undefined",
-            type: "keyof typeof ICONS",
+            type: "IconName",
             description: "Sets badge with icon.",
           },
           {
@@ -376,7 +383,7 @@ const COMPONENTS = [
           {
             name: "icon",
             default: "undefined",
-            type: "keyof typeof ICONS",
+            type: "IconName",
             description: "Adds icon to the button.",
           },
           {
@@ -668,7 +675,7 @@ const COMPONENTS = [
     description:
       "Icons are used to represent different types of content, such as images, text, links, and buttons. They can be used to display a variety of content types, such as images, text, links, and buttons.",
     path: "/components/icon",
-    code: `<Icon name="Sunset" className="size-16" />`,
+    code: `<Icon name="sun" className="size-16" />`,
     props: [
       {
         name: "Icon",
@@ -676,7 +683,7 @@ const COMPONENTS = [
           {
             name: "name",
             default: "undefined",
-            type: "keyof typeof ICONS",
+            type: "IconName",
             description: "Name of the icon to render.",
           },
           {
@@ -701,7 +708,7 @@ const COMPONENTS = [
     description:
       "Icon buttons are used to perform an action. They can be used to submit a form, to open a dialog, to navigate to a new page, to save a record, or to perform any other action.",
     path: "/components/icon-button",
-    code: `<IconButton variant="primary" size="md" icon="Sunset" />`,
+    code: `<IconButton variant="primary" size="md" icon="sun" />`,
     props: [
       {
         name: "IconButton",
@@ -727,7 +734,7 @@ const COMPONENTS = [
           {
             name: "icon",
             default: "undefined",
-            type: "keyof typeof ICONS",
+            type: "IconName",
             description: "Adds icon to the button.",
           },
           {
@@ -771,7 +778,7 @@ const COMPONENTS = [
     path: "/components/input",
     code: `<Input
   status="default"
-  icon={type === "text" ? "EyeOff" : "Eye"}
+  icon={type === "text" ? "eye-closed" : "eye"}
   iconPositon="right"
   value={value}
   onChange={handleChange}
@@ -812,7 +819,7 @@ const COMPONENTS = [
           {
             name: "icon",
             default: "undefined",
-            type: "keyof typeof ICONS",
+            type: "IconName",
             description: "Adds icon to the input",
           },
           {
@@ -1221,12 +1228,6 @@ const COMPONENTS = [
             description: "Select disabled.",
           },
           {
-            name: "multiple",
-            default: "undefined",
-            type: "boolean",
-            description: "If true sets select as multiple.",
-          },
-          {
             name: "helperText",
             default: "undefined",
             type: "string",
@@ -1294,7 +1295,7 @@ const COMPONENTS = [
     code: `<Sheet open={open} handleClose={handleClose}>
   <div className="flex flex-col px-4 py-3">
     <Icon
-      name="Close"
+      name="close"
       className="size-5 cursor-pointer self-end"
       onClick={handleClose}
     />
@@ -1313,7 +1314,7 @@ const COMPONENTS = [
         label="Password"
         onChange={(_) => _}
         status="valid"
-        icon="Eye"
+        icon="eye"
       />
       <Button variant="secondary" size="md">
         Submit
@@ -1371,7 +1372,7 @@ const COMPONENTS = [
     code: `<div className="flex w-3/4 flex-wrap gap-1">
   <Skeleton className="h-8 w-full rounded-1" />
   <Skeleton className="h-8 w-full flex-1 rounded-1" />
-  <Skeleton className="h-8 w-full flex-[2] rounded-1" />
+  <Skeleton className="h-8 w-full flex-2 rounded-1" />
 </div>`,
     props: [
       {
@@ -1626,7 +1627,7 @@ const COMPONENTS = [
           {
             name: "icon",
             default: "undefined",
-            type: "keyof typeof ICONS",
+            type: "IconName",
             description: "Adds icon to the input",
           },
           {
@@ -1830,7 +1831,7 @@ const COMPONENTS = [
   toggled={toggled}
   onClick={handleClick}
   variant="primary"
-  icon="Sunset"
+  icon="sun"
   label="Toggle me!"
 />`,
     props: [

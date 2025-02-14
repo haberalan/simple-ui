@@ -22,7 +22,7 @@ const Switch: React.FC<SwitchProps> = (props) => {
           disabled={props.disabled}
           checked={props.checked}
           onChange={props.onClick}
-          className="box-content h-4 w-8 cursor-pointer appearance-none rounded-full border-2 border-gray-300 bg-gray-300 transition-all duration-200 ease-in-out checked:border-black checked:bg-black disabled:cursor-default disabled:border-gray-500 disabled:bg-gray-500 dark:border-gray-900 dark:bg-gray-900 checked:dark:border-gray-100 checked:dark:bg-gray-100 disabled:dark:border-gray-700 disabled:dark:bg-gray-700"
+          className="box-content h-4 w-8 cursor-pointer appearance-none rounded-full border-2 border-gray-300 bg-gray-300 transition-all duration-200 ease-in-out checked:border-black checked:bg-black disabled:cursor-default disabled:border-gray-500 disabled:bg-gray-500 dark:border-gray-900 dark:bg-gray-900 dark:checked:border-gray-100 dark:checked:bg-gray-100 dark:disabled:border-gray-700 dark:disabled:bg-gray-700"
         />
         <AnimatePresence initial={false}>
           <motion.div

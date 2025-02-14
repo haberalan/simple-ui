@@ -1,8 +1,7 @@
 // region Imports
 import React from "react";
 import { IconProps } from "./component.types";
-import { ICONS } from "@/assets/assets";
-import { ICON_FILES } from "./component.constants";
+import { IconName, ICONS } from "@/assets/icons";
 // endregion
 
 // region Component
@@ -12,10 +11,10 @@ import { ICON_FILES } from "./component.constants";
  * @returns {React.ReactElement} The React element
  */
 const Icon: React.FC<IconProps> = (props) => {
-  const iconName = ICONS[props.name ?? "ArrowRight"];
+  const iconName = props.name ?? "ArrowRight";
 
   const SVGIcon: React.FC<React.SVGProps<SVGSVGElement>> | undefined =
-    ICON_FILES[iconName as keyof typeof ICONS];
+    ICONS[iconName as IconName];
 
   return (
     SVGIcon && (

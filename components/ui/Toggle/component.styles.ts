@@ -10,7 +10,7 @@ const ToggleStyles = styles(
     toggled: {
       true: "bg-gray-200 dark:bg-gray-900 text-black dark:text-gray-300",
       false:
-        "hover:bg-gray-200 hover:dark:bg-gray-900 text-gray-600 hover:text-black hover:dark:text-gray-300",
+        "hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-600 hover:text-black dark:hover:text-gray-300",
     },
     disabled: {
       true: "pointer-events-none text-gray-400 border-gray-200 dark:text-gray-800 dark:border-gray-800",

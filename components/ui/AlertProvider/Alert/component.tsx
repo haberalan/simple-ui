@@ -24,7 +24,7 @@ const Alert: React.FC<AlertProps> = (props) => {
   }, [width]);
 
   return (
-    <Card className="relative flex w-full items-center justify-between gap-8 overflow-hidden bg-gray-200 py-4 shadow-sm dark:bg-black">
+    <Card className="relative flex w-full items-center justify-between gap-8 overflow-hidden bg-gray-200 py-4 shadow-xs dark:bg-black">
       <div className="flex gap-4">
         {props.icon && <Icon name={props.icon} className="size-6 shrink-0" />}
         <div className="flex flex-col gap-1">
@@ -38,7 +38,7 @@ const Alert: React.FC<AlertProps> = (props) => {
       {props.showClose && (
         <div className="absolute right-3 top-2">
           <IconButton
-            icon="Close"
+            icon="close"
             variant="quaternary"
             size="sm"
             onClick={props.onClose.bind(this, props.id)}

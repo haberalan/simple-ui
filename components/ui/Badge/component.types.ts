@@ -1,4 +1,4 @@
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 
 type BadgeProps = {
   /**
@@ -24,7 +24,7 @@ type BadgeProps = {
   /**
    * Sets badge with icon
    */
-  icon?: keyof typeof ICONS;
+  icon?: IconName;
   /**
    * Sets icon position
    */

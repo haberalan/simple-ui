@@ -8,6 +8,27 @@ import { usePathname } from "next/navigation";
 
 const GROUPS = [
   {
+    name: "Getting started",
+    path: "/general",
+    items: [
+      {
+        name: "Installation",
+        formattedName: undefined,
+        path: "/general/installation",
+      },
+      {
+        name: "Documentation",
+        formattedName: undefined,
+        path: "/general/documentation",
+      },
+      {
+        name: "Icons",
+        formattedName: undefined,
+        path: "/general/icons",
+      },
+    ],
+  },
+  {
     name: "Components",
     path: "/components",
     items: COMPONENTS,
@@ -34,7 +55,7 @@ const NavMobile = () => {
     <>
       <div className="xl:hidden">
         <Icon
-          name="Menu"
+          name="menu"
           onClick={handleOpen}
           className="size-8 cursor-pointer"
         />
@@ -44,10 +65,12 @@ const NavMobile = () => {
         <div className="flex h-full flex-col gap-8 px-4 py-3">
           <div className="flex items-center justify-between">
             <Link href="/" className="hover:underline">
-              <h1 className="text-md font-500 dark:text-white">simple-ui</h1>
+              <h1 className="text-md font-500 font-mono dark:text-white">
+                alanhaber/simple-ui
+              </h1>
             </Link>
             <Icon
-              name="Close"
+              name="close"
               className="size-5 cursor-pointer self-end"
               onClick={handleClose}
             />

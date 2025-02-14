@@ -1,4 +1,4 @@
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 
 type InputProps = {
   /**
@@ -20,7 +20,7 @@ type InputProps = {
   /**
    * Adds icon to the input
    */
-  icon?: keyof typeof ICONS;
+  icon?: IconName;
   /**
    * Icon position
    */

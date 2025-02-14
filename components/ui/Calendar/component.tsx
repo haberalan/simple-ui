@@ -137,7 +137,7 @@ const Calendar: React.FC<CalendarProps> = (props) => {
       <div className="flex w-full items-center justify-between">
         <IconButton
           onClick={decrementMonth}
-          icon="ChevronLeft"
+          icon="chevron-left"
           size="sm"
           variant="tertiary"
         />
@@ -146,7 +146,7 @@ const Calendar: React.FC<CalendarProps> = (props) => {
         </p>
         <IconButton
           onClick={incrementMonth}
-          icon="ChevronRight"
+          icon="chevron-right"
           size="sm"
           variant="tertiary"
         />

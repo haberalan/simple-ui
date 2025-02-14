@@ -53,7 +53,7 @@ export default async function Page({
         <Card
           key={component.name}
           href={component.path}
-          className="flex min-h-[120px] items-center justify-center text-sm text-gray-600 shadow-sm transition hover:text-black hover:shadow-lg dark:hover:text-white"
+          className="flex min-h-[120px] items-center justify-center text-sm text-gray-600 shadow-xs transition hover:text-black hover:shadow-lg dark:hover:text-white"
         >
           {component.formattedName || component.name}
         </Card>

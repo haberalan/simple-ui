@@ -15,7 +15,7 @@ const TogglePreview = () => {
       toggled={toggled}
       onClick={handleClick}
       variant="primary"
-      icon="Sunset"
+      icon="sun"
       label="Toggle me!"
     />
   );

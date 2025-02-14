@@ -1,10 +1,10 @@
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 
 type IconButtonProps = {
   /**
    * Icon to be displayed
    */
-  icon: keyof typeof ICONS;
+  icon: IconName;
   /**
    * IconButton variant
    */

@@ -1,17 +1,17 @@
 import styles from "@/lib/styles";
 
 const SelectStyles = styles(
-  "relative select-none peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 pl-3 pr-6 py-2 text-sm placeholder:text-gray-500 placeholder:dark:text-gray-700 focus-visible:dark:outline-gray-800 min-h-[36px]",
+  "relative select-none peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 pl-3 pr-6 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:focus-visible:outline-gray-800 min-h-[36px]",
   {
     status: {
       default:
-        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 focus-visible:dark:border-gray-600 cursor-pointer",
+        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 dark:focus-visible:border-gray-600 cursor-pointer",
       error:
         "bg-white dark:bg-gray-1000 border-error-700 dark:border-error-900 text-error-600 dark:text-error-500 cursor-pointer",
       disabled:
         "bg-gray-200 text-gray-400 dark:bg-gray-900 dark:text-gray-700 pointer-events-none",
       valid:
-        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 focus-visible:dark:border-gray-600 cursor-pointer",
+        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 dark:focus-visible:border-gray-600 cursor-pointer",
     },
   },
 );
@@ -40,7 +40,7 @@ const LabelStyles = styles(
 );
 
 const ItemStyles = styles(
-  "relative py-2 px-3 rounded-1 cursor-pointer focus-visible:bg-gray-200 focus-visible:border-gray-100 hover:bg-gray-200 focus-visible:dark:bg-gray-900 hover:dark:bg-gray-900 focus-visible:dark:border-gray-600",
+  "relative py-2 px-3 rounded-1 cursor-pointer focus-visible:bg-gray-200 focus-visible:border-gray-100 hover:bg-gray-200 dark:focus-visible:bg-gray-900 dark:hover:bg-gray-900 dark:focus-visible:border-gray-600",
   {
     selected: {
       true: "bg-gray-200 dark:bg-gray-900",

@@ -8,6 +8,17 @@ import { usePathname } from "next/navigation";
 import styles from "@/lib/styles";
 // endregion
 
+// region Helper
+function convertPathToRegex(path: string, exact: boolean): RegExp {
+  if (!path.startsWith("/")) path = "/" + path;
+
+  const regexStr = path.replace(/(:\w+|\[\w+\])/g, "[^/]+");
+  return exact
+    ? new RegExp(`^${regexStr}/?$`)
+    : new RegExp(`^${regexStr}(/.*)?$`);
+}
+// endregion
+
 // region Component
 /**
  * @name ActiveLink
@@ -25,15 +36,15 @@ const ActiveLink: React.FC<ActiveLinkProps> = (props) => {
   });
 
   const isActive = useCallback(() => {
-    const path = pathname.split("/").filter((path) => path !== "");
-    const href = props.href.split("/").filter((path) => path !== "");
-
-    if (props.noAbsolute) {
-      return path.every((pathPath) => href.includes(pathPath));
+    if (props.href.includes(":") || props.href.includes("[")) {
+      const regex = convertPathToRegex(props.href, props.exact ?? true);
+      return regex.test(pathname);
     }
 
-    return href.every((hrefPath) => path.includes(hrefPath));
-  }, [pathname, props.href, props.noAbsolute]);
+    if (props.exact) return pathname === props.href;
+
+    return pathname.startsWith(props.href);
+  }, [pathname, props.href, props.exact]);
 
   return (
     <Link

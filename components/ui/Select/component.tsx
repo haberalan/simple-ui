@@ -57,12 +57,12 @@ const Select: React.FC<SelectProps> = (props) => {
 
   const selected = props.multiple ? (
     <div className={BadgesWrapperStyles({ disabled: props.disabled })}>
-      {props.value.map((item) => (
+      {props.value.map((item, index) => (
         <Badge
           variant="tertiary"
           size="xs"
           shape="pill"
-          key={item}
+          key={`${item}--${index}`}
           onClick={(e) => handleClickSelectedOption(e!, item)}
         >
           {item}
@@ -90,7 +90,7 @@ const Select: React.FC<SelectProps> = (props) => {
             </p>
           )}
           {props.value && selected}
-          <Icon name="ChevronDown" className={IconStyles({ open })} />
+          <Icon name="chevron-down" className={IconStyles({ open })} />
         </div>
         <AnimatePresence>
           {open && !props.disabled && (
@@ -108,7 +108,7 @@ const Select: React.FC<SelectProps> = (props) => {
                     status="default"
                     value={search}
                     onChange={handleSearch}
-                    icon="Search"
+                    icon="search"
                     iconPositon="right"
                     placeholder="Search..."
                   />
@@ -129,7 +129,7 @@ const Select: React.FC<SelectProps> = (props) => {
                     {option.label}
                     {isSelected(option) && (
                       <Icon
-                        name="Check"
+                        name="check"
                         className="absolute right-2 top-2 size-4"
                       />
                     )}

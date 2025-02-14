@@ -9,7 +9,7 @@ const AlertPreview = () => {
     ctxAlert.push({
       label: "Alert",
       children: "This is an alert",
-      icon: "Sunset",
+      icon: "sun",
       timer: true,
       showClose: true,
     });

@@ -1,16 +1,16 @@
 import styles from "@/lib/styles";
 
 const InputStyles = styles(
-  "peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 px-3 py-2 text-sm placeholder:text-gray-500 placeholder:dark:text-gray-700 focus-visible:dark:outline-gray-800",
+  "peer transition-colors ease-in-out duration-150 border border-gray-300 dark:border-gray-900 rounded-1 px-3 py-2 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-700 dark:focus-visible:outline-gray-800",
   {
     status: {
       default:
-        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 focus-visible:dark:border-gray-600",
+        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 dark:focus-visible:border-gray-600",
       error:
         "bg-white dark:bg-gray-1000 border-error-700 dark:border-error-900 text-error-600 dark:text-error-500",
       disabled: "bg-gray-200 text-gray-400 dark:bg-gray-900 dark:text-gray-700",
       valid:
-        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 focus-visible:dark:border-gray-600",
+        "bg-white dark:bg-gray-1000 focus-visible:border-gray-500 dark:focus-visible:border-gray-600",
     },
     icon: {
       left: "pl-8",
@@ -25,12 +25,12 @@ const IconStyles = styles(
   {
     status: {
       default:
-        "text-gray-400 peer-focus:text-black hover:text-black dark:text-gray-700 peer-focus:dark:text-gray-500 hover:dark:text-gray-500",
+        "text-gray-400 peer-focus:text-black hover:text-black dark:text-gray-700 dark:peer-focus:text-gray-500 dark:hover:text-gray-500",
       error:
-        "text-error-700 hover:text-error-600 dark:text-error-600 hover:dark:text-error-500",
-      disabled: "text-gray-400 dark:text-gray-700 !pointer-events-none",
+        "text-error-700 hover:text-error-600 dark:text-error-600 dark:hover:text-error-500",
+      disabled: "text-gray-400 dark:text-gray-700 pointer-events-none!",
       valid:
-        "text-gray-400 peer-focus:text-black hover:text-black dark:text-gray-700 peer-focus:dark:text-gray-500 hover:dark:text-gray-500",
+        "text-gray-400 peer-focus:text-black hover:text-black dark:text-gray-700 dark:peer-focus:text-gray-500 dark:hover:text-gray-500",
     },
     icon: {
       left: "left-2",

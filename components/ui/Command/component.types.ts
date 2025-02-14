@@ -1,4 +1,4 @@
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 
 type ItemProp = {
   /**
@@ -12,7 +12,7 @@ type ItemProp = {
   /**
    * Item icon
    */
-  icon: keyof typeof ICONS;
+  icon: IconName;
 };
 
 type ItemsProps = {

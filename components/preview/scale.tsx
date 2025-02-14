@@ -19,7 +19,7 @@ const ScalePreview = () => {
       <Sheet open={open} handleClose={handleClose}>
         <div className="flex flex-col px-4 py-3">
           <Icon
-            name="Close"
+            name="close"
             className="size-5 cursor-pointer self-end"
             onClick={handleClose}
           />
@@ -38,7 +38,7 @@ const ScalePreview = () => {
               label="Password"
               onChange={(_) => _}
               status="valid"
-              icon="Eye"
+              icon="eye"
             />
             <Button variant="secondary" size="md">
               Submit

@@ -1,5 +1,5 @@
 import React from "react";
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 import { ButtonProps } from "../../Button/component.types";
 
 type AlertProps = {
@@ -18,7 +18,7 @@ type AlertProps = {
   /**
    * Icon of the alert
    */
-  icon?: keyof typeof ICONS;
+  icon?: IconName;
   /**
    * Action button
    */

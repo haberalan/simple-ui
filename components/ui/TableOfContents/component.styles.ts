@@ -15,7 +15,7 @@ const ItemStyles = styles(
     active: {
       true: "font-600",
       false:
-        "text-gray-700 dark:text-gray-600 hover:text-black hover:dark:text-gray-100",
+        "text-gray-700 dark:text-gray-600 hover:text-black dark:hover:text-gray-100",
     },
   },
 );

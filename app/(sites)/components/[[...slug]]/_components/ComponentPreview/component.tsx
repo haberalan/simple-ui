@@ -20,7 +20,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = (props) => {
           </div>
         </TabItem>
         <TabItem label="Code">
-          <div className="scrollbar max-h-[400px] min-h-[200px] overflow-auto rounded-2 border border-gray-300 bg-grid-light px-2 py-4 font-sans dark:border-gray-900 dark:bg-grid-dark">
+          <div className="scrollbar max-h-[400px] min-h-[200px] overflow-auto rounded-2 border border-gray-300 bg-gray-100 px-2 py-4 font-sans dark:border-gray-900 dark:bg-gray-1000">
             <SyntaxHighlighter
               language="typescript"
               style={style}

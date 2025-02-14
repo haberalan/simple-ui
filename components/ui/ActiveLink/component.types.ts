@@ -33,6 +33,11 @@ type ActiveLinkProps = {
    * Prefetch the linked page in the background
    */
   prefetch?: boolean;
+  /**
+   * If true, the link will be considered active only if the current pathname exactly matches
+   * the href (or the converted pattern, in the case of dynamic routes). Defaults to true.
+   */
+  exact?: boolean;
 };
 
 export { type ActiveLinkProps };

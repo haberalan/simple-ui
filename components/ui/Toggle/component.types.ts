@@ -1,4 +1,4 @@
-import { ICONS } from "@/assets/assets";
+import { IconName } from "@/assets/icons";
 
 type ToggleProps = {
   /**
@@ -8,7 +8,7 @@ type ToggleProps = {
   /**
    * Icon of the toggle.
    */
-  icon: keyof typeof ICONS;
+  icon: IconName;
   /**
    * Toggled state.
    */

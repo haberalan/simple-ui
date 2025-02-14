@@ -23,7 +23,7 @@ const Checkbox: React.FC<CheckboxProps> = (props) => {
           disabled={props.disabled}
           checked={props.checked}
           onChange={props.onClick}
-          className="size-4 cursor-pointer appearance-none rounded-1 border border-black transition-all duration-150 ease-in-out checked:bg-black hover:bg-gray-300 checked:hover:bg-gray-800 disabled:pointer-events-none disabled:border-gray-500 disabled:bg-gray-300 checked:disabled:bg-gray-500 dark:border-gray-100 checked:dark:bg-gray-100 hover:dark:bg-gray-800 checked:hover:dark:bg-gray-200 disabled:dark:border-gray-600 disabled:dark:bg-gray-900 checked:disabled:dark:bg-gray-600"
+          className="size-4 cursor-pointer appearance-none rounded-1 border border-black transition-all duration-150 ease-in-out checked:bg-black hover:bg-gray-300 checked:hover:bg-gray-800 disabled:pointer-events-none disabled:border-gray-500 disabled:bg-gray-300 checked:disabled:bg-gray-500 dark:border-gray-100 dark:checked:bg-gray-100 dark:hover:bg-gray-800 dark:checked:hover:bg-gray-200 dark:disabled:border-gray-600 dark:disabled:bg-gray-900 dark:checked:disabled:bg-gray-600"
         />
         <AnimatePresence>
           {props.checked && (
@@ -35,7 +35,7 @@ const Checkbox: React.FC<CheckboxProps> = (props) => {
               className="pointer-events-none absolute"
             >
               <Icon
-                name="Check"
+                name="check"
                 className={IconStyles({
                   disabled: !!props.disabled,
                   checked: props.checked,

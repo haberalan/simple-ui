@@ -1,16 +1,16 @@
 "use client";
 
-import { ICONS } from "@/assets/assets";
+import { IconName, ICONS } from "@/assets/icons";
 import { Select } from "../ui";
 import { useState } from "react";
 
 const OPTIONS = Object.keys(ICONS).map((item) => ({ label: item }));
 
 const SelectPreview = () => {
-  const [value, setValue] = useState<keyof typeof ICONS>("Sunset");
+  const [value, setValue] = useState<IconName>("sun");
 
   const handleChange = (e: string) => {
-    setValue(e as keyof typeof ICONS);
+    setValue(e as IconName);
   };
 
   return (

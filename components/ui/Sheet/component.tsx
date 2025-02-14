@@ -60,7 +60,7 @@ const Sheet: React.FC<SheetProps> = (props) => {
             exit={{ opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.15 }}
             onClick={handleClick}
-            className="fixed left-0 top-0 z-20 size-full bg-white/5 backdrop-blur-sm dark:bg-gray-900/5"
+            className="fixed left-0 top-0 z-20 size-full bg-white/5 backdrop-blur-xs dark:bg-gray-900/5"
           ></motion.div>
           <motion.div
             initial="initial"
