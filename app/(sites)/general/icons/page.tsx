@@ -40,8 +40,8 @@ export default function Page() {
         <Separator variant="horizontal" />
       </div>
       {filteredIcons.length === 0 && (
-        <p className="text-center text-sm text-gray-600">
-          There are no icons for this filter.
+        <p className="text-md text-center text-gray-600">
+          There are no icons that match your search.
         </p>
       )}
       <div className="grid grid-cols-3 gap-4">
