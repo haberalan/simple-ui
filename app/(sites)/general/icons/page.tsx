@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card, Icon, Input, Separator } from "@/components/ui";
+import { Card, Icon, Input, Separator, useToastContext } from "@/components/ui";
 import { IconName, ICONS } from "@/assets/icons";
 import { PageHeader } from "../../_components";
 
@@ -19,6 +19,20 @@ export default function Page() {
   const filteredIcons = Object.keys(ICONS).filter((icon) =>
     icon.toLowerCase().includes(value.toLowerCase()),
   );
+
+  const ctxToast = useToastContext();
+
+  const handleClick = (icon: string) => {
+    navigator.clipboard.writeText(icon);
+
+    ctxToast.push({
+      children: (
+        <>
+          Copied icon <b>{icon}</b>.
+        </>
+      ),
+    });
+  };
 
   return (
     <>
@@ -48,7 +62,8 @@ export default function Page() {
         {filteredIcons.map((icon) => (
           <Card
             key={icon}
-            className="flex min-h-[120px] flex-col items-center justify-center gap-2 text-sm text-gray-600 shadow-xs transition hover:text-black hover:shadow-lg dark:hover:text-white"
+            onClick={() => handleClick(icon)}
+            className="flex min-h-[120px] cursor-pointer flex-col items-center justify-center gap-2 text-sm text-gray-600 shadow-xs transition hover:text-black hover:shadow-lg dark:hover:text-white"
           >
             <Icon name={icon as IconName} className="size-12" />
             <p>{icon}</p>
